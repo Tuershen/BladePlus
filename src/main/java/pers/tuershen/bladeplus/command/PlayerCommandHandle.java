@@ -1,0 +1,54 @@
+package pers.tuershen.bladeplus.command;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import pers.tuershen.bladeplus.api.IYamlSetting;
+import pers.tuershen.bladeplus.command.player.AbstractPlayerCommand;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @auther Tuershen Create Date on 2021/2/10
+ */
+public class PlayerCommandHandle extends AbstractCommandExecutor {
+
+    private static List<AbstractPlayerCommand> playerCommands = new ArrayList<>();
+
+    public PlayerCommandHandle(IYamlSetting iYamlSetting) {
+        super(iYamlSetting);
+        this.tabResultList.add("help");
+        this.tabResultList.add("open");
+        this.tabResultList.add("jd");
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
+        if (args.length > 0) {
+            this.callExecutor(sender, playerCommands, args);
+            return true;
+        }
+        return false;
+    }
+
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String s, String[] args) {
+        if (args.length >= 1) {
+            if (args[0].equalsIgnoreCase("")) return this.tabResult();
+        }
+        return this.callTabExecutor(sender, playerCommands, args);
+    }
+
+    public static <T extends AbstractPlayerCommand> void registerCommandHandle(T playerCommand) {
+        if (playerCommand != null) {
+            playerCommands.add(playerCommand);
+        }
+    }
+
+    @Override
+    protected List<String> tabResult() {
+        return this.tabResultList;
+    }
+
+}

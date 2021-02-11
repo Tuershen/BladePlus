@@ -1,0 +1,21 @@
+#强化石位置
+forging_material_slot: 2
+#强化按钮位置
+forging_button:
+  #位置
+  slot: 4
+  #材质，不能填物品id， 填物品名称，默认是铁砧
+  material: 'ANVIL'
+  #子id， 默认是铁砧，铁砧没有子id所以填0
+  mate: 0
+  display: '&7『&e开始锻造&7』'
+  lore:
+    - '&8&m--一一一一一一一&7[&b温馨提示&7]&8&m一一一一一一一--'
+    - ' &a▪ &7左边放入强化石 <=> 右边放入保护石，幸运石 &5▪'
+
+#保护石，幸运石
+forging_gemstone_slot: 6
+#进度条材质
+speed_of_progress_material: 'STAINED_GLASS_PANE:9'
+#进度条显示语言
+speed_of_progress: '&7强化进度: &e%SpeedOfProgress%%  &a|  &7剩余强化时间: &b%time% 秒'

@@ -1,0 +1,19 @@
+#拔刀最高锻造值
+maxRepairCounter: 1000
+#强化界面的标题
+title: '拔刀强化界面'
+#强化界面，这个是显示在强化界面的第一个槽位中
+forgingUi: 'STAINED_GLASS_PANE:7'
+#禁止交互方块
+forgingFail: 'STAINED_GLASS_PANE:7'
+#禁止使用拔刀的世界
+banUseWorld:
+  - 'plotworld'
+#拔刀识别设置，填与拔刀名称相似的物品
+slashBlade:
+- 'FLAMMPFEILSLASHBLADE'
+#鉴定石设置， 填物品名称即可
+appraisal:
+  - 'FLAMMPFEILSLASHBLADE_PROUDSOUL'
+  - 'NETHER_STAR'
+
