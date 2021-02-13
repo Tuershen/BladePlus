@@ -40,6 +40,11 @@ public enum GemstoneTypeEnum {
         public BladePlusGemstone pretreatment(BladePlusMaterial blade) {
             return new BladePlusGemstone(blade, 0);
         }
+
+        @Override
+        public int consumeCount(ResultTypeEnum resultType) {
+            return resultType == ResultTypeEnum.FAIL ? 1 : 0;
+        }
     },
     //幸运石 增加强化成功的几率
     LUCKY(2) {
@@ -64,6 +69,11 @@ public enum GemstoneTypeEnum {
             }
             return new BladePlusGemstone(blade, 1);
         }
+
+        @Override
+        public int consumeCount(ResultTypeEnum resultType) {
+            return 0;
+        }
     },
     //异类石 有几率随机增加拔刀的基础伤害值，杀敌数，以及随机剑气颜色
     SPECIAL(3) {
@@ -77,6 +87,7 @@ public enum GemstoneTypeEnum {
                 int min = this.checkInt("min");
                 SpecialTypeEnum specialTypeEnum = SpecialTypeEnum.getRandomSpecialAttribute(iSpecialGemstone);
                 int specialType = specialTypeEnum.getSpecialType(max, min);
+                System.out.println("值是"+ specialType);
                 tag.set(specialTypeEnum.getAttributeName(), new TagInt(specialType));
                 if (this.checkPlayer()) {
                     List<String> successMsg = iSpecialGemstone.getSuccessMsg();
@@ -100,6 +111,11 @@ public enum GemstoneTypeEnum {
         @Override
         public BladePlusGemstone pretreatment(BladePlusMaterial blade) {
             return new BladePlusGemstone(blade, 0);
+        }
+
+        @Override
+        public int consumeCount(ResultTypeEnum resultType) {
+            return 1;
         }
     },
     //赌石 有几率翻倍增加拔刀剑的属性，但也可能翻倍扣除拔刀剑的属性
@@ -132,6 +148,8 @@ public enum GemstoneTypeEnum {
                 if (this.checkPlayer()) {
                     afterRepairCounter = blade.getRepairCounter() - ((int) (blade.getRepairCounter() * magnification));
                     afterProudSoul = blade.getProudSoul() - ((int) (blade.getProudSoul() * magnification));
+                    blade.setRepairCounter(afterRepairCounter);
+                    blade.setProudSoul(afterProudSoul);
                     List<String> failMsg = iBetGemstone.getFailMsg();
                     for (String msg : failMsg) {
                         player.sendMessage(msg
@@ -149,6 +167,11 @@ public enum GemstoneTypeEnum {
         @Override
         public BladePlusGemstone pretreatment(BladePlusMaterial blade) {
             return new BladePlusGemstone(blade, 0);
+        }
+
+        @Override
+        public int consumeCount(ResultTypeEnum resultType) {
+            return 1;
         }
     },
     //封印石
@@ -184,6 +207,11 @@ public enum GemstoneTypeEnum {
         public BladePlusGemstone pretreatment(BladePlusMaterial blade) {
             return new BladePlusGemstone(blade, 0);
         }
+
+        @Override
+        public int consumeCount(ResultTypeEnum resultType) {
+            return 1;
+        }
     };
 
     private int type;
@@ -201,6 +229,8 @@ public enum GemstoneTypeEnum {
     public abstract CalculationResult handleGemstone(TagCompound tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType);
 
     public abstract BladePlusGemstone pretreatment(BladePlusMaterial blade);
+
+    public abstract int consumeCount(ResultTypeEnum resultType);
 
     protected double checkDouble(String key) {
         return this.gemstoneMate.hasKey(key) ? this.gemstoneMate.getDouble(key).getDouble() : 0.0d;

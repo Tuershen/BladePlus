@@ -31,4 +31,5 @@ public class CalculationResult {
     public void setBladePlusMaterial(BladePlusMaterial bladePlusMaterial) {
         this.bladePlusMaterial = bladePlusMaterial;
     }
+
 }

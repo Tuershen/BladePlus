@@ -27,15 +27,17 @@ public class ResultDistributionHandle extends ResultHandle {
         }
     }
 
-    public void dispatchGemstone(ResultTypeEnum resultType, GemstoneTypeEnum gemstoneTypeEnum) {
+    public int dispatchGemstone(ResultTypeEnum resultType, GemstoneTypeEnum gemstoneTypeEnum) {
         if (resultType == ResultTypeEnum.SUCCESS) {
             sendSuccessMsg();
             SuccessHandle successHandle = new SuccessHandle(this.plusHandle, setting, player);
             successHandle.handleGemstoneEvent(gemstoneTypeEnum);
+            return gemstoneTypeEnum.consumeCount(ResultTypeEnum.SUCCESS);
         } else {
             sendFailMsg();
             FailHandle failHandle = new FailHandle(this.plusHandle, setting, player);
             failHandle.handleGemstoneEvent(gemstoneTypeEnum);
+            return gemstoneTypeEnum.consumeCount(ResultTypeEnum.FAIL);
         }
     }
 

@@ -186,7 +186,7 @@ public class BladePlusInventory extends AbstractBladePlusInventory implements IS
                 //count如果大于0说明已做预处理，需要在强化之前扣除相应数量的宝石
                 if (pretreatment.getCount() > 0) {
                     //扣除宝石
-                    this.setGemstoneSlot(gemstone, this.getGemstoneSlot());
+                    this.setGemstoneSlot(gemstone, this.getGemstoneSlot(), 1);
                 }
                 //强化材料更新
                 bladePlusMaterial = pretreatment.getBladePlus();
@@ -218,9 +218,9 @@ public class BladePlusInventory extends AbstractBladePlusInventory implements IS
                      * 宝石预处理与强化后处理
                      * 强化后处理dispatchGemstone(ResultType, GemstoneTypeEnum)
                      */
-                    distributionHandle.dispatchGemstone(resultType, instance);
+                    int consumeCount = distributionHandle.dispatchGemstone(resultType, instance);
                     //强化处理后扣除宝石
-                    this.setGemstoneSlot(gemstone, this.getGemstoneSlot());
+                    this.setGemstoneSlot(gemstone, this.getGemstoneSlot(), consumeCount);
                     //重置进度条
                     this.setDefaultSpeedOfProgress();
                     return true;
@@ -256,14 +256,14 @@ public class BladePlusInventory extends AbstractBladePlusInventory implements IS
      * @param gemstone 宝石
      * @param gemstoneSlot 宝石槽位
      */
-    public void setGemstoneSlot(ItemStack gemstone, int gemstoneSlot) {
+    public void setGemstoneSlot(ItemStack gemstone, int gemstoneSlot, int count) {
         //如果宝石只剩余一个则把该槽位设置为空
         if (gemstone.getAmount() == 1) {
             this.bladeInventory.setItem(gemstoneSlot, new ItemStack(Material.AIR));
             return;
         }
         //否则扣除一个宝石
-        gemstone.setAmount(gemstone.getAmount() - 1);
+        gemstone.setAmount(gemstone.getAmount() - count);
         this.bladeInventory.setItem(gemstoneSlot, gemstone);
     }
 

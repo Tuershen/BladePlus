@@ -143,6 +143,7 @@ repair:
   failMsg:
     - '§7[§3Console§7] §b▶ §7很遗憾，封印石已失效.'
 
+
 #异类石，强化成功有几率增加拔刀的基础伤害值，杀敌数，以及随机剑气颜色
 special:
   display: '§f[§b§l拔刀锻造§f]§8-§d§l异类石'
@@ -161,8 +162,8 @@ special:
   summonedSwordColor: '§d剑气颜色'
   successMsg:
     - '§7[§3Console§7] §b▶ §7你消耗了一个异类石，增加了一个随机属性值.'
-    - '§7[§3Console§7]   §a▪ §7属性名称：%specialType%.'
-    - '§7[§3Console§7]   §a▪ §7增加数量：§b%value%.'
+    - '§7[§3Console§7]   §a▪ §7属性名称： %specialType%.'
+    - '§7[§3Console§7]   §a▪ §7增加数量： §b%value%.'
   failMsg:
     - '§7[§3Console§7] §b▶ §7很遗憾，异类石已失效.'
 
@@ -180,10 +181,10 @@ bet:
   successMsg:
     - '§7[§3Console§7] §b▶ §7恭喜， 赌石生效， 你赢了'
     - '§7[§3Console§7]   §a▪ §7强化石属性提升 §b%magnification% §7倍'
-    - '§7[§3Console§7]   §a▪ §7锻造数： §8%previously_repairRepairCounter% §a↑ §b§%after_repairRepairCounter%'
-    - '§7[§3Console§7]   §a▪ §7荣耀值： §8%previously_proudSoul% §a↑ §b§%after_proudSoul%'
+    - '§7[§3Console§7]   §a▪ §7锻造数： §5%previously_repairRepairCounter% §a↑ §b%after_repairRepairCounter%'
+    - '§7[§3Console§7]   §a▪ §7荣耀值： §5%previously_proudSoul% §a↑ §b%after_proudSoul%'
   failMsg:
     - '§7[§3Console§7] §b▶ §7很遗憾， 赌石已失效， 你输了'
     - '§7[§3Console§7]   §a▪ §7强化石属性下降 §b%magnification% §7倍'
-    - '§7[§3Console§7]   §a▪ §7锻造数： §8%previously_repairRepairCounter% §c↓ §b§%after_repairRepairCounter%'
-    - '§7[§3Console§7]   §a▪ §7荣耀值： §8%previously_proudSoul% §c↓ §b§%after_proudSoul%'
+    - '§7[§3Console§7]   §a▪ §7锻造数： §5%previously_repairRepairCounter% §c↓ §b%after_repairRepairCounter%'
+    - '§7[§3Console§7]   §a▪ §7荣耀值： §5%previously_proudSoul% §c↓ §b%after_proudSoul%'
