@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5ce12b5-219a-4f05-b052-48e14e232431" name="Default Changelist" comment="修改指令更改拔刀锻造值和荣耀值bug">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/BladePlusMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/BladePlusMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/gemstone/ISpecialGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/gemstone/ISpecialGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandMaxRepairRepairCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandMaxRepairCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/gemstone/SpecialGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/gemstone/SpecialGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/SpecialTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/SpecialTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlSladePlusGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlSladePlusGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/guiSetting.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/guiSetting.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/BladePlusMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/BladePlusMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlSladePlusGemstone.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlSladePlusGemstone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/BladePlus-1.0-Release.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/BladePlus-1.0-Release.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/language.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/language.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +102,7 @@
       <recent name="C:\Users\Tuershen\Desktop\github\BladePlus\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Gradle.BladePlus [build]">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pers.tuershen.bladeplus.Test" />
       <module name="BladePlus.main" />
@@ -129,7 +135,7 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BladePlus [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BladePlus [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -140,7 +146,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="buildDependents" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -188,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BladePlus [build]" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Gradle.BladePlus [dependencies]" />
         <item itemvalue="Gradle.BladePlus [processResources]" />
         <item itemvalue="Gradle.BladePlus [assemble]" />
-        <item itemvalue="Gradle.BladePlus [buildDependents]" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +230,7 @@
       <workItem from="1613223238456" duration="476000" />
       <workItem from="1613224377699" duration="4553000" />
       <workItem from="1613229985186" duration="201000" />
-      <workItem from="1613230620096" duration="9302000" />
+      <workItem from="1613230620096" duration="9475000" />
     </task>
     <task id="LOCAL-00001" summary="调整强化结果">
       <created>1613232346679</created>
@@ -312,22 +318,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="190" y="209" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1613230649759" />
-    <state width="1323" height="277" key="GridCell.Tab.0.bottom" timestamp="1613240417986">
+    <state width="1323" height="277" key="GridCell.Tab.0.bottom" timestamp="1613241182612">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="277" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1613240417986" />
-    <state width="1323" height="277" key="GridCell.Tab.0.center" timestamp="1613240417986">
+    <state width="1323" height="277" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1613241182612" />
+    <state width="1323" height="277" key="GridCell.Tab.0.center" timestamp="1613241182612">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="277" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1613240417986" />
-    <state width="1323" height="277" key="GridCell.Tab.0.left" timestamp="1613240417986">
+    <state width="1323" height="277" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1613241182612" />
+    <state width="1323" height="277" key="GridCell.Tab.0.left" timestamp="1613241182612">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="277" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1613240417986" />
-    <state width="1323" height="277" key="GridCell.Tab.0.right" timestamp="1613240417986">
+    <state width="1323" height="277" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1613241182612" />
+    <state width="1323" height="277" key="GridCell.Tab.0.right" timestamp="1613241182612">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="277" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1613240417986" />
+    <state width="1323" height="277" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1613241182612" />
     <state x="62" y="0" width="1243" height="728" key="SettingsEditor" timestamp="1613230652009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
