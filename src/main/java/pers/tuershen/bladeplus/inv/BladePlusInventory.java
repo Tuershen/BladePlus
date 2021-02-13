@@ -64,8 +64,9 @@ public class BladePlusInventory extends AbstractBladePlusInventory implements IS
         return this;
     }
 
-    public void setEntityNBTTagCompoundApi(EntityNBTTagCompoundApi entityNBTTagCompoundApi) {
+    public BladePlusInventory setEntityNBTTagCompoundApi(EntityNBTTagCompoundApi entityNBTTagCompoundApi) {
         this.entityNBTTagCompoundApi = entityNBTTagCompoundApi;
+        return this;
     }
 
 
@@ -296,6 +297,10 @@ public class BladePlusInventory extends AbstractBladePlusInventory implements IS
 
     public IYamlGuiSetting getIYamlGuiSetting() {
         return iYamlSetting.getIYamlGuiSetting();
+    }
+
+    public void setBlock(Block block) {
+        this.block = block;
     }
 
     @Override

@@ -18,8 +18,6 @@ public class BladePlusUseSAListener implements Listener {
 
     private IYamlSetting iYamlSetting;
 
-    private static String warning = "你使用的SA存在BUG，已为你随机替换SA";
-
     public BladePlusUseSAListener(IYamlSetting iYamlSetting) {
         this.iYamlSetting = iYamlSetting;
     }
@@ -41,6 +39,7 @@ public class BladePlusUseSAListener implements Listener {
                         if (!playerPermissionUseSA(player, id)) {
                             ItemStack blade = NBTWrite.setSpecialAttackTypeId(itemInHand, this.iYamlSetting.getIYamlSpecialAttackType().getRandomSA());
                             player.setItemInHand(blade);
+                            String warning = "你使用的SA存在BUG，已为你随机替换SA";
                             player.openInventory(new WarningInventory(warning).getInventory());
                             event.setCancelled(true);
                         }

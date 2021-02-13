@@ -19,8 +19,6 @@ public class BladePlusUseBladeListener implements Listener {
 
     private IYamlSetting iYamlSetting;
 
-    private static String warning = "该世界禁止使用拔刀剑";
-
     public BladePlusUseBladeListener(IYamlSetting iYamlSetting) {
         this.iYamlSetting = iYamlSetting;
     }
@@ -41,6 +39,7 @@ public class BladePlusUseBladeListener implements Listener {
                     if (this.iYamlSetting.getIYamlBanUseWorld().isBanWorld(world)) {
                         if (!player.isOp()) {
                             int heldItemSlot = player.getInventory().getHeldItemSlot();
+                            String warning = "该世界禁止使用拔刀剑";
                             if (heldItemSlot == 0) {
                                 player.getInventory().setHeldItemSlot(1);
                                 player.openInventory(new WarningInventory(warning).getInventory());

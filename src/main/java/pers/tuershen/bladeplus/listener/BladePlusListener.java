@@ -156,7 +156,10 @@ public class BladePlusListener implements Listener {
                                     this.forgingInventoryMap.put(player.getName(), forgingInventory);
                                 }
                                 forgingInventory = this.forgingInventoryMap.get(player.getName());
-                                forgingInventory.setPlayer(event.getPlayer()).setEntityNBTTagCompoundApi(instance);
+                                forgingInventory
+                                        .setPlayer(event.getPlayer())
+                                        .setEntityNBTTagCompoundApi(instance)
+                                        .setBlock(event.getClickedBlock());
                                 event.setCancelled(true);
                                 player.openInventory(forgingInventory.getInventory());
                                 break;
