@@ -15,6 +15,8 @@ public interface ISpecialGemstone extends IGemstone {
 
     String getSummonedSwordColor();
 
+    String getRepairCounter();
+
     List<String> getFailMsg();
 
 

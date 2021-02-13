@@ -117,7 +117,7 @@ public class BladePlusMain extends JavaPlugin {
     public void initAdminCommands(AdminCommandHandle adminCommandHandle, IYamlSetting iYamlSetting) {
         adminCommandHandle.registerAdminCommandHandle(new ACommandAppraisal(iYamlSetting));
         adminCommandHandle.registerAdminCommandHandle(new ACommandMaterial(iYamlSetting));
-        adminCommandHandle.registerAdminCommandHandle(new ACommandMaxRepairRepairCounter(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandMaxRepairCounter(iYamlSetting));
         adminCommandHandle.registerAdminCommandHandle(new ACommandModel(iYamlSetting));
         adminCommandHandle.registerAdminCommandHandle(new ACommandProtect(iYamlSetting));
         adminCommandHandle.registerAdminCommandHandle(new ACommandHelp(iYamlSetting));

@@ -13,9 +13,9 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class ACommandMaxRepairRepairCounter extends AbstractAdminCommand<Player> {
+public class ACommandMaxRepairCounter extends AbstractAdminCommand<Player> {
 
-    public ACommandMaxRepairRepairCounter(IYamlSetting iYamlSetting) {
+    public ACommandMaxRepairCounter(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 

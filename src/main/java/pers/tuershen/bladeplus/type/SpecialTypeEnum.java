@@ -75,6 +75,22 @@ public enum SpecialTypeEnum {
         public String getSpecialDisplay() {
             return this.iSpecialGemstone.getBaseAttackModifier();
         }
+    },
+    REPAIR_COUNTER(5) {
+        @Override
+        public int getSpecialType(int max, int min) {
+            return  Calculation.getRandomNumber(min, max);
+        }
+
+        @Override
+        public String getAttributeName() {
+            return "RepairCounter";
+        }
+
+        @Override
+        public String getSpecialDisplay() {
+            return this.iSpecialGemstone.getRepairCounter();
+        }
     };
 
     int type;
@@ -88,6 +104,7 @@ public enum SpecialTypeEnum {
         specialTypeEnumMap.put(2, SpecialTypeEnum.SUMMONED_SWORD_COLOR);
         specialTypeEnumMap.put(3, SpecialTypeEnum.PROD_SOUL);
         specialTypeEnumMap.put(4, SpecialTypeEnum.BASE_ATTACK_MODIFIER);
+        specialTypeEnumMap.put(5, SpecialTypeEnum.REPAIR_COUNTER);
     }
 
     SpecialTypeEnum(int type) {
@@ -101,7 +118,7 @@ public enum SpecialTypeEnum {
     public abstract String getSpecialDisplay();
 
     public static SpecialTypeEnum getRandomSpecialAttribute(ISpecialGemstone iSpecialGemstone) {
-        int random = Calculation.getRandomNumber(1, 5);
+        int random = Calculation.getRandomNumber(1, 6);
         SpecialTypeEnum specialTypeEnum = specialTypeEnumMap.get(random);
         specialTypeEnum.setISpecialGemstone(iSpecialGemstone);
         return specialTypeEnum;

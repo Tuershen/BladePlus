@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * @auther Tuershen Create Date on 2021/2/12
+ * 异类石语言
  */
 public class SpecialGemstone extends Gemstone implements ISpecialGemstone {
 
@@ -18,6 +19,8 @@ public class SpecialGemstone extends Gemstone implements ISpecialGemstone {
     private String baseAttackModifierMsg;
 
     private String summonedSwordColorMsg;
+
+    private String repairCounter;
 
     public SpecialGemstone(String display, List<String> lore, List<String> successMsg) {
         super(display, lore, successMsg);
@@ -52,6 +55,11 @@ public class SpecialGemstone extends Gemstone implements ISpecialGemstone {
         return this;
     }
 
+    public SpecialGemstone setRepairCounter(String repairCounter) {
+        this.repairCounter = repairCounter;
+        return this;
+    }
+
     public String getKillCountMsg() {
         return killCountMsg;
     }
@@ -70,5 +78,7 @@ public class SpecialGemstone extends Gemstone implements ISpecialGemstone {
         return this.summonedSwordColorMsg;
     }
 
-
+    public String getRepairCounter() {
+        return this.repairCounter;
+    }
 }

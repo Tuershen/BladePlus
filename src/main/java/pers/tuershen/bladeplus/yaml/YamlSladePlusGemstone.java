@@ -92,6 +92,7 @@ public class YamlSladePlusGemstone extends YamlReset implements IYamlSladePlusGe
                 .setBaseAttackModifierMsg(configuration.getString("special.baseAttackModifier"))
                 .setKillCountMsg(configuration.getString("special.killCount"))
                 .setProudSoulMsg(configuration.getString("special.proudSoul"))
+                .setRepairCounter(configuration.getString("special.repairCounter"))
                 .setSummonedSwordColorMsg(configuration.getString("special.summonedSwordColor"));
 
     }
