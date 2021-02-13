@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="NBTLibrary">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../开发/nbt/NBTLibrary.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

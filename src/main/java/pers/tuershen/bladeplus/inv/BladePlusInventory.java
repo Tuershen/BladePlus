@@ -5,7 +5,7 @@ import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.api.inv.ISladePlusInventory;
 import pers.tuershen.bladeplus.common.*;
-import pers.tuershen.bladeplus.common.hanlde.ResultDistributionHandle;
+import pers.tuershen.bladeplus.gemstone.hanlde.ResultDistributionHandle;
 import pers.tuershen.bladeplus.nbt.NBTRead;
 import pers.tuershen.bladeplus.gemstone.AbstractGemstone;
 import pers.tuershen.bladeplus.take.BladePlusTake;
@@ -225,12 +225,12 @@ public class BladePlusInventory extends AbstractBladePlusInventory implements IS
                     this.setDefaultSpeedOfProgress();
                     return true;
                 }
-                //如果宝石槽位没有宝石则默认调用模式处理模式
-                distributionHandle.dispatchDefault(resultType);
-                //重置进度条
-                this.setDefaultSpeedOfProgress();
-                return true;
             }
+            //如果宝石槽位没有宝石则默认调用模式处理模式
+            distributionHandle.dispatchDefault(resultType);
+            //重置进度条
+            this.setDefaultSpeedOfProgress();
+            return true;
         }
         //如果强化时间结束后，如果刀架台消失或者位置移动将不做任何强化处理
         //重置进度条

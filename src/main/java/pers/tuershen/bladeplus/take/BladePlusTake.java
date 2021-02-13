@@ -1,5 +1,6 @@
 package pers.tuershen.bladeplus.take;
 
+import org.bukkit.Sound;
 import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
 import pers.tuershen.bladeplus.common.AnvilBlockLocation;
 import pers.tuershen.bladeplus.common.BladeEntityLocation;
@@ -99,6 +100,7 @@ public class BladePlusTake extends BukkitRunnable {
         }
         //播放火焰粒子
         effLocation.getWorld().playEffect(effLocation, Effect.MOBSPAWNER_FLAMES, 10);
+        effLocation.getWorld().playSound(effLocation, Sound.ANVIL_LAND,  1, (float) 1);
         //强化进度
         double speedOfProgress = ((double) this.cumulative / this.time) * 100;
         ItemMeta itemMeta = speedOfProgressMaterial.getItemMeta();
@@ -111,7 +113,6 @@ public class BladePlusTake extends BukkitRunnable {
         }
         this.cumulative++;
     }
-
 
 
 
