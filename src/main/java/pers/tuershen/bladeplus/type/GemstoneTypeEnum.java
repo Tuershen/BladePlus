@@ -87,7 +87,6 @@ public enum GemstoneTypeEnum {
                 int min = this.checkInt("min");
                 SpecialTypeEnum specialTypeEnum = SpecialTypeEnum.getRandomSpecialAttribute(iSpecialGemstone);
                 int specialType = specialTypeEnum.getSpecialType(max, min);
-                System.out.println("值是"+ specialType);
                 tag.set(specialTypeEnum.getAttributeName(), new TagInt(specialType));
                 if (this.checkPlayer()) {
                     List<String> successMsg = iSpecialGemstone.getSuccessMsg();
@@ -131,14 +130,16 @@ public enum GemstoneTypeEnum {
             if (resultType == ResultTypeEnum.SUCCESS) {
                 afterRepairCounter = (int) (blade.getRepairCounter() * magnification);
                 afterProudSoul = (int) (blade.getProudSoul() * magnification);
+                int tempRepairCounter = blade.getRepairCounter();
+                int tempProudSoul = blade.getProudSoul();
                 blade.setRepairCounter(afterRepairCounter);
                 blade.setProudSoul(afterProudSoul);
                 if (this.checkPlayer()) {
                     List<String> successMsg = iBetGemstone.getSuccessMsg();
                     for (String msg : successMsg) {
                         player.sendMessage(msg
-                                .replace("%previously_repairRepairCounter%", String.valueOf(blade.getRepairCounter()))
-                                .replace("%previously_proudSoul%", String.valueOf(blade.getProudSoul()))
+                                .replace("%previously_repairRepairCounter%", String.valueOf(tempRepairCounter))
+                                .replace("%previously_proudSoul%", String.valueOf(tempProudSoul))
                                 .replace("%after_repairRepairCounter%", String.valueOf(afterRepairCounter))
                                 .replace("%after_proudSoul%", String.valueOf(afterProudSoul))
                                 .replace("%magnification%", String.valueOf(magnification)));
@@ -148,13 +149,15 @@ public enum GemstoneTypeEnum {
                 if (this.checkPlayer()) {
                     afterRepairCounter = blade.getRepairCounter() - ((int) (blade.getRepairCounter() * magnification));
                     afterProudSoul = blade.getProudSoul() - ((int) (blade.getProudSoul() * magnification));
+                    int tempRepairCounter = blade.getRepairCounter();
+                    int tempProudSoul = blade.getProudSoul();
                     blade.setRepairCounter(afterRepairCounter);
                     blade.setProudSoul(afterProudSoul);
                     List<String> failMsg = iBetGemstone.getFailMsg();
                     for (String msg : failMsg) {
                         player.sendMessage(msg
-                                .replace("%previously_repairRepairCounter%", String.valueOf(blade.getRepairCounter()))
-                                .replace("%previously_proudSoul%", String.valueOf(blade.getProudSoul()))
+                                .replace("%previously_repairRepairCounter%", String.valueOf(tempRepairCounter))
+                                .replace("%previously_proudSoul%", String.valueOf(tempProudSoul))
                                 .replace("%after_repairRepairCounter%", String.valueOf(afterRepairCounter))
                                 .replace("%after_proudSoul%", String.valueOf(afterProudSoul))
                                 .replace("%magnification%", String.valueOf(magnification)));

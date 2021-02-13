@@ -151,7 +151,7 @@ special:
     - '§8§m--一一一一一一一一一一一一一一一一一一一--'
     - '§b▶ §6物品说明:'
     - '  §a▪ §f强化成功有几率增加以下属性'
-    - '  §a▪ §a基础伤害值， §c杀敌数， §d剑气颜色'
+    - '  §a▪ §a基础伤害值， §c杀敌数， §d剑气颜色， §5锻造值'
     - '  §a▪ §f当前几率: §b%probability% §e%'
     - '  §a▪ §f属性范围: §b%min% §7- §b%max%'
     - '    §7......'
@@ -160,7 +160,7 @@ special:
   proudSoul: '§5荣耀值'
   baseAttackModifier: '§c基础伤害值'
   summonedSwordColor: '§d剑气颜色'
-  repairCounter: '§5锻造值'
+  repairCounter: '§6锻造值'
   successMsg:
     - '§7[§3Console§7] §b▶ §7你消耗了一个异类石， 增加了一个随机属性值.'
     - '§7[§3Console§7]   §a▪ §7属性名称： %specialType%.'
