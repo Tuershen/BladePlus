@@ -25,7 +25,7 @@ public class ACommandBaseAttackModifier extends AbstractAdminCommand<Player> {
         int baseAttackModifier = this.iConvert(args[0]);
         ItemStack itemInHand = player.getItemInHand();
         if (itemInHand.getType() != Material.AIR) {
-            ItemStack itemStack = NBTWrite.setDouble(itemInHand, "baseAttackModifier", baseAttackModifier);
+            ItemStack itemStack = NBTWrite.setDouble(itemInHand, "BaseAttackModifier", baseAttackModifier);
             player.setItemInHand(itemStack);
             player.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
             player.sendMessage("§7[§3Console§7]   §a▪ 基础伤害值为： §e" + baseAttackModifier + "");
