@@ -31,7 +31,6 @@ public class SuccessHandle extends AbstractHandle {
         this.tag.set("ProudSoul", getProudSoul(this.bladePlusMaterial.getProudSoul()));
         this.tag.set("ForgingModel", getBladeModel());
         this.saveBlade();
-        sendMessage(this.setting.getIYamlMsg().getMsg("error_3"));
     }
 
     @Override
