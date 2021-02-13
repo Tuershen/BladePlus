@@ -1,14 +1,12 @@
 package pers.tuershen.bladeplus.listener;
 
-import pers.tuershen.bladeplus.BladePlusMain;
-import pers.tuershen.bladeplus.api.balde.IYamlModel;
 import pers.tuershen.bladeplus.api.inv.IAppraisalInventory;
 import pers.tuershen.bladeplus.api.inv.ISladePlusInventory;
 import pers.tuershen.bladeplus.api.msg.IYamlMsg;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.inv.BladePlusInventory;
+import pers.tuershen.bladeplus.nbt.NBTBladePlusUtil;
 import pers.tuershen.bladeplus.nbt.NBTLookup;
-import pers.tuershen.bladeplus.nbt.NBTUtil;
 import pers.tuershen.bladeplus.inv.AppraisalInventory;
 import pers.tuershen.bladeplus.inv.TextModelInventory;
 import com.tuershen.nbtlibrary.api.EntityNBTTagCompoundApi;
@@ -16,7 +14,6 @@ import com.tuershen.nbtlibrary.api.NBTTagCompoundApi;
 import com.tuershen.nbtlibrary.minecraft.entity.AbstractMinecraftEntity;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -145,7 +142,7 @@ public class BladePlusListener implements Listener {
                 final Player player = event.getPlayer();
                 Entity[] entities = clickedBlock.getChunk().getEntities();
                 for (Entity entity : entities) {
-                    if (entity.getType().name().equalsIgnoreCase(NBTUtil.BLADE_STAND)) {
+                    if (entity.getType().name().equalsIgnoreCase(NBTBladePlusUtil.BLADE_STAND)) {
                         Location anvil = entity.getLocation();
                         anvil.setY(anvil.getY() - 1);
                         if (anvil.getBlock().equals(clickedBlock)) {

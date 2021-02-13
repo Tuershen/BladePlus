@@ -4,7 +4,7 @@ import com.tuershen.nbtlibrary.minecraft.nbt.TagInt;
 import org.bukkit.entity.Player;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.check.RepairCounterCheck;
-import pers.tuershen.bladeplus.common.IProgramme;
+import pers.tuershen.bladeplus.api.IProgramme;
 import pers.tuershen.bladeplus.common.BladePlusHandle;
 import pers.tuershen.bladeplus.common.CalculationResult;
 import pers.tuershen.bladeplus.type.GemstoneTypeEnum;

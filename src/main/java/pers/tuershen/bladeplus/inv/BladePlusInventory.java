@@ -7,7 +7,7 @@ import pers.tuershen.bladeplus.api.inv.ISladePlusInventory;
 import pers.tuershen.bladeplus.common.*;
 import pers.tuershen.bladeplus.common.hanlde.ResultDistributionHandle;
 import pers.tuershen.bladeplus.nbt.NBTRead;
-import pers.tuershen.bladeplus.nbt.gemstone.AbstractGemstone;
+import pers.tuershen.bladeplus.gemstone.AbstractGemstone;
 import pers.tuershen.bladeplus.take.BladePlusTake;
 import pers.tuershen.bladeplus.type.GemstoneTypeEnum;
 import pers.tuershen.bladeplus.type.ResultTypeEnum;

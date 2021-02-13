@@ -6,7 +6,7 @@ import org.bukkit.entity.Entity;
 import pers.tuershen.bladeplus.common.AnvilBlockLocation;
 import pers.tuershen.bladeplus.common.BladeEntityLocation;
 import pers.tuershen.bladeplus.common.BladePlusHandle;
-import pers.tuershen.bladeplus.nbt.NBTUtil;
+import pers.tuershen.bladeplus.nbt.NBTBladePlusUtil;
 
 /**
  * @auther Tuershen Create Date on 2021/2/10
@@ -44,7 +44,7 @@ public class BlandStandCheck {
 
     private boolean entityBladeCheck(Entity[] entities) {
         for (Entity entity : entities) {
-            if (entity.getType().name().equalsIgnoreCase(NBTUtil.BLADE_STAND)) {
+            if (entity.getType().name().equalsIgnoreCase(NBTBladePlusUtil.BLADE_STAND)) {
                 Location el = entity.getLocation();
                 if (el.getX() == blade.getX() && el.getY() == blade.getY() && el.getZ() == blade.getZ()) {
                     if (AbstractMinecraftEntity.getInstance(entity).getNBTTagCompound().hasKey("Blade")) {

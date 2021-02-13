@@ -2,7 +2,7 @@ package pers.tuershen.bladeplus.check;
 
 import com.tuershen.nbtlibrary.minecraft.nbt.TagCompound;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagInt;
-import pers.tuershen.bladeplus.common.IProgramme;
+import pers.tuershen.bladeplus.api.IProgramme;
 
 /**
  * @auther Tuershen Create Date on 2021/2/10
