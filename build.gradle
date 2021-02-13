@@ -32,7 +32,6 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation files('bukkit/craftbukkit-1.12.2.jar')
     implementation files('bukkit/NBTLibrary.jar')
     implementation files('bukkit/Uranium-1710-dev-5-B287-4e9e823-server.jar')
 

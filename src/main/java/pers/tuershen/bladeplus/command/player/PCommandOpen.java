@@ -17,15 +17,14 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class PCommandOpen extends AbstractPlayerCommand {
+public class PCommandOpen extends AbstractPlayerCommand<Player> {
 
     public PCommandOpen(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
+    public boolean onCommandHandle(Player player, String... args) {
         ItemStack itemStack = player.getItemInHand();
         if (itemStack.getType() != Material.AIR) {
             if (NBTLookup.hasModel(itemStack)) {

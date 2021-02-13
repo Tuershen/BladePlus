@@ -2,9 +2,8 @@ package pers.tuershen.bladeplus.yaml;
 
 import pers.tuershen.bladeplus.BladePlusMain;
 import pers.tuershen.bladeplus.api.balde.IYamlModel;
-import pers.tuershen.bladeplus.entity.ForgingModel;
+import pers.tuershen.bladeplus.common.ForgingModel;
 import org.bukkit.configuration.MemorySection;
-import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;
 import java.util.HashMap;

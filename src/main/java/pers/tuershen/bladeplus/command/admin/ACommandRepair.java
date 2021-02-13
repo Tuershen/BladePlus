@@ -5,6 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import pers.tuershen.bladeplus.api.IYamlSetting;
+import pers.tuershen.bladeplus.api.gemstone.IGemstoneDisplay;
 import pers.tuershen.bladeplus.nbt.gemstone.Repair;
 import pers.tuershen.bladeplus.type.CommandExecutorType;
 
@@ -13,27 +14,27 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/12
  */
-public class ACommandRepair extends AbstractAdminCommand {
+public class ACommandRepair extends AbstractAdminCommand<Player> {
 
     public ACommandRepair(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
-        int repair = this.iConvert(args[0]);
-        double probability = this.dConvert(args[1]);
+    public boolean onCommandHandle(Player player, String... args) {
+        double probability = this.probabilityCheck(dConvert(args[0]));
+        int repair = this.iConvert(args[1]);
         ItemStack itemStack = player.getItemInHand();
         if (itemStack.getType() != Material.AIR) {
-            ItemStack repairGemstone = new Repair(itemStack, repair, probability).setGemstoneMate();
+            IGemstoneDisplay iGemstoneDisplay = this.iYamlSetting.getIYamlSladePlusGemstone().getIRepairGemstone().getIGemstoneDisplay();
+            ItemStack repairGemstone = new Repair(itemStack, iGemstoneDisplay, repair, probability).setGemstoneDisplay().setGemstoneMate();
             player.setItemInHand(repairGemstone);
-            sender.sendMessage("§7[§3Console§7] §7▶ §a获取成功.");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 增加几率为： §e" + probability+"");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 增加锻造数： §e" + repair+"");
+            player.sendMessage("§7[§3Console§7] §7▶ §a获取成功.");
+            player.sendMessage("§7[§3Console§7]   §a▪ 增加几率为： §e" + probability + " §b%");
+            player.sendMessage("§7[§3Console§7]   §a▪ 增加锻造数： §e" + repair + "");
             return true;
         }
-        sender.sendMessage("§7[§3Console§7] §c▶ §c请手持物品.");
+        player.sendMessage("§7[§3Console§7] §c▶ §c请手持物品.");
         return true;
     }
 
@@ -45,7 +46,7 @@ public class ACommandRepair extends AbstractAdminCommand {
 
     @Override
     public int getCommandLength() {
-        return 1;
+        return 2;
     }
 
     @Override

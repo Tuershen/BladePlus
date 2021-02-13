@@ -6,6 +6,7 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import pers.tuershen.bladeplus.BladePlusMain;
+import pers.tuershen.bladeplus.util.ItemUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +16,12 @@ import java.util.List;
  */
 public abstract class AbstractInventory {
 
-    //页面集合
     protected List<Inventory> inventoryList = new ArrayList<>();
 
-    //页面数量
     protected int page;
 
-    //当前页面下标
     protected int nowPage;
 
-    //
     protected Inventory inventory;
 
 
@@ -50,35 +47,17 @@ public abstract class AbstractInventory {
         return this.inventoryList.get(++this.nowPage);
     }
 
-
-    public int getPage(){
-        return this.nowPage;
-    }
-
-
     public static Inventory setDefaultInventory(InventoryHolder inventoryHolder){
         Inventory inventory = BladePlusMain.bladePlusMain.getServer().createInventory(inventoryHolder, 54, "皮肤库");
         for (int i = 45; i < 54 ; i++) {
             inventory.setItem(i, new ItemStack(Material.STAINED_GLASS_PANE));
         }
-        inventory.setItem(48, thePrevious());
-        inventory.setItem(50, next());
+        inventory.setItem(48, ItemUtil.createItem("§b上一页"));
+        inventory.setItem(50, ItemUtil.createItem("§b下一页"));
         return inventory;
     }
 
-    public static ItemStack next() {
-        ItemStack itemStack = new ItemStack(Material.ENDER_PEARL);
-        ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setDisplayName("§b下一页");
-        itemStack.setItemMeta(itemMeta);
-        return itemStack;
-    }
 
-    public static ItemStack thePrevious() {
-        ItemStack itemStack = new ItemStack(Material.ENDER_PEARL);
-        ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setDisplayName("§b上一页");
-        itemStack.setItemMeta(itemMeta);
-        return itemStack;
-    }
+
+
 }

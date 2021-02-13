@@ -5,7 +5,8 @@ import com.tuershen.nbtlibrary.minecraft.nbt.TagCompound;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagInt;
 import org.bukkit.entity.Player;
 import pers.tuershen.bladeplus.api.IYamlSetting;
-import pers.tuershen.bladeplus.entity.BladePlusHandle;
+import pers.tuershen.bladeplus.common.BladePlusHandle;
+import pers.tuershen.bladeplus.common.CalculationResult;
 import pers.tuershen.bladeplus.type.GemstoneTypeEnum;
 
 /**
@@ -34,7 +35,10 @@ public class FailHandle extends AbstractHandle {
 
     @Override
     public void handleGemstoneEvent(GemstoneTypeEnum gemstoneTypeEnum) {
-
+        CalculationResult result = gemstoneTypeEnum.handleGemstone(this.tag, this.bladePlusMaterial);
+        this.tag = result.getTag();
+        this.bladePlusMaterial = result.getBladePlusMaterial();
+        handleEvent();
     }
 
 

@@ -1,11 +1,10 @@
 package pers.tuershen.bladeplus.nbt;
 
-import com.tuershen.nbtlibrary.minecraft.nbt.TagCompound;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagList;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagString;
 import org.bukkit.inventory.ItemStack;
 import pers.tuershen.bladeplus.BladePlusMain;
-import pers.tuershen.bladeplus.entity.BladePlusMaterial;
+import pers.tuershen.bladeplus.common.BladePlusMaterial;
 
 /**
  * @auther Tuershen Create Date on 2021/2/10
@@ -91,6 +90,14 @@ public class NBTRead {
     }
 
 
+    /**
+     * 获取拔刀剑的最大锻造值
+     * @param blade
+     * @return
+     */
+    public static int getMaxRepairCounter(ItemStack blade) {
+        return BladePlusMain.libraryApi.getCompound(blade).getInt("MaxRepairCounter");
+    }
 
 
 }

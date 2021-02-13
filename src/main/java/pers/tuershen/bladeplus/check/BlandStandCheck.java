@@ -3,9 +3,9 @@ package pers.tuershen.bladeplus.check;
 import com.tuershen.nbtlibrary.minecraft.entity.AbstractMinecraftEntity;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
-import pers.tuershen.bladeplus.entity.AnvilBlockLocation;
-import pers.tuershen.bladeplus.entity.BladeEntityLocation;
-import pers.tuershen.bladeplus.entity.BladePlusHandle;
+import pers.tuershen.bladeplus.common.AnvilBlockLocation;
+import pers.tuershen.bladeplus.common.BladeEntityLocation;
+import pers.tuershen.bladeplus.common.BladePlusHandle;
 import pers.tuershen.bladeplus.nbt.NBTUtil;
 
 /**

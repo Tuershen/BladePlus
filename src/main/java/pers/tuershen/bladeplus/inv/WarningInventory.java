@@ -6,6 +6,7 @@ import pers.tuershen.bladeplus.BladePlusMain;
 
 /**
  * @auther Tuershen Create Date on 2021/2/9
+ * 警告界面
  */
 public class WarningInventory implements InventoryHolder {
 

@@ -2,7 +2,7 @@ package pers.tuershen.bladeplus.common.hanlde;
 
 import org.bukkit.entity.Player;
 import pers.tuershen.bladeplus.api.IYamlSetting;
-import pers.tuershen.bladeplus.entity.BladePlusHandle;
+import pers.tuershen.bladeplus.common.BladePlusHandle;
 import pers.tuershen.bladeplus.type.GemstoneTypeEnum;
 import pers.tuershen.bladeplus.type.ResultTypeEnum;
 
@@ -17,9 +17,11 @@ public class ResultDistributionHandle extends ResultHandle {
 
     public void dispatchDefault(ResultTypeEnum resultType) {
         if (resultType == ResultTypeEnum.SUCCESS) {
+            sendSuccessMsg();
             SuccessHandle successHandle = new SuccessHandle(this.plusHandle, setting, player);
             successHandle.handleEvent();
         } else {
+            sendFailMsg();
             FailHandle failHandle = new FailHandle(this.plusHandle, setting, player);
             failHandle.handleEvent();
         }
@@ -27,13 +29,28 @@ public class ResultDistributionHandle extends ResultHandle {
 
     public void dispatchGemstone(ResultTypeEnum resultType, GemstoneTypeEnum gemstoneTypeEnum) {
         if (resultType == ResultTypeEnum.SUCCESS) {
+            sendSuccessMsg();
             SuccessHandle successHandle = new SuccessHandle(this.plusHandle, setting, player);
             successHandle.handleGemstoneEvent(gemstoneTypeEnum);
         } else {
+            sendFailMsg();
             FailHandle failHandle = new FailHandle(this.plusHandle, setting, player);
             failHandle.handleGemstoneEvent(gemstoneTypeEnum);
         }
     }
+
+    private void sendSuccessMsg(){
+        if (this.player != null) {
+            player.sendMessage(setting.getIYamlMsg().getMsg("error_3"));
+        }
+    }
+
+    private void sendFailMsg(){
+        if (this.player != null) {
+            player.sendMessage(setting.getIYamlMsg().getMsg("error_5"));
+        }
+    }
+
 
 
 }

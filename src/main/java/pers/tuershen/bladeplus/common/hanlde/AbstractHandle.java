@@ -8,8 +8,8 @@ import com.tuershen.nbtlibrary.minecraft.nbt.TagList;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagString;
 import org.bukkit.entity.Player;
 import pers.tuershen.bladeplus.api.IYamlSetting;
-import pers.tuershen.bladeplus.entity.BladePlusHandle;
-import pers.tuershen.bladeplus.entity.BladePlusMaterial;
+import pers.tuershen.bladeplus.common.BladePlusHandle;
+import pers.tuershen.bladeplus.common.BladePlusMaterial;
 import pers.tuershen.bladeplus.nbt.NBTWrite;
 import pers.tuershen.bladeplus.type.GemstoneTypeEnum;
 

@@ -9,14 +9,14 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class ACommandHelp extends AbstractAdminCommand {
+public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
 
     public ACommandHelp(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
+    public boolean onCommandHandle(CommandSender sender, String... args) {
         int page;
         if (args[0] == null || args[0].equalsIgnoreCase("")) {
             page = 1;

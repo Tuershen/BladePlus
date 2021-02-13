@@ -1,7 +1,7 @@
 package pers.tuershen.bladeplus.util;
 
-import pers.tuershen.bladeplus.entity.ForgingGuiSetting;
-import pers.tuershen.bladeplus.entity.ForgingUi;
+import pers.tuershen.bladeplus.common.BladePlusButton;
+import pers.tuershen.bladeplus.common.BladeSpeedOfProgressAttribute;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -13,11 +13,11 @@ import java.util.List;
  */
 public class ItemUtil {
 
-    public static ItemStack convertItemStack(ForgingGuiSetting forgingGuiSetting){
-        short mate = forgingGuiSetting.getMate();
-        ItemStack itemStack = new ItemStack(Material.getMaterial(forgingGuiSetting.getMaterial()), mate);
-        String display = forgingGuiSetting.getDisplay().replace('&','§');
-        List<String> lore = forgingGuiSetting.getLore();
+    public static ItemStack convertItemStack(BladePlusButton bladePlusButton){
+        short mate = bladePlusButton.getMate();
+        ItemStack itemStack = new ItemStack(Material.getMaterial(bladePlusButton.getMaterial()),1, mate);
+        String display = bladePlusButton.getDisplay().replace('&','§');
+        List<String> lore = bladePlusButton.getLore();
         for (int i = 0; i < lore.size(); i++) {
             lore.set(i, lore.get(i).replace('&','§'));
         }
@@ -28,11 +28,21 @@ public class ItemUtil {
         return itemStack;
     }
 
-    public static ForgingUi convertForgingUi(String id) {
-        String[] type = id.split(":");
-        if (type.length == 2) return new ForgingUi(type[0], Short.parseShort(type[1]));
-        return new ForgingUi(type[0]);
+    public static ItemStack convertItemStack(BladeSpeedOfProgressAttribute ofProgressAttribute){
+        short mate = ofProgressAttribute.getMate();
+        return new ItemStack(Material.getMaterial(ofProgressAttribute.getMaterial()),1, mate);
     }
+
+    public static ItemStack createItem(String display){
+        ItemStack itemStack = new ItemStack(Material.ENDER_PEARL);
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setDisplayName(display);
+        itemStack.setItemMeta(itemMeta);
+        return itemStack;
+    }
+
+
+
 
 
 

@@ -2,9 +2,10 @@ package pers.tuershen.bladeplus.nbt;
 
 import com.tuershen.nbtlibrary.minecraft.nbt.*;
 import pers.tuershen.bladeplus.BladePlusMain;
-import pers.tuershen.bladeplus.appraisal.AppraisalMaterial;
-import pers.tuershen.bladeplus.entity.BladePlusMaterial;
-import pers.tuershen.bladeplus.entity.ForgingModel;
+import pers.tuershen.bladeplus.common.appraisal.AppraisalMaterial;
+import pers.tuershen.bladeplus.common.BladePlusAppraisalDisplay;
+import pers.tuershen.bladeplus.common.BladePlusMaterial;
+import pers.tuershen.bladeplus.common.ForgingModel;
 import pers.tuershen.bladeplus.util.Calculation;
 import com.tuershen.nbtlibrary.api.NBTTagCompoundApi;
 import org.bukkit.inventory.ItemStack;
@@ -88,7 +89,7 @@ public class NBTWrite {
      * @param appraisalMaterial 鉴定材料
      * @return 返回一个固定范围的随机属性强化材料
      */
-    public static ItemStack appraisalToMaterial(ItemStack appraisal, ItemStack appraisalMaterial) {
+    public static ItemStack appraisalToMaterial(ItemStack appraisal, ItemStack appraisalMaterial, BladePlusAppraisalDisplay display) {
         NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(appraisal);
         TagCompound appraisalMaterial1 = compound.get("AppraisalMaterial");
         BladePlusMaterial bladePlusMaterial = new BladePlusMaterial();
@@ -99,8 +100,8 @@ public class NBTWrite {
         bladePlusMaterial.setProudSoul(Calculation.getRandomNumber(appraisalMaterial1.getInt("min_proudSoul").getInt(), appraisalMaterial1.getInt("max_proudSoul").getInt()));
         bladePlusMaterial.setFail(Calculation.getRandomNumber(appraisalMaterial1.getInt("min_fail").getInt(), appraisalMaterial1.getInt("max_fail").getInt()));
         bladePlusMaterial.setModel(compound.getString("model"));
-        bladePlusMaterial.setDisplay("&f[&b&l强化材料&f]");
-        bladePlusMaterial.setLore(getDefaultLore());
+        bladePlusMaterial.setDisplay(display.getDisplay());
+        bladePlusMaterial.setLore(display.getLore());
         return writerNBT(appraisalMaterial, bladePlusMaterial);
     }
 
@@ -156,27 +157,6 @@ public class NBTWrite {
 
 
 
-
-    public static List<String> getDefaultLore() {
-        List<String> list = new ArrayList<>();
-        list.add("&8&m--一一一一一一一&7[&e强化物品&7]&8&m一一一一一一一--");
-        list.add("&b▶ &3物品属性:");
-        list.add("  &a▪ &7等级需求: &f%exp% 级");
-        list.add("  &a▪ &7成功几率: &f%probability%%");
-        list.add("  &a▪ &7强化时间: &f%time% 秒");
-        list.add("  &a▪ &7失败惩罚: &f-%fail% 锻");
-        list.add("&8&m--一一一一一一一一一一一一一一一一一一一--");
-        list.add("&b▶ &c强化加成:");
-        list.add("  &a▪ &7锻造数值: &f+%repairCounter%");
-        list.add("  &a▪ &7耀魂数值: &f+%proudSoul%");
-        list.add("  &a▪ &7镶嵌皮肤: &f%model%");
-        list.add("&8&m--一一一一一一一一一一一一一一一一一一一--");
-        list.add("&b▶ &6获取方式:");
-        list.add("  &a▪ &f由鉴定石鉴定而来.");
-        list.add("    &7......");
-        list.add("&8&m--一一一一一一一一一一一一一一一一一一一--");
-        return list;
-    }
 
 
 

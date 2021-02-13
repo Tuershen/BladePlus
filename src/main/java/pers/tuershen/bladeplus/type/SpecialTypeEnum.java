@@ -1,5 +1,6 @@
 package pers.tuershen.bladeplus.type;
 
+import pers.tuershen.bladeplus.api.gemstone.ISpecialGemstone;
 import pers.tuershen.bladeplus.util.Calculation;
 
 import java.util.HashMap;
@@ -21,6 +22,11 @@ public enum SpecialTypeEnum {
         public String getAttributeName() {
             return "killCount";
         }
+
+        @Override
+        public String getSpecialDisplay() {
+            return this.iSpecialGemstone.getKillCountMsg();
+        }
     },
     SUMMONED_SWORD_COLOR(2) {
         @Override
@@ -31,6 +37,11 @@ public enum SpecialTypeEnum {
         @Override
         public String getAttributeName() {
             return "SummonedSwordColor";
+        }
+
+        @Override
+        public String getSpecialDisplay() {
+            return this.iSpecialGemstone.getSummonedSwordColor();
         }
     },
     PROD_SOUL(3) {
@@ -43,6 +54,11 @@ public enum SpecialTypeEnum {
         public String getAttributeName() {
             return "ProudSoul";
         }
+
+        @Override
+        public String getSpecialDisplay() {
+            return this.iSpecialGemstone.getProudSoulMsg();
+        }
     },
     BASE_ATTACK_MODIFIER(4) {
         @Override
@@ -54,9 +70,16 @@ public enum SpecialTypeEnum {
         public String getAttributeName() {
             return "baseAttackModifier";
         }
+
+        @Override
+        public String getSpecialDisplay() {
+            return this.iSpecialGemstone.getBaseAttackModifier();
+        }
     };
 
     int type;
+
+    ISpecialGemstone iSpecialGemstone;
 
     protected static Map<Integer, SpecialTypeEnum> specialTypeEnumMap = new HashMap<>();
 
@@ -75,10 +98,16 @@ public enum SpecialTypeEnum {
 
     public abstract String getAttributeName();
 
-    public static SpecialTypeEnum getRandomSpecialAttribute() {
+    public abstract String getSpecialDisplay();
+
+    public static SpecialTypeEnum getRandomSpecialAttribute(ISpecialGemstone iSpecialGemstone) {
         int random = Calculation.getRandomNumber(1, 4);
-        return specialTypeEnumMap.get(random);
+        SpecialTypeEnum specialTypeEnum = specialTypeEnumMap.get(random);
+        specialTypeEnum.setISpecialGemstone(iSpecialGemstone);
+        return specialTypeEnum;
     }
 
-
+    public void setISpecialGemstone(ISpecialGemstone iSpecialGemstone) {
+        this.iSpecialGemstone = iSpecialGemstone;
+    }
 }

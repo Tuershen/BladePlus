@@ -1,7 +1,7 @@
 package pers.tuershen.bladeplus.inv;
 
 import pers.tuershen.bladeplus.api.balde.IYamlModel;
-import pers.tuershen.bladeplus.entity.ForgingModel;
+import pers.tuershen.bladeplus.common.ForgingModel;
 
 import pers.tuershen.bladeplus.nbt.NBTLookup;
 import pers.tuershen.bladeplus.nbt.NBTRead;
@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * @auther Tuershen Create Date on 2021/1/8
+ * 拔刀皮肤库界面
  */
 public class TextModelInventory extends AbstractInventory implements InventoryHolder {
 
@@ -34,6 +35,10 @@ public class TextModelInventory extends AbstractInventory implements InventoryHo
         analysis();
     }
 
+    /**
+     * 界面解析以及分页
+     * @return 界面
+     */
     public Inventory analysis(){
         List<TagString> data = textModelList.getData();
         this.page = (data.size() / 45) + 1;

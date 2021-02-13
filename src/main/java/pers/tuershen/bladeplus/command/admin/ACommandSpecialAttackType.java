@@ -13,31 +13,30 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/11
  */
-public class ACommandSpecialAttackType extends AbstractAdminCommand {
+public class ACommandSpecialAttackType extends AbstractAdminCommand<Player> {
 
     public ACommandSpecialAttackType(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
+    public boolean onCommandHandle(Player player, String... args) {
         int specialAttackType = this.iConvert(args[0]);
         ItemStack itemInHand = player.getItemInHand();
         if (itemInHand.getType() != Material.AIR) {
             ItemStack itemStack = NBTWrite.setInt(itemInHand, "SpecialAttackType", specialAttackType);
             player.setItemInHand(itemStack);
-            sender.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 技能id为： §e" + specialAttackType+"");
+            player.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
+            player.sendMessage("§7[§3Console§7]   §a▪ 技能id为： §e" + specialAttackType + "");
             return true;
         }
-        sender.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
+        player.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
         return true;
     }
 
     @Override
     public String[] getArgs() {
-        return new String[] {"specialAttackType"};
+        return new String[]{"specialAttackType"};
     }
 
     @Override

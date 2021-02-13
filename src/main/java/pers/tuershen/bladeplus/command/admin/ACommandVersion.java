@@ -9,14 +9,14 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/11
  */
-public class ACommandVersion extends AbstractAdminCommand {
+public class ACommandVersion extends AbstractAdminCommand<CommandSender> {
 
     public ACommandVersion(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
+    public boolean onCommandHandle(CommandSender sender, String... args) {
         sender.sendMessage("§7[§3Console§7] §aThe plugin version is 1.0");
         sender.sendMessage("§7[§3Console§7] §aThe author of this plugin is Tuershen(兔儿神) ");
         return true;
@@ -24,7 +24,7 @@ public class ACommandVersion extends AbstractAdminCommand {
 
     @Override
     public String[] getArgs() {
-        return new String[] {"version"};
+        return new String[]{"version"};
     }
 
     @Override

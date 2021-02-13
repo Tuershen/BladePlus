@@ -13,31 +13,30 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/11
  */
-public class ACommandRepairCounter extends AbstractAdminCommand{
+public class ACommandRepairCounter extends AbstractAdminCommand<Player> {
 
     public ACommandRepairCounter(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
+    public boolean onCommandHandle(Player player, String... args) {
         int repairCounter = this.iConvert(args[0]);
         ItemStack itemInHand = player.getItemInHand();
         if (itemInHand.getType() != Material.AIR) {
             ItemStack itemStack = NBTWrite.setInt(itemInHand, "repairCounter", repairCounter);
             player.setItemInHand(itemStack);
-            sender.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 锻造值为： §e" + repairCounter + "");
+            player.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
+            player.sendMessage("§7[§3Console§7]   §a▪ 锻造值为： §e" + repairCounter + "");
             return true;
         }
-        sender.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
+        player.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
         return true;
     }
 
     @Override
     public String[] getArgs() {
-        return new String[] {"repairCounter"};
+        return new String[]{"repairCounter"};
     }
 
     @Override

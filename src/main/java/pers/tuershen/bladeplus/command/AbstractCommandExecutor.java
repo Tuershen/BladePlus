@@ -4,6 +4,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import pers.tuershen.bladeplus.api.IYamlSetting;
+import pers.tuershen.bladeplus.command.player.AbstractPlayerCommand;
 import pers.tuershen.bladeplus.type.CommandExecutorType;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/11
  */
-public abstract class AbstractCommandExecutor implements TabExecutor {
+public abstract class AbstractCommandExecutor<C extends CommandSender> implements TabExecutor {
 
     protected IYamlSetting iYamlSetting;
 
@@ -42,7 +43,7 @@ public abstract class AbstractCommandExecutor implements TabExecutor {
         return executorType == CommandExecutorType.ALL;
     }
 
-    public <T extends AbstractCommand> void callExecutor(CommandSender sender, List<T> executors, String... args) {
+    public <T extends AbstractCommand<C>> void callExecutor(C sender, List<T> executors, String... args) {
         for (T executor : executors) {
             if (screenExecutorType(sender, executor.getCommandExecutorType())) {
                 if (sender.hasPermission(executor.getPermission())) {
@@ -65,27 +66,21 @@ public abstract class AbstractCommandExecutor implements TabExecutor {
     }
 
 
-    public <T extends AbstractCommand> List<String> callTabExecutor(CommandSender sender, List<T> executors, String... args) {
+    public <T extends AbstractCommand<C>> List<String> callTabExecutor(C sender, List<T> executors, String... args) {
         List<String> tabList = new ArrayList<>();
-        for (T executor : executors) {
-            if (screenExecutorType(sender, executor.getCommandExecutorType())) {
-                if (sender.hasPermission(executor.getPermission())) {
-                    int index = args.length - 1;
-                    String param = args[index];
-                    if (param.equalsIgnoreCase("")) {
-                        index = index == 0 ? 0 : index - 1;
-                        if (executor.getArgs().length >= args.length - 1) {
-                            if (executor.getArgs()[index].equalsIgnoreCase(args[index])) {
-                                return executor.getTabExecutorResult();
-                            }
-                        }
-                    } else {
-                        if (executor.getArgs().length >= args.length) {
-                            if (executor.getArgs()[index].contains(param)) {
-                                tabList.add(executor.getArgs()[index]);
-                            }
-                        }
+        for (T abstractCommand : executors) {
+            if (screenExecutorType(sender, abstractCommand.getCommandExecutorType()) && sender.hasPermission(abstractCommand.getPermission())) {
+                int index = args.length - 1;
+                String param = args[index];
+                if (param.equalsIgnoreCase("")) {
+                    index = (index == 0) ? 0 : (index - 1);
+                    if ((abstractCommand.getArgs()).length >= args.length - 1 && abstractCommand.getArgs()[index].equalsIgnoreCase(args[index])) {
+                        return abstractCommand.getTabExecutorResult();
                     }
+                    continue;
+                }
+                if ((abstractCommand.getArgs()).length >= args.length && abstractCommand.getArgs()[index].contains(param)) {
+                    tabList.add(abstractCommand.getArgs()[index]);
                 }
             }
         }
@@ -93,6 +88,5 @@ public abstract class AbstractCommandExecutor implements TabExecutor {
     }
 
     protected abstract List<String> tabResult();
-
 
 }

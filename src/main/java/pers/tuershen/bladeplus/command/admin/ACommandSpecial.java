@@ -5,6 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import pers.tuershen.bladeplus.api.IYamlSetting;
+import pers.tuershen.bladeplus.api.gemstone.IGemstoneDisplay;
 import pers.tuershen.bladeplus.nbt.gemstone.Lucky;
 import pers.tuershen.bladeplus.nbt.gemstone.Special;
 import pers.tuershen.bladeplus.type.CommandExecutorType;
@@ -14,35 +15,40 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/11
  */
-public class ACommandSpecial extends AbstractAdminCommand {
+public class ACommandSpecial extends AbstractAdminCommand<Player> {
 
     public ACommandSpecial(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
-        double probability =  this.dConvert(args[0]);
-        int min =  this.iConvert(args[1]);
-        int max =  this.iConvert(args[2]);
+    public boolean onCommandHandle(Player player, String... args) {
+        double probability = this.probabilityCheck(dConvert(args[0]));
+        int min = this.iConvert(args[1]);
+        int max = this.iConvert(args[2]);
+        if (min > max) {
+            int temp = max;
+            max = min;
+            min = temp;
+        }
         ItemStack itemInHand = player.getItemInHand();
         if (itemInHand.getType() != Material.AIR) {
-            ItemStack itemStack = new Special(itemInHand, probability, max, min).setGemstoneMate();
+            IGemstoneDisplay iGemstoneDisplay = this.iYamlSetting.getIYamlSladePlusGemstone().getISpecialGemstone().getIGemstoneDisplay();
+            ItemStack itemStack = new Special(itemInHand, iGemstoneDisplay, probability, max, min).setGemstoneDisplay().setGemstoneMate();
             player.setItemInHand(itemStack);
-            sender.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 几率为： §e" + probability+" §b%");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 最小范围： §e" + min+"");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 最大范围： §e" + max+"");
+            player.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
+            player.sendMessage("§7[§3Console§7]   §a▪ 几率为： §e" + probability + " §b%");
+            player.sendMessage("§7[§3Console§7]   §a▪ 最小范围： §e" + min + "");
+            player.sendMessage("§7[§3Console§7]   §a▪ 最大范围： §e" + max + "");
             return true;
         }
-        sender.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
+        player.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
         return true;
     }
 
     @Override
     public String[] getArgs() {
-        return new String[] {"special"};
+        return new String[]{"special"};
     }
 
     @Override

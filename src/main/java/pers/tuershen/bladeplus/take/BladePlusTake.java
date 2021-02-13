@@ -1,10 +1,10 @@
 package pers.tuershen.bladeplus.take;
 
 import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
-import pers.tuershen.bladeplus.entity.AnvilBlockLocation;
-import pers.tuershen.bladeplus.entity.BladeEntityLocation;
-import pers.tuershen.bladeplus.entity.BladePlusHandle;
-import pers.tuershen.bladeplus.entity.BladePlusMaterial;
+import pers.tuershen.bladeplus.common.AnvilBlockLocation;
+import pers.tuershen.bladeplus.common.BladeEntityLocation;
+import pers.tuershen.bladeplus.common.BladePlusHandle;
+import pers.tuershen.bladeplus.common.BladePlusMaterial;
 import pers.tuershen.bladeplus.inv.BladePlusInventory;
 import com.tuershen.nbtlibrary.api.EntityNBTTagCompoundApi;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagDouble;
@@ -16,6 +16,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import pers.tuershen.bladeplus.type.ResultTypeEnum;
 import pers.tuershen.bladeplus.util.Calculation;
+import pers.tuershen.bladeplus.util.ItemUtil;
 
 import java.text.DecimalFormat;
 
@@ -71,7 +72,7 @@ public class BladePlusTake extends BukkitRunnable {
         this.anvilBlockLocation = loadBlockLocation(this.blockLocation);
         this.guiSetting = bladePlusInventory.getIYamlGuiSetting();
         //设置进度条材质
-        this.speedOfProgressMaterial = this.guiSetting.getSpeedOfProgressMaterial();
+        this.speedOfProgressMaterial = ItemUtil.convertItemStack(this.guiSetting.getBladeSpeedOfProgressAttribute());
         this.factor = this.time / 9.0;
     }
 
@@ -80,10 +81,17 @@ public class BladePlusTake extends BukkitRunnable {
     public void run() {
         //强化时间结束
         if (this.time == cumulative) {
+            //执行霹雷效果
             this.effLocation.getWorld().strikeLightning(this.effLocation);
-            //强化成功
+            //传一个强化成功几率得到一个返回一个结果
+            /**
+             * ResultTypeEnum.FAIL 代表强化失败
+             * ResultTypeEnum.SUCCESS 代表强化成功
+             */
             ResultTypeEnum resultType = Calculation.getResultType(this.bladePlusMaterial.getProbability());
+            //强化结果处理
             this.bladePlusInventory.handleDistribution(createForgingHandle(), resultType);
+            //取消强化状态
             this.bladePlusInventory.caneWorld(name);
             //结束异步
             this.cancel();
@@ -107,15 +115,15 @@ public class BladePlusTake extends BukkitRunnable {
 
 
 
-    public String speedOfProgressDisplay(double speedOfProgress, double time) {
-        return this.guiSetting.getSpeedOfProgress()
+    private String speedOfProgressDisplay(double speedOfProgress, double time) {
+        return this.guiSetting.getBladeSpeedOfProgressAttribute().getDisplay()
                 .replace("%SpeedOfProgress%", decimalFormat.format(speedOfProgress))
                 .replace("%time%", decimalFormat.format(time))
                 .replace("&", "§");
     }
 
 
-    public BladeEntityLocation loadForgingLocation(EntityNBTTagCompoundApi entityNBTTagCompoundApi) {
+    private BladeEntityLocation loadForgingLocation(EntityNBTTagCompoundApi entityNBTTagCompoundApi) {
         TagList<TagDouble> pos = entityNBTTagCompoundApi.getNBTTagCompound().get("Pos");
         return new BladeEntityLocation(
                 pos.getData().get(0).getDouble(),
@@ -125,7 +133,7 @@ public class BladePlusTake extends BukkitRunnable {
         );
     }
 
-    public AnvilBlockLocation loadBlockLocation(Location location) {
+    private AnvilBlockLocation loadBlockLocation(Location location) {
         return new AnvilBlockLocation(
                 location.getBlockX(),
                 location.getBlockY(),

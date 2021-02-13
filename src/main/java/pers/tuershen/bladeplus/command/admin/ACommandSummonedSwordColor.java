@@ -14,31 +14,30 @@ import java.util.Random;
 /**
  * @auther Tuershen Create Date on 2021/2/11
  */
-public class ACommandSummonedSwordColor extends AbstractAdminCommand {
+public class ACommandSummonedSwordColor extends AbstractAdminCommand<Player> {
 
     public ACommandSummonedSwordColor(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
+    public boolean onCommandHandle(Player player, String... args) {
         ItemStack itemInHand = player.getItemInHand();
         int random = new Random().nextInt(0xffffff);
         if (itemInHand.getType() != Material.AIR) {
             ItemStack itemStack = NBTWrite.setInt(itemInHand, "SummonedSwordColor", random);
             player.setItemInHand(itemStack);
-            sender.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 颜色RGB为： §e" + random+"");
+            player.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
+            player.sendMessage("§7[§3Console§7]   §a▪ 颜色RGB为： §e" + random + "");
             return true;
         }
-        sender.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
+        player.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
         return true;
     }
 
     @Override
     public String[] getArgs() {
-        return new String[] {"summonedSwordColor"};
+        return new String[]{"summonedSwordColor"};
     }
 
     @Override

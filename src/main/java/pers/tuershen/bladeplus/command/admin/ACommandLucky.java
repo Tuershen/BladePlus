@@ -5,6 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import pers.tuershen.bladeplus.api.IYamlSetting;
+import pers.tuershen.bladeplus.api.gemstone.IGemstoneDisplay;
 import pers.tuershen.bladeplus.nbt.NBTWrite;
 import pers.tuershen.bladeplus.nbt.gemstone.Lucky;
 import pers.tuershen.bladeplus.type.CommandExecutorType;
@@ -14,31 +15,31 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/11
  */
-public class ACommandLucky extends AbstractAdminCommand {
+public class ACommandLucky extends AbstractAdminCommand<Player> {
 
     public ACommandLucky(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
-        double probability =  this.dConvert(args[0]);
+    public boolean onCommandHandle(Player player, String... args) {
+        double probability = this.probabilityCheck(dConvert(args[0]));
         ItemStack itemInHand = player.getItemInHand();
         if (itemInHand.getType() != Material.AIR) {
-            ItemStack itemStack = new Lucky(itemInHand, probability).setGemstoneMate();
+            IGemstoneDisplay iGemstoneDisplay = this.iYamlSetting.getIYamlSladePlusGemstone().getILuckyGemstone().getIGemstoneDisplay();
+            ItemStack itemStack = new Lucky(itemInHand, iGemstoneDisplay, probability).setGemstoneDisplay().setGemstoneMate();
             player.setItemInHand(itemStack);
-            sender.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 幸运石几率为： §e" + probability + " §b%");
+            player.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
+            player.sendMessage("§7[§3Console§7]   §a▪ 幸运石几率为： §e" + probability + " §b%");
             return true;
         }
-        sender.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
+        player.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
         return true;
     }
 
     @Override
     public String[] getArgs() {
-        return new String[] {"lucky"};
+        return new String[]{"lucky"};
     }
 
     @Override

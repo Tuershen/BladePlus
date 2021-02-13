@@ -9,22 +9,13 @@ import pers.tuershen.bladeplus.api.balde.IYamlSpecialAttackType;
 import pers.tuershen.bladeplus.api.check.IYamlBanUseWorld;
 import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
 import pers.tuershen.bladeplus.api.msg.IYamlMsg;
-import pers.tuershen.bladeplus.entity.ForgingUi;
-
-import java.util.List;
 
 /**
  * @auther Tuershen Create Date on 2021/1/5
  */
 public interface IYamlSetting extends IYamlReset {
 
-    String title();
-
     int getMaxRepairCounter();
-
-    ForgingUi getForgingUi();
-
-    ForgingUi getForgingFail();
 
     /**
      * 强化界面，鉴定界面...等设置
@@ -83,5 +74,9 @@ public interface IYamlSetting extends IYamlReset {
      * @return
      */
     IYamlSpecialAttackType getIYamlSpecialAttackType();
+
+
+
+    IYamlSladePlusGemstone getIYamlSladePlusGemstone();
 
 }

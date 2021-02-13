@@ -3,7 +3,7 @@ package pers.tuershen.bladeplus.common.hanlde;
 import org.bukkit.entity.Player;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.check.BlandStandCheck;
-import pers.tuershen.bladeplus.entity.BladePlusHandle;
+import pers.tuershen.bladeplus.common.BladePlusHandle;
 
 /**
  * @auther Tuershen Create Date on 2021/2/10

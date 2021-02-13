@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public abstract class AbstractCommand {
+public abstract class AbstractCommand<T extends CommandSender> {
 
     protected IYamlSetting iYamlSetting;
 
@@ -20,7 +20,7 @@ public abstract class AbstractCommand {
         this.iYamlSetting = iYamlSetting;
     }
 
-    public abstract <T extends CommandSender> boolean onCommandHandle(T sender, String... args);
+    public abstract boolean onCommandHandle(T sender, String... args);
 
     public abstract String[] getArgs();
 

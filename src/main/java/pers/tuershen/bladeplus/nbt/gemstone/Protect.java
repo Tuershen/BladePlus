@@ -4,15 +4,21 @@ import com.tuershen.nbtlibrary.api.NBTTagCompoundApi;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagCompound;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagInt;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import pers.tuershen.bladeplus.BladePlusMain;
+import pers.tuershen.bladeplus.api.gemstone.IGemstoneDisplay;
+
+import java.util.List;
 
 /**
  * @auther Tuershen Create Date on 2021/2/11
+ * 保护石
+ * 保护石可以免除一次强化失败的惩罚
  */
-public class Protect extends AbstractGemstone {
+public class Protect extends AbstractGemstone<IGemstoneDisplay> {
 
-    public Protect(ItemStack gemstone) {
-        super(gemstone);
+    public Protect(ItemStack gemstone, IGemstoneDisplay display) {
+        super(gemstone, display);
     }
 
     /**
@@ -29,7 +35,14 @@ public class Protect extends AbstractGemstone {
         return BladePlusMain.libraryApi.setCompound(this.gemstone, compound);
     }
 
-
+    @Override
+    public AbstractGemstone<IGemstoneDisplay> setGemstoneLore() {
+        ItemMeta itemMeta = this.gemstone.getItemMeta();
+        List<String> lore = this.gemstoneDisplay.getLore();
+        itemMeta.setLore(lore);
+        this.gemstone.setItemMeta(itemMeta);
+        return this;
+    }
 
 
 }

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class ACommandReload extends AbstractAdminCommand {
+public class ACommandReload extends AbstractAdminCommand<CommandSender> {
 
     public ACommandReload(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
@@ -17,7 +17,7 @@ public class ACommandReload extends AbstractAdminCommand {
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
+    public boolean onCommandHandle(CommandSender sender, String... args) {
         this.iYamlSetting.reload();
         sender.sendMessage("§7[§3Console§7] §7▶ §a重载成功.");
         return false;

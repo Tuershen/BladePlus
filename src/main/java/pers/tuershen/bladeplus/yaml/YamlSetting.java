@@ -11,11 +11,8 @@ import pers.tuershen.bladeplus.api.balde.IYamlSpecialAttackType;
 import pers.tuershen.bladeplus.api.check.IYamlBanUseWorld;
 import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
 import pers.tuershen.bladeplus.api.msg.IYamlMsg;
-import pers.tuershen.bladeplus.entity.ForgingUi;
-import pers.tuershen.bladeplus.util.ItemUtil;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import java.util.List;
 
 /**
  * @auther Tuershen Create Date on 2021/1/5
@@ -40,13 +37,9 @@ public class YamlSetting implements IYamlSetting {
 
     private YamlSpecialAttackType yamlSpecialAttackType;
 
-    private String title;
+    private YamlSladePlusGemstone yamlSladePlusGemstone;
 
     private int maxRepairCounter;
-
-    private ForgingUi forgingUi;
-
-    private ForgingUi forgingFail;
 
     private YamlReset yamlReset;
 
@@ -61,15 +54,13 @@ public class YamlSetting implements IYamlSetting {
         yamlInventorySetting = new YamlInventorySetting();
         yamlReset = new YamlReset();
         yamlSpecialAttackType = new YamlSpecialAttackType();
+        yamlSladePlusGemstone = new YamlSladePlusGemstone();
     }
 
     @Override
     public void init() {
         FileConfiguration fileConfiguration = BladePlusMain.bladePlusMain.getConfig();
         this.maxRepairCounter = fileConfiguration.getInt("maxRepairCounter");
-        this.forgingUi = ItemUtil.convertForgingUi(fileConfiguration.getString("forgingUi"));
-        this.forgingFail = ItemUtil.convertForgingUi(fileConfiguration.getString("forgingFail"));;
-        this.title = fileConfiguration.getString("title").replace('&','§');
         yamlReset.init();
     }
 
@@ -81,22 +72,8 @@ public class YamlSetting implements IYamlSetting {
     }
 
     @Override
-    public String title() {
-        return this.title;
-    }
-
-    @Override
     public int getMaxRepairCounter() { return this.maxRepairCounter; }
 
-    @Override
-    public ForgingUi getForgingUi() {
-        return this.forgingUi;
-    }
-
-    @Override
-    public ForgingUi getForgingFail() {
-        return this.forgingFail;
-    }
 
     @Override
     public IYamlGuiSetting getIYamlGuiSetting(){
@@ -141,6 +118,11 @@ public class YamlSetting implements IYamlSetting {
     @Override
     public IYamlSpecialAttackType getIYamlSpecialAttackType() {
         return this.yamlSpecialAttackType;
+    }
+
+    @Override
+    public IYamlSladePlusGemstone getIYamlSladePlusGemstone() {
+        return this.yamlSladePlusGemstone;
     }
 
 

@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import pers.tuershen.bladeplus.api.IYamlSetting;
+import pers.tuershen.bladeplus.api.gemstone.IGemstoneDisplay;
 import pers.tuershen.bladeplus.nbt.gemstone.Protect;
 import pers.tuershen.bladeplus.type.CommandExecutorType;
 
@@ -14,23 +15,23 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class ACommandProtect extends AbstractAdminCommand {
+public class ACommandProtect extends AbstractAdminCommand<Player> {
 
     public ACommandProtect(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
+    public boolean onCommandHandle(Player player, String... args) {
         ItemStack itemInHand = player.getItemInHand();
         if (null != itemInHand || itemInHand.getType() != Material.AIR) {
-            ItemStack itemStack = new Protect(itemInHand).setGemstoneMate();
+            IGemstoneDisplay iGemstoneDisplay = this.iYamlSetting.getIYamlSladePlusGemstone().getIProtectGemstone().getIGemstoneDisplay();
+            ItemStack itemStack = new Protect(itemInHand, iGemstoneDisplay).setGemstoneDisplay().setGemstoneMate();
             player.setItemInHand(itemStack);
-            sender.sendMessage("§7[§3Console§7] §7▶ §a保护石获取成功.");
+            player.sendMessage("§7[§3Console§7] §7▶ §a保护石获取成功.");
             return true;
         }
-        sender.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
+        player.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
         return true;
     }
 

@@ -2,6 +2,8 @@ package pers.tuershen.bladeplus.listener;
 
 import pers.tuershen.bladeplus.BladePlusMain;
 import pers.tuershen.bladeplus.api.balde.IYamlModel;
+import pers.tuershen.bladeplus.api.inv.IAppraisalInventory;
+import pers.tuershen.bladeplus.api.inv.ISladePlusInventory;
 import pers.tuershen.bladeplus.api.msg.IYamlMsg;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.inv.BladePlusInventory;
@@ -71,10 +73,9 @@ public class BladePlusListener implements Listener {
             //强化界面
         } else if (event.getInventory().getHolder() instanceof BladePlusInventory) {
             Player player = (Player) event.getWhoClicked();
-            // iYamlSetting.getIYamlGuiSetting().getMaterialSlot 强化石的位置
-            if (rawSlot == iYamlSetting.getIYamlGuiSetting().getForgingGuiSetting().getSlot()) {
-                BladePlusInventory bladePlus = (BladePlusInventory) event.getInventory().getHolder();
-                ItemStack material = bladePlus.getInventory().getItem(iYamlSetting.getIYamlGuiSetting().getMaterialSlot());
+            ISladePlusInventory bladePlus = (BladePlusInventory) event.getInventory().getHolder();
+            if (rawSlot == bladePlus.getButtonSlot()) {
+                ItemStack material = bladePlus.getInventory().getItem(bladePlus.getMaterialSlot());
                 if (null == material || material.getType() == Material.AIR) {
                     //材料为空气
                     player.sendMessage(iYamlMsg.getMsg("error_1"));
@@ -88,11 +89,10 @@ public class BladePlusListener implements Listener {
                 }
             }
             if (rawSlot < 18
-                    && rawSlot != iYamlSetting.getIYamlGuiSetting().getMaterialSlot()
-                    && rawSlot != iYamlSetting.getIYamlGuiSetting().getGemstoneSlot()) {
+                    && rawSlot != bladePlus.getGemstoneSlot()
+                    && rawSlot != bladePlus.getMaterialSlot()) {
                 event.setCancelled(true);
             }
-
         } else if (event.getInventory().getHolder() instanceof TextModelInventory) {
             if (rawSlot >= 0 && rawSlot < 54) {
                 TextModelInventory textModelInventory = (TextModelInventory) event.getInventory().getHolder();
@@ -117,16 +117,14 @@ public class BladePlusListener implements Listener {
             event.setCancelled(true);
             //强化石鉴定
         } else if (event.getInventory().getHolder() instanceof AppraisalInventory) {
-            AppraisalInventory appraisalInventory = (AppraisalInventory) event.getInventory().getHolder();
-            if (rawSlot < 18) {
-                switch (rawSlot) {
-                    case 2:
-                    case 6:
-                        break;
-                    case 4:
-                        appraisalInventory.appraisalMaterial((Player) event.getWhoClicked());
-                    default:
-                        event.setCancelled(true);
+            IAppraisalInventory iAppraisalInventory = (AppraisalInventory) event.getInventory().getHolder();
+            if (rawSlot < 9) {
+                if (iAppraisalInventory.getButtonSlot() == rawSlot) {
+                    iAppraisalInventory.checkAppraisalGemstone((Player) event.getWhoClicked());
+                    event.setCancelled(true);
+                }
+                if (rawSlot != iAppraisalInventory.getGemstoneSlot() && rawSlot != iAppraisalInventory.getMaterialSlot()) {
+                    event.setCancelled(true);
                 }
             }
         }
@@ -156,7 +154,7 @@ public class BladePlusListener implements Listener {
                             if (nbtTagCompound.hasKey("Blade")) {
                                 BladePlusInventory forgingInventory;
                                 if (!forgingInventoryMap.containsKey(player.getName())) {
-                                    forgingInventory = new BladePlusInventory(event.getPlayer(), event.getClickedBlock(), this.iYamlSetting, this.iYamlSetting.title(), instance);
+                                    forgingInventory = new BladePlusInventory(event.getPlayer(), event.getClickedBlock(), this.iYamlSetting, instance);
                                     forgingInventory.setDefaultUi();
                                     this.forgingInventoryMap.put(player.getName(), forgingInventory);
                                 }
@@ -172,9 +170,6 @@ public class BladePlusListener implements Listener {
             }
         }
     }
-
-
-
 
 
 }

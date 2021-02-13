@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class AdminCommandHandle extends AbstractCommandExecutor {
+public class AdminCommandHandle<C extends CommandSender> extends AbstractCommandExecutor<C> {
 
-    private static List<AbstractAdminCommand> adminCommands = new ArrayList<>();
+    private List<AbstractAdminCommand<C>> adminCommands = new ArrayList<>();
 
     public AdminCommandHandle(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
@@ -42,7 +42,7 @@ public class AdminCommandHandle extends AbstractCommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         if (args.length > 0) {
-            this.callExecutor(sender, adminCommands, args);
+            this.callExecutor((C)sender, adminCommands, args);
         }
         return false;
     }
@@ -53,11 +53,11 @@ public class AdminCommandHandle extends AbstractCommandExecutor {
         if (args.length >= 1) {
             if (args[0].equalsIgnoreCase("")) return this.tabResult();
         }
-        return this.callTabExecutor(sender, adminCommands, args);
+        return this.callTabExecutor((C)sender, adminCommands, args);
     }
 
 
-    public static <T extends AbstractAdminCommand> void registerAdminCommandHandle(T adminCommand) {
+    public <T extends AbstractAdminCommand<C>> void registerAdminCommandHandle(T adminCommand) {
         if (adminCommand != null) {
             adminCommands.add(adminCommand);
         }

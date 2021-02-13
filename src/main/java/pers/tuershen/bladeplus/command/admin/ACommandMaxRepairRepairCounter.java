@@ -13,24 +13,23 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class ACommandMaxRepairRepairCounter extends AbstractAdminCommand {
+public class ACommandMaxRepairRepairCounter extends AbstractAdminCommand<Player> {
 
     public ACommandMaxRepairRepairCounter(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
 
     @Override
-    public <T extends CommandSender> boolean onCommandHandle(T sender, String... args) {
-        Player player = (Player) sender;
-        int repairCounter =  this.iConvert(args[0]);
+    public boolean onCommandHandle(Player player, String... args) {
+        int repairCounter = this.iConvert(args[0]);
         if (player.getItemInHand().getType() != Material.AIR) {
             ItemStack itemStack = NBTWrite.setMaxRepairCounter(player.getItemInHand(), repairCounter);
             player.setItemInHand(itemStack);
-            sender.sendMessage("§7[§3Console§7] §7▶ §a设置成功.");
-            sender.sendMessage("§7[§3Console§7]   §a▪ 最大锻造值为： §e" + repairCounter + "");
+            player.sendMessage("§7[§3Console§7] §7▶ §a设置成功.");
+            player.sendMessage("§7[§3Console§7]   §a▪ 最大锻造值为： §e" + repairCounter + "");
             return true;
         }
-        sender.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
+        player.sendMessage("§7[§3Console§7] §7▶ §c请手持物品.");
         return true;
     }
 

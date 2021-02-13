@@ -1,7 +1,7 @@
 package pers.tuershen.bladeplus.api.balde;
 
 import pers.tuershen.bladeplus.api.IYamlReset;
-import pers.tuershen.bladeplus.entity.BladePlusMaterial;
+import pers.tuershen.bladeplus.common.BladePlusMaterial;
 
 import java.util.List;
 

@@ -2,6 +2,7 @@ package pers.tuershen.bladeplus.command;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.command.player.AbstractPlayerCommand;
 
@@ -11,21 +12,22 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class PlayerCommandHandle extends AbstractCommandExecutor {
+public class PlayerCommandHandle<C extends CommandSender> extends AbstractCommandExecutor<C> {
 
-    private static List<AbstractPlayerCommand> playerCommands = new ArrayList<>();
+    private List<AbstractPlayerCommand<C>> playerCommands = new ArrayList<>();
 
     public PlayerCommandHandle(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
         this.tabResultList.add("help");
         this.tabResultList.add("open");
+        this.tabResultList.add("see");
         this.tabResultList.add("jd");
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         if (args.length > 0) {
-            this.callExecutor(sender, playerCommands, args);
+            this.callExecutor((C)sender, playerCommands, args);
             return true;
         }
         return false;
@@ -37,12 +39,12 @@ public class PlayerCommandHandle extends AbstractCommandExecutor {
         if (args.length >= 1) {
             if (args[0].equalsIgnoreCase("")) return this.tabResult();
         }
-        return this.callTabExecutor(sender, playerCommands, args);
+        return this.callTabExecutor((C)sender, playerCommands, args);
     }
 
-    public static <T extends AbstractPlayerCommand> void registerCommandHandle(T playerCommand) {
+    public <T extends AbstractPlayerCommand<C>> void registerCommandHandle(T playerCommand) {
         if (playerCommand != null) {
-            playerCommands.add(playerCommand);
+            this.playerCommands.add(playerCommand);
         }
     }
 

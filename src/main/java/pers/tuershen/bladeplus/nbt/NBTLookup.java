@@ -63,6 +63,11 @@ public class NBTLookup {
         return BladePlusMain.libraryApi.getCompound(itemStack).hasKey("AppraisalMaterial");
     }
 
+    public static boolean hasMaxRepairCounter(ItemStack blade){
+        return BladePlusMain.libraryApi.getCompound(blade).hasKey("MaxRepairCounter");
+    }
+
+
 
 
 
