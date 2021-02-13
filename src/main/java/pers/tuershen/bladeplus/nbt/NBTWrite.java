@@ -182,6 +182,13 @@ public class NBTWrite {
         return BladePlusMain.libraryApi.setCompound(blade, compound);
     }
 
+
+    public static ItemStack setFloat(ItemStack blade, String key, float val) {
+        NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(blade);
+        compound.set(key, new TagFloat(val));
+        return BladePlusMain.libraryApi.setCompound(blade, compound);
+    }
+
     public static ItemStack setInt(ItemStack blade, String key, int val) {
         NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(blade);
         compound.set(key, new TagInt(val));

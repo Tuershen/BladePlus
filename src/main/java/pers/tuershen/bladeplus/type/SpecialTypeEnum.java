@@ -101,7 +101,7 @@ public enum SpecialTypeEnum {
     public abstract String getSpecialDisplay();
 
     public static SpecialTypeEnum getRandomSpecialAttribute(ISpecialGemstone iSpecialGemstone) {
-        int random = Calculation.getRandomNumber(1, 4);
+        int random = Calculation.getRandomNumber(1, 5);
         SpecialTypeEnum specialTypeEnum = specialTypeEnumMap.get(random);
         specialTypeEnum.setISpecialGemstone(iSpecialGemstone);
         return specialTypeEnum;

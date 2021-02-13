@@ -28,6 +28,12 @@ public abstract class AbstractAdminCommand<T extends CommandSender> extends Abst
         return Integer.parseInt(args);
     }
 
+    public float fConvert(String args){
+        if (args == null) return 0.0f;
+        return Float.parseFloat(args);
+
+    }
+
     public double probabilityCheck(double probability){
         return probability > 100.0d ? 100.0d : probability < 0 ? 0.0d : probability;
     }
