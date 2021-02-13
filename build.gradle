@@ -22,7 +22,7 @@ tasks.withType(JavaCompile) {
 }
 
 group 'org.example'
-version '1.0.7-Release'
+version '1.0.9-Release'
 
 sourceCompatibility = 1.8
 

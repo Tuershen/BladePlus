@@ -72,14 +72,19 @@ public class BladePlusMain extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new BladePlusListener(yamlSetting), this);
         Bukkit.getPluginManager().registerEvents(new BladePlusUseBladeListener(yamlSetting), this);
         Bukkit.getPluginManager().registerEvents(new BladePlusUseSAListener(yamlSetting), this);
-        getLogger().info("[BladePlus] 拔刀剑剑锻造系统加载成功!");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §a拔刀剑剑锻造系统加载成功!");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6作者：§d兔儿神");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6插件反馈群：§b978420514");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6如果你有好的意见请务必反馈给我！");
     }
 
 
     @Override
     public void onDisable() {
-
-        getLogger().info("已卸载!");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §a拔刀剑剑锻造系统已卸载!");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6作者：§d兔儿神");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6插件反馈群：§b978420514");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6如果你有好的意见请务必反馈给我！");
     }
 
     public void registerCommandExecutor(String command, CommandExecutor executor) {
