@@ -56,8 +56,8 @@ public enum GemstoneTypeEnum {
                 List<String> successMsg = setting.getIYamlSladePlusGemstone().getILuckyGemstone().getSuccessMsg();
                 for (String msg : successMsg) {
                     player.sendMessage(msg
-                            .replace("probability", String.valueOf(this.checkDouble("probability")))
-                            .replace("max_probability", String.valueOf(gemstoneProbability)));
+                            .replace("%probability%", String.valueOf(this.checkDouble("probability")))
+                            .replace("%max_probability%", String.valueOf(gemstoneProbability)));
                 }
             }
             return new BladePlusGemstone(blade, 1);
@@ -80,8 +80,8 @@ public enum GemstoneTypeEnum {
                     List<String> successMsg = iSpecialGemstone.getSuccessMsg();
                     for (String msg : successMsg) {
                         player.sendMessage(msg
-                                .replace("specialType", specialTypeEnum.getSpecialDisplay())
-                                .replace("value", String.valueOf(specialType)));
+                                .replace("%specialType%", specialTypeEnum.getSpecialDisplay())
+                                .replace("%value%", String.valueOf(specialType)));
                     }
                 }
             } else {
@@ -157,8 +157,8 @@ public enum GemstoneTypeEnum {
                     List<String> successMsg = iRepairGemstone.getSuccessMsg();
                     for (String msg : successMsg) {
                         player.sendMessage(msg
-                                .replace("repair", String.valueOf(repair))
-                                .replace("max_repair", String.valueOf(tag.getInt("MaxRepairCounter"))));
+                                .replace("%repair%", String.valueOf(repair))
+                                .replace("%max_repair%", String.valueOf(tag.getInt("MaxRepairCounter"))));
                     }
                 }
             } else {

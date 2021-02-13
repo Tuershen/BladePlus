@@ -16,7 +16,6 @@ public class ResultDistributionHandle extends ResultHandle {
     }
 
     public void dispatchDefault(ResultTypeEnum resultType) {
-        System.out.println("强化结果11"+ resultType.name());
         if (resultType == ResultTypeEnum.SUCCESS) {
             sendSuccessMsg();
             SuccessHandle successHandle = new SuccessHandle(this.plusHandle, setting, player);
@@ -29,10 +28,6 @@ public class ResultDistributionHandle extends ResultHandle {
     }
 
     public void dispatchGemstone(ResultTypeEnum resultType, GemstoneTypeEnum gemstoneTypeEnum) {
-
-        System.out.println("强化结果"+ resultType.name());
-
-
         if (resultType == ResultTypeEnum.SUCCESS) {
             sendSuccessMsg();
             SuccessHandle successHandle = new SuccessHandle(this.plusHandle, setting, player);
