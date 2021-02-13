@@ -31,7 +31,7 @@ public enum SpecialTypeEnum {
     SUMMONED_SWORD_COLOR(2) {
         @Override
         public int getSpecialType(int max, int min) {
-            return new Random().nextInt(0xffffff) + 1;
+            return new Random().nextInt(0xffffff);
         }
 
         @Override

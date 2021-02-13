@@ -138,8 +138,8 @@ repair:
     - '    §7......'
     - '§8§m--一一一一一一一一一一一一一一一一一一一--'
   successMsg:
-    - '§7[§3Console§7] §b▶ §7恭喜，你消耗了一个封印石增加了%repair%的最大锻造值.'
-    - '§7[§3Console§7]   §a▪ §7当前拔刀剑的最高锻造值为%max_repair%.'
+    - '§7[§3Console§7] §b▶ §7恭喜，你消耗了一个封印石增加了 §c%repair% §7的最大锻造值.'
+    - '§7[§3Console§7]   §a▪ §7当前拔刀剑的最高锻造值为 §c%max_repair%.'
   failMsg:
     - '§7[§3Console§7] §b▶ §7很遗憾，封印石已失效.'
 
@@ -178,12 +178,12 @@ bet:
     - '    §7......'
     - '§8§m--一一一一一一一一一一一一一一一一一一一--'
   successMsg:
-    - '§7[§3Console§7] §b▶ §7恭喜，赌石已生效，你赢了'
+    - '§7[§3Console§7] §b▶ §7恭喜， 赌石生效， 你赢了'
     - '§7[§3Console§7]   §a▪ §7强化石属性提升 §b%magnification% §7倍'
-    - '§7[§3Console§7]   §a▪ §7锻造数：§8%previously_repairRepairCounter% §a↑ §b§%after_repairRepairCounter%'
-    - '§7[§3Console§7]   §a▪ §7荣耀值：§8%previously_proudSoul% §a↑ §b§%after_proudSoul%'
+    - '§7[§3Console§7]   §a▪ §7锻造数： §8%previously_repairRepairCounter% §a↑ §b§%after_repairRepairCounter%'
+    - '§7[§3Console§7]   §a▪ §7荣耀值： §8%previously_proudSoul% §a↑ §b§%after_proudSoul%'
   failMsg:
-    - '§7[§3Console§7] §b▶ §7很遗憾，赌石已失效，你输了'
+    - '§7[§3Console§7] §b▶ §7很遗憾， 赌石已失效， 你输了'
     - '§7[§3Console§7]   §a▪ §7强化石属性下降 §b%magnification% §7倍'
-    - '§7[§3Console§7]   §a▪ §7锻造数：§8%previously_repairRepairCounter% §a↑ §b§%after_repairRepairCounter%'
-    - '§7[§3Console§7]   §a▪ §7荣耀值：§8%previously_proudSoul% §a↓ §b§%after_proudSoul%'
+    - '§7[§3Console§7]   §a▪ §7锻造数： §8%previously_repairRepairCounter% §c↓ §b§%after_repairRepairCounter%'
+    - '§7[§3Console§7]   §a▪ §7荣耀值： §8%previously_proudSoul% §c↓ §b§%after_proudSoul%'

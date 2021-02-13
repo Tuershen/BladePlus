@@ -12,6 +12,7 @@ import pers.tuershen.bladeplus.common.BladePlusHandle;
 import pers.tuershen.bladeplus.common.BladePlusMaterial;
 import pers.tuershen.bladeplus.nbt.NBTWrite;
 import pers.tuershen.bladeplus.type.GemstoneTypeEnum;
+import pers.tuershen.bladeplus.type.ResultTypeEnum;
 
 /**
  * @auther Tuershen Create Date on 2021/2/10
@@ -69,6 +70,8 @@ public abstract class AbstractHandle extends ResultHandle {
     public abstract void handleEvent();
 
     public abstract void handleGemstoneEvent(GemstoneTypeEnum gemstoneTypeEnum);
+
+    public abstract ResultTypeEnum getResultType();
 
 
 }

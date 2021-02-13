@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5ce12b5-219a-4f05-b052-48e14e232431" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="f5ce12b5-219a-4f05-b052-48e14e232431" name="Default Changelist" comment="修改指令更改拔刀锻造值和荣耀值bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/BladePlus-1.0-Release.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/BladePlus-1.0-Release.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandProudSoul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandProudSoul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandRepairCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandRepairCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/AbstractHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/AbstractHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/FailHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/FailHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/SuccessHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/SuccessHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/GemstoneTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/GemstoneTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/guiSetting.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/guiSetting.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +229,7 @@
       <workItem from="1613223238456" duration="476000" />
       <workItem from="1613224377699" duration="4553000" />
       <workItem from="1613229985186" duration="201000" />
-      <workItem from="1613230620096" duration="4600000" />
+      <workItem from="1613230620096" duration="5634000" />
     </task>
     <task id="LOCAL-00001" summary="调整强化结果">
       <created>1613232346679</created>
@@ -274,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613234020140</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改指令更改拔刀锻造值和荣耀值bug">
+      <created>1613236376608</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1613236376608</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,17 +285,18 @@
     <MESSAGE value="强化成功提示玩家语言修复" />
     <MESSAGE value="修复剑气颜色随机值超出int范围" />
     <MESSAGE value="修复宝石变量替换错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复宝石变量替换错误" />
+    <MESSAGE value="修改指令更改拔刀锻造值和荣耀值bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改指令更改拔刀锻造值和荣耀值bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Project_Structure" timestamp="1613086871400">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1613086871400" />
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1613226840077">
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1613236586163">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1613226840077" />
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1613236586163" />
     <state x="529" y="252" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1613086259195">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -309,30 +309,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1613098093559" />
-    <state x="141" y="0" key="CommitChangelistDialog2" timestamp="1613236269127">
+    <state x="259" y="161" width="895" height="447" key="CommitChangelistDialog2" timestamp="1613236387503">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="141" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1613236269127" />
+    <state x="259" y="161" width="895" height="447" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1613236387503" />
     <state x="190" y="209" key="FileChooserDialogImpl" timestamp="1613230649759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="190" y="209" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1613230649759" />
-    <state width="1323" height="277" key="GridCell.Tab.0.bottom" timestamp="1613235259478">
+    <state width="1323" height="277" key="GridCell.Tab.0.bottom" timestamp="1613237456923">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="277" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1613235259478" />
-    <state width="1323" height="277" key="GridCell.Tab.0.center" timestamp="1613235259478">
+    <state width="1323" height="277" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1613237456923" />
+    <state width="1323" height="277" key="GridCell.Tab.0.center" timestamp="1613237456923">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="277" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1613235259478" />
-    <state width="1323" height="277" key="GridCell.Tab.0.left" timestamp="1613235259478">
+    <state width="1323" height="277" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1613237456923" />
+    <state width="1323" height="277" key="GridCell.Tab.0.left" timestamp="1613237456923">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="277" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1613235259478" />
-    <state width="1323" height="277" key="GridCell.Tab.0.right" timestamp="1613235259478">
+    <state width="1323" height="277" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1613237456923" />
+    <state width="1323" height="277" key="GridCell.Tab.0.right" timestamp="1613237456923">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="277" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1613235259478" />
+    <state width="1323" height="277" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1613237456923" />
     <state x="62" y="0" width="1243" height="728" key="SettingsEditor" timestamp="1613230652009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

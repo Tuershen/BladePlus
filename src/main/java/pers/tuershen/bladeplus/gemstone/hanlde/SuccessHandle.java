@@ -8,6 +8,7 @@ import pers.tuershen.bladeplus.api.IProgramme;
 import pers.tuershen.bladeplus.common.BladePlusHandle;
 import pers.tuershen.bladeplus.common.CalculationResult;
 import pers.tuershen.bladeplus.type.GemstoneTypeEnum;
+import pers.tuershen.bladeplus.type.ResultTypeEnum;
 
 /**
  * @auther Tuershen Create Date on 2021/2/10
@@ -35,10 +36,15 @@ public class SuccessHandle extends AbstractHandle {
 
     @Override
     public void handleGemstoneEvent(GemstoneTypeEnum gemstoneTypeEnum) {
-        CalculationResult result = gemstoneTypeEnum.handleGemstone(this.tag, this.bladePlusMaterial);
+        CalculationResult result = gemstoneTypeEnum.handleGemstone(this.tag, this.bladePlusMaterial, this.getResultType());
         this.tag = result.getTag();
         this.bladePlusMaterial = result.getBladePlusMaterial();
         handleEvent();
+    }
+
+    @Override
+    public ResultTypeEnum getResultType() {
+        return ResultTypeEnum.SUCCESS;
     }
 
 
