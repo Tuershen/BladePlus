@@ -24,7 +24,7 @@ public class ACommandRepairCounter extends AbstractAdminCommand<Player> {
         int repairCounter = this.iConvert(args[0]);
         ItemStack itemInHand = player.getItemInHand();
         if (itemInHand.getType() != Material.AIR) {
-            ItemStack itemStack = NBTWrite.setInt(itemInHand, "repairCounter", repairCounter);
+            ItemStack itemStack = NBTWrite.setInt(itemInHand, "RepairCounter", repairCounter);
             player.setItemInHand(itemStack);
             player.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
             player.sendMessage("§7[§3Console§7]   §a▪ 锻造值为： §e" + repairCounter + "");

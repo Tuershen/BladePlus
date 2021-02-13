@@ -24,7 +24,7 @@ public class ACommandProudSoul extends AbstractAdminCommand<Player> {
         int proudSoul = this.iConvert(args[0]);
         ItemStack itemInHand = player.getItemInHand();
         if (itemInHand.getType() != Material.AIR) {
-            ItemStack itemStack = NBTWrite.setInt(itemInHand, "proudSoul", proudSoul);
+            ItemStack itemStack = NBTWrite.setInt(itemInHand, "ProudSoul", proudSoul);
             player.setItemInHand(itemStack);
             player.sendMessage("§7[§3Console§7] §b▶ §7设置成功.");
             player.sendMessage("§7[§3Console§7]   §a▪ 荣耀值为： §e" + proudSoul + "");
