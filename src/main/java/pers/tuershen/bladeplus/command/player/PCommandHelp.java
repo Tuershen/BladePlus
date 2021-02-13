@@ -23,7 +23,7 @@ public class PCommandHelp extends AbstractPlayerCommand<CommandSender> {
         sender.sendMessage("§7[§3Console§7]   §a▪ §7打开皮肤管理界面");
         sender.sendMessage("§7[§3Console§7] §b▶ /bd see");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7查看手中拔刀的最大锻造值");
-        sender.sendMessage("§7[§3Console§7] §b▶ /bd jd §7打开强化石鉴定界面");
+        sender.sendMessage("§7[§3Console§7] §b▶ /bd jd");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7打开强化石鉴定界面");
         sender.sendMessage("§8§m--一一一一一一一一§7[§b1 §a/ §c1§7]§8§m一一一一一一一一--");
         return true;

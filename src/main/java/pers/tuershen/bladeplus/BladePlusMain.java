@@ -1,6 +1,7 @@
 package pers.tuershen.bladeplus;
 
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import pers.tuershen.bladeplus.api.IYamlSetting;
