@@ -2,7 +2,10 @@
 messages:
   error_1: '&7[&3Console&7] &b▶ &c请放入锻造材料.'
   error_2: '&7[&3Console&7] &b▶ &c该物品没有属性值，不能做为锻造材料.'
-  error_3: '&7[&3Console&7] &b▶ &a锻造成功.'
+  error_3: |-
+    &7[&3Console&7] &b▶ &a锻造成功.
+    &7[&3Console&7]   §a▪ §f锻造值增加: §a↑ §b%repairCounter%'
+    &7[&3Console&7]   §a▪ §f荣耀值增加: §a↑ §b%proudSoul%'
   error_5: '&7[&3Console&7] &b▶ &c很遗憾，锻造失败.'
   error_6: '&7[&3Console&7] &b▶ &c等级不够，不能锻造拔刀'
   error_7: '&7[&3Console&7] &b▶ &c你的拔刀已经锻造到极限了，再继续锻造只能浪费强化石了.'
@@ -15,4 +18,5 @@ messages:
   error_16: '&7[&3Console&7] &b▶ &c鉴定材料一次只能放一个哦.'
   error_17: '&7[&3Console&7] &b▶ &7鉴定成功.'
   error_18: '&7[&3Console&7] &b▶ &c该世界不能使用拔刀剑.'
+
 
