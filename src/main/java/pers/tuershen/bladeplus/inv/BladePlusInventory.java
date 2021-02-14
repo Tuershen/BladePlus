@@ -259,7 +259,7 @@ public class BladePlusInventory extends AbstractBladePlusInventory implements IS
      */
     public void setGemstoneSlot(ItemStack gemstone, int gemstoneSlot, int count) {
         //如果宝石只剩余一个则把该槽位设置为空
-        if (gemstone.getAmount() == 1) {
+        if (gemstone.getAmount() == 1 && count > 0) {
             this.bladeInventory.setItem(gemstoneSlot, new ItemStack(Material.AIR));
             return;
         }

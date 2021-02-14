@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5ce12b5-219a-4f05-b052-48e14e232431" name="Default Changelist" comment="修改指令更改拔刀锻造值和荣耀值bug">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/BladePlus-1.0.7-Release.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/BladePlus-1.0.7-Release.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/BladePlusMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/BladePlusMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/inv/BladePlusInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/inv/BladePlusInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/GemstoneTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/GemstoneTypeEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +221,7 @@
       <workItem from="1613223238456" duration="476000" />
       <workItem from="1613224377699" duration="4553000" />
       <workItem from="1613229985186" duration="201000" />
-      <workItem from="1613230620096" duration="11551000" />
+      <workItem from="1613230620096" duration="13358000" />
     </task>
     <task id="LOCAL-00001" summary="调整强化结果">
       <created>1613232346679</created>

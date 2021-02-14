@@ -151,8 +151,8 @@ public enum GemstoneTypeEnum {
                     afterProudSoul = blade.getProudSoul() - ((int) (blade.getProudSoul() * magnification));
                     int tempRepairCounter = blade.getRepairCounter();
                     int tempProudSoul = blade.getProudSoul();
-                    blade.setRepairCounter(afterRepairCounter);
-                    blade.setProudSoul(afterProudSoul);
+                    blade.setRepairCounter(Math.max(afterRepairCounter, 0));
+                    blade.setProudSoul(Math.max(afterProudSoul, 0));
                     List<String> failMsg = iBetGemstone.getFailMsg();
                     for (String msg : failMsg) {
                         player.sendMessage(msg

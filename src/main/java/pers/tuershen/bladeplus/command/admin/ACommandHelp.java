@@ -84,7 +84,7 @@ public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
         sender.sendMessage("§7[§3Console§7]   §a▪ §7设置异类石");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7有几率随机增加拔刀的基础伤害值，杀敌数，以及随机剑气颜色");
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus bet <几率> <倍数>");
-        sender.sendMessage("§7[§3Console§7]   §a▪ §d赌狗石");
+        sender.sendMessage("§7[§3Console§7]   §a▪ §d赌石");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7有几率翻倍增加拔刀剑的属性");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7但也可能翻倍扣除拔刀剑的属性");
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus repair <几率> <锻造数>");
