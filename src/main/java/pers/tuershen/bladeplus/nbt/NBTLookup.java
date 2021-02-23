@@ -67,6 +67,10 @@ public class NBTLookup {
         return BladePlusMain.libraryApi.getCompound(blade).hasKey("MaxRepairCounter");
     }
 
+    public static boolean isNever(ItemStack blade){
+        return BladePlusMain.libraryApi.getCompound(blade).hasKey("never_replace");
+    }
+
 
 
 

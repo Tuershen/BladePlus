@@ -4,19 +4,24 @@ messages:
   error_2: '&7[&3Console&7] &b▶ &c该物品没有属性值，不能做为锻造材料.'
   error_3: |-
     &7[&3Console&7] &b▶ &a锻造成功.
-    &7[&3Console&7]   §a▪ §f锻造值增加: §a↑ §b%repairCounter%'
-    &7[&3Console&7]   §a▪ §f荣耀值增加: §a↑ §b%proudSoul%'
+    &7[&3Console&7]   §a▪ §f锻造值增加: §a↑ §b%repairCounter%
+    &7[&3Console&7]   §a▪ §f荣耀值增加: §a↑ §b%proudSoul%
   error_5: '&7[&3Console&7] &b▶ &c很遗憾，锻造失败.'
   error_6: '&7[&3Console&7] &b▶ &c等级不够，不能锻造拔刀'
   error_7: '&7[&3Console&7] &b▶ &c你的拔刀已经锻造到极限了，再继续锻造只能浪费强化石了.'
   error_8: '&7[&3Console&7] &b▶ &c你的拔刀正在锻造.'
-  error_9: '&7[&3Console&7] &b▶ &c服务器已经取消了铁砧锻造拔刀的机制，请用拔刀右键铁砧打开锻造界面.'
+  error_9: |-
+    &7[&3Console&7] &b▶ &c服务器已经取消了铁砧锻造拔刀的机制.
+    &7[&3Console&7] &b▶ &6正确操作流程：在铁砧上方(y+1)生成一个刀挂台，刀挂台放入需要锻造的拔刀剑
+    &7[&3Console&7] &b▶ &a最后需要右击一下铁砧来打开拔刀强化台
   error_11: '&7[&3Console&7] &b▶ &7皮肤切换成功.'
   error_12: '&7[&3Console&7] &b▶ &c请放入鉴定石.'
   error_13: '&7[&3Console&7] &b▶ &c你放入的不是鉴定石.'
   error_14: '&7[&3Console&7] &b▶ &c请放入正确的鉴定材料，材料可以是耀魂，破碎耀魂，耀魂宝珠，技能.'
   error_16: '&7[&3Console&7] &b▶ &c鉴定材料一次只能放一个哦.'
   error_17: '&7[&3Console&7] &b▶ &7鉴定成功.'
-  error_18: '&7[&3Console&7] &b▶ &c该世界不能使用拔刀剑.'
+  banSAmsg: '你使用的SA技能%saType%存在BUG，已为你随机替换SA.'
+  banSEmsg: '你使用的SE技能%effectType%存在BUG，已自动为你删除.'
+  banUseWorldMsg: '&c该世界禁止使用拔刀剑.'
 
 

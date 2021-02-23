@@ -1,10 +1,13 @@
 package pers.tuershen.bladeplus.nbt;
 
-import com.tuershen.nbtlibrary.minecraft.nbt.TagList;
-import com.tuershen.nbtlibrary.minecraft.nbt.TagString;
+import com.tuershen.nbtlibrary.minecraft.nbt.*;
 import org.bukkit.inventory.ItemStack;
 import pers.tuershen.bladeplus.BladePlusMain;
-import pers.tuershen.bladeplus.common.BladePlusMaterial;
+import pers.tuershen.bladeplus.core.common.BladePlusMaterial;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @auther Tuershen Create Date on 2021/2/10
@@ -12,11 +15,11 @@ import pers.tuershen.bladeplus.common.BladePlusMaterial;
 public class NBTRead {
 
 
-
     /**
      * 获取Int
+     *
      * @param itemStack item
-     * @param key 标签名称
+     * @param key       标签名称
      * @return int 数据
      */
     public static int getMaterialInt(ItemStack itemStack, String key) {
@@ -25,8 +28,9 @@ public class NBTRead {
 
     /**
      * 获取String
+     *
      * @param itemStack item
-     * @param key 标签名称
+     * @param key       标签名称
      * @return String数据
      */
     public static String getMaterialString(ItemStack itemStack, String key) {
@@ -35,8 +39,9 @@ public class NBTRead {
 
     /**
      * 获取Double
-     * @param itemStack  item
-     * @param key 标签名称
+     *
+     * @param itemStack item
+     * @param key       标签名称
      * @return double数据
      */
     public static double getMaterialDouble(ItemStack itemStack, String key) {
@@ -45,6 +50,7 @@ public class NBTRead {
 
     /**
      * 获取拔刀的皮肤列表
+     *
      * @param blade 拔刀本体
      * @return 皮肤列表
      */
@@ -73,6 +79,7 @@ public class NBTRead {
 
     /**
      * 获取拔刀剑sa技能id
+     *
      * @param blade 拔刀
      * @return
      */
@@ -82,16 +89,35 @@ public class NBTRead {
 
     /**
      * 是否有技能id
+     *
      * @param blade 拔刀
      * @return
      */
-    public static boolean hasSpecialAttackTypeId(ItemStack blade){
+    public static boolean hasSpecialAttackTypeId(ItemStack blade) {
         return BladePlusMain.libraryApi.getCompound(blade).hasKey("SpecialAttackType");
     }
 
 
+    public static boolean hasSEffect(ItemStack blade) {
+        return BladePlusMain.libraryApi.getCompound(blade).hasKey("SB.SEffect");
+    }
+
+
+    public static List<String> getSEffectList(ItemStack blade) {
+        TagCompound<TagInt> effectMap = BladePlusMain.libraryApi.getCompound(blade).get("SB.SEffect");
+        Map<String, TagInt> map = effectMap.getMap();
+        List<String> effectList = new ArrayList<>();
+        map.keySet().forEach((k) -> effectList.add(k));
+        return effectList;
+    }
+
+    public static TagCompound<TagInt> getSEffect(ItemStack blade) {
+        return BladePlusMain.libraryApi.getCompound(blade).get("SB.SEffect");
+    }
+
     /**
      * 获取拔刀剑的最大锻造值
+     *
      * @param blade
      * @return
      */

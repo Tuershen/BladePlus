@@ -1,17 +1,20 @@
 package pers.tuershen.bladeplus.nbt;
 
 import com.tuershen.nbtlibrary.minecraft.nbt.*;
+import org.bukkit.Material;
 import pers.tuershen.bladeplus.BladePlusMain;
-import pers.tuershen.bladeplus.common.appraisal.AppraisalMaterial;
-import pers.tuershen.bladeplus.common.BladePlusAppraisalDisplay;
-import pers.tuershen.bladeplus.common.BladePlusMaterial;
-import pers.tuershen.bladeplus.common.ForgingModel;
+import pers.tuershen.bladeplus.core.common.appraisal.AppraisalMaterial;
+import pers.tuershen.bladeplus.core.common.BladePlusAppraisalDisplay;
+import pers.tuershen.bladeplus.core.common.BladePlusMaterial;
+import pers.tuershen.bladeplus.core.common.ForgingModel;
 import pers.tuershen.bladeplus.util.Calculation;
 import com.tuershen.nbtlibrary.api.NBTTagCompoundApi;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @auther Tuershen Create Date on 2021/2/10
@@ -77,9 +80,43 @@ public class NBTWrite {
      */
     public static ItemStack setModel(ItemStack blade, ForgingModel model) {
         NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(blade);
+        if (!compound.hasKey("never_replace")) {
+            Map<String, TagBase> never = new HashMap<>();
+            if (compound.hasKey("TextureName") && compound.hasKey("ModelName")) {
+                never.put("TextureName", new TagString(compound.getString("TextureName")));
+                never.put("ModelName", new TagString(compound.getString("ModelName")));
+                compound.set("never_replace", new TagCompound<>(never));
+                return setBladeModel(BladePlusMain.libraryApi.setCompound(blade, compound), model);
+            }
+            never.put("id", new TagString(blade.getType().name()));
+            never.put("dur", new TagShort(blade.getDurability()));
+            compound.set("never_replace", new TagCompound<>(never));
+            return setBladeModel(BladePlusMain.libraryApi.setCompound(blade, compound), model);
+        }
+        return setBladeModel(BladePlusMain.libraryApi.setCompound(blade, compound), model);
+    }
+
+
+    public static ItemStack setBladeModel(ItemStack blade, ForgingModel model){
+        NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(blade);
         compound.setString("TextureName", model.getTextPath());
         compound.setString("ModelName", model.getModelPath());
         return BladePlusMain.libraryApi.setCompound(blade, compound);
+    }
+
+
+    public static ItemStack setInventoryModel(ItemStack blade, TagCompound never){
+        NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(blade);
+        if (never.hasKey("TextureName")) {
+            TagString textureName = never.getString("TextureName");
+            TagString modelName = never.getString("ModelName");
+            compound.setString("TextureName", textureName.getData());
+            compound.setString("ModelName", modelName.getData());
+            return BladePlusMain.libraryApi.setCompound(blade, compound);
+        }
+        TagString id = never.getString("id");
+        TagShort dur = never.getShort("dur");
+        return new ItemStack(Material.valueOf(id.getData()), 1 , dur.getData());
     }
 
     /**
@@ -169,6 +206,7 @@ public class NBTWrite {
      * @return 列表皮肤
      */
     public static List<TagString> putModel(List<TagString> list, String model) {
+        if (model.equalsIgnoreCase("无")) return list;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getData().equalsIgnoreCase(model)) return list;
         }
@@ -208,7 +246,16 @@ public class NBTWrite {
         return BladePlusMain.libraryApi.setCompound(blade, compound);
     }
 
+    public static ItemStack removeSEffect(ItemStack blade, TagCompound<TagInt> effect){
+        NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(blade);
+        compound.set("SB.SEffect", effect);
+        return BladePlusMain.libraryApi.setCompound(blade, compound);
+    }
 
+
+    public static TagCompound getNever(ItemStack blade){
+        return BladePlusMain.libraryApi.getCompound(blade).get("never_replace");
+    }
 
 
 }

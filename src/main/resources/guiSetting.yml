@@ -138,8 +138,8 @@ repair:
     - '    §7......'
     - '§8§m--一一一一一一一一一一一一一一一一一一一--'
   successMsg:
-    - '§7[§3Console§7] §b▶ §7恭喜，你消耗了一个封印石增加了 §c%repair% §7的最大锻造值.'
-    - '§7[§3Console§7]   §a▪ §7当前拔刀剑的最高锻造值为 §c%max_repair%.'
+    - '§7[§3Console§7] §b▶ §7恭喜，你消耗了一个封印石增加了 §c%repair% §7的最大锻造值'
+    - '§7[§3Console§7]   §a▪ §7当前拔刀剑的最高锻造值为 §c%max_repair%'
   failMsg:
     - '§7[§3Console§7] §b▶ §7很遗憾， 封印石已失效.'
 
@@ -163,8 +163,8 @@ special:
   repairCounter: '§6锻造值'
   successMsg:
     - '§7[§3Console§7] §b▶ §7你消耗了一个异类石， 增加了一个随机属性值.'
-    - '§7[§3Console§7]   §a▪ §7属性名称： %specialType%.'
-    - '§7[§3Console§7]   §a▪ §7增加数量： §b%value%.'
+    - '§7[§3Console§7]   §a▪ §7属性名称： %specialType%'
+    - '§7[§3Console§7]   §a▪ §7增加数量： §b%value%'
   failMsg:
     - '§7[§3Console§7] §b▶ §7很遗憾， 异类石已失效.'
 

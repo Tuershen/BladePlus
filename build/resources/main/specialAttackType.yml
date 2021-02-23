@@ -1,8 +1,11 @@
 #禁止使用的SA(拔刀技能)
-blacklist:
+SABlacklist:
   - 1
   - 2
 #随机替换
-randoms:
+SARandoms:
   - 3
   - 4
+
+#se黑名单， 不会被随机替换
+SEBlacklist: []

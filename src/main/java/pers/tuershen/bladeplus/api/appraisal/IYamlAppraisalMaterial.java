@@ -1,7 +1,7 @@
 package pers.tuershen.bladeplus.api.appraisal;
 
 import pers.tuershen.bladeplus.api.IYamlReset;
-import pers.tuershen.bladeplus.common.appraisal.AppraisalMaterial;
+import pers.tuershen.bladeplus.core.common.appraisal.AppraisalMaterial;
 
 import java.util.List;
 
