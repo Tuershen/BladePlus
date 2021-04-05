@@ -16,7 +16,6 @@ import pers.tuershen.bladeplus.nbt.NBTLookup;
  */
 public class BladePlusUseBladeListener implements Listener {
 
-
     private IYamlSetting iYamlSetting;
 
     public BladePlusUseBladeListener(IYamlSetting iYamlSetting) {
@@ -32,23 +31,17 @@ public class BladePlusUseBladeListener implements Listener {
     public void onBanUseWorld(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         ItemStack itemInHand = player.getItemInHand();
-        if (itemInHand != null) {
-            if (itemInHand.getType() != Material.AIR) {
-                if (NBTLookup.isSlashBlade(itemInHand)) {
-                    World world = player.getWorld();
-                    if (this.iYamlSetting.getIYamlBanUseWorld().isBanWorld(world)) {
-                        if (!player.isOp()) {
-                            int heldItemSlot = player.getInventory().getHeldItemSlot();
-                            String warning = this.iYamlSetting.getIYamlMsg().getMsg("banUseWorldMsg");
-                            player.getInventory().setHeldItemSlot(
-                                    heldItemSlot == 0
-                                            ? 1 : heldItemSlot == 8
-                                            ? 7 : heldItemSlot + 1);
-                            player.openInventory(new WarningInventory(warning, iYamlSetting).getInventory());
-                            event.setCancelled(true);
-                        }
-                    }
-                }
+        if (itemInHand != null &&
+                itemInHand.getType() != Material.AIR &&
+                NBTLookup.isSlashBlade(itemInHand)) {
+            World world = player.getWorld();
+            if (this.iYamlSetting.getIYamlBanUseWorld().isBanWorld(world) &&
+                    !player.isOp()) {
+                int heldItemSlot = player.getInventory().getHeldItemSlot();
+                String warning = this.iYamlSetting.getIYamlMsg().getMsg("banUseWorldMsg");
+                player.getInventory().setHeldItemSlot((heldItemSlot == 0) ? 1 : ((heldItemSlot == 8) ? 7 : (heldItemSlot + 1)));
+                player.openInventory((new WarningInventory(warning, this.iYamlSetting)).getInventory());
+                event.setCancelled(true);
             }
         }
     }

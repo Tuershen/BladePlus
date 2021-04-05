@@ -1,5 +1,6 @@
 package pers.tuershen.bladeplus.core.gemstone.hanlde;
 
+import com.tuershen.nbtlibrary.minecraft.nbt.TagBase;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagInt;
 import org.bukkit.entity.Player;
 import pers.tuershen.bladeplus.api.IYamlSetting;
@@ -25,13 +26,12 @@ public class SuccessHandle extends AbstractHandle {
         int maxRepairCounter = this.setting.getMaxRepairCounter();
         RepairCounterCheck repairCounterCheck = new RepairCounterCheck(this.tag, repairCounter, maxRepairCounter);
         IProgramme iProgramme = repairCounterCheck.getRepairCounter();
-        if (iProgramme.isAchieveLimit()) {
-            sendMessage(setting.getIYamlMsg().getMsg("error_7"));
-        }
+        if (iProgramme.isAchieveLimit())
+            sendMessage(this.setting.getIYamlMsg().getMsg("error_7"));
         this.tag.set("RepairCounter", new TagInt(iProgramme.getRepairCounter()));
         this.tag.set("ProudSoul", getProudSoul(this.bladePlusMaterial.getProudSoul()));
         this.tag.set("ForgingModel", getBladeModel());
-        this.saveBlade();
+        saveBlade();
     }
 
     @Override

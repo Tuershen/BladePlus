@@ -43,10 +43,13 @@ public class ResultDistributionHandle extends ResultHandle {
 
     private void sendSuccessMsg(){
         if (this.player != null) {
-            player.sendMessage(setting.getIYamlMsg().getMsg("error_3")
-            .replace("%repairCounter%", String.valueOf(this.plusHandle.getBladePlusMaterial().getRepairCounter()))
-            .replace("%proudSoul%", String.valueOf(this.plusHandle.getBladePlusMaterial().getProudSoul()))
-            );
+            int repairCounter = this.plusHandle.getBladePlusMaterial().getRepairCounter();
+            int proudSoul = this.plusHandle.getBladePlusMaterial().getProudSoul();
+            player.sendMessage(setting
+                    .getIYamlMsg()
+                    .getMsg("error_3")
+                    .replace("%repairCounter%", String.valueOf(repairCounter))
+                    .replace("%proudSoul%", String.valueOf(proudSoul)));
         }
     }
 

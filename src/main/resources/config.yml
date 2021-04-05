@@ -13,4 +13,5 @@ slashBlade:
 appraisal:
   - 'FLAMMPFEILSLASHBLADE_PROUDSOUL'
   - 'NETHER_STAR'
-
+#是否开启霹雷
+enableEff: true

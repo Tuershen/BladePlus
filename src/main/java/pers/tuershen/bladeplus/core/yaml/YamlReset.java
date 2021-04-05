@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class YamlReset implements IYamlReset {
 
-    private static List<IYamlReset> resets = new ArrayList<>();
+    private static final List<IYamlReset> resets = new ArrayList<>();
 
     protected FileConfiguration fileConfiguration;
 

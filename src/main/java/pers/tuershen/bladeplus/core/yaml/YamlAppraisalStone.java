@@ -29,8 +29,6 @@ public class YamlAppraisalStone  extends YamlReset implements IYamlAppraisalSton
         BladePlusMain.bladePlusMain.reloadConfig();
         this.modelMap = new ArrayList<>();
         this.init();
-
-
     }
 
     @Override

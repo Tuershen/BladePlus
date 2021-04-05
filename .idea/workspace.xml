@@ -1,319 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f5ce12b5-219a-4f05-b052-48e14e232431" name="Default Changelist" comment="修改指令更改拔刀锻造值和荣耀值bug">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/BladePlus_1_1_1_Release.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/CatServer_f2bc11f_universal.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/bukkit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/BladePlusHide.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/BladePlusHide.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/BladePlusRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/ISladePlusRunTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/ISladePlusTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/balde/IYamlBladeSkillType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/charset/CharsetType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandBanSE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/player/PCommandVersion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/WarningInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/listener/BladePlusUseSASEListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/BladeInventoryHandleEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/SEffectType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlBladeSkillType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/util/EntityCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/BladePlus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BladePlus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/BladePlus.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BladePlus.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bukkit/[1.7.10]BladePlus-1.1.5.3-Release-low.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/BladePlusMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/IProgramme.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/IYamlReset.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/IYamlSetting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/IYamlSladePlusGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/appraisal/IYamlAppraisalMaterial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/appraisal/IYamlAppraisalStone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/balde/IYamlMaterial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/balde/IYamlModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/balde/IYamlSlashBlade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/balde/IYamlSpecialAttackType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/check/IYamlBanUseWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/file/IBladeFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/gemstone/IBetGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/gemstone/IGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/gemstone/IGemstoneDisplay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/gemstone/ILuckyGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/gemstone/IProtectGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/gemstone/IRepairGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/gemstone/ISpecialGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/gui/IYamlGuiSetting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/inv/IAppraisalInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/inv/IAttributeInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/inv/ISladePlusInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/api/msg/IYamlMsg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/check/BlandStandCheck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/check/RepairCounterCheck$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/check/RepairCounterCheck$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/check/RepairCounterCheck$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/check/RepairCounterCheck$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/check/RepairCounterCheck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/AbstractCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/AbstractCommandExecutor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/AdminCommandHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/PlayerCommandHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandAppraisal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandBanSA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandBaseAttackModifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandBet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandBladeModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandHelp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandKillCount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandLucky.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandMaterial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandMaxRepairCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandProtect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandProudSoul.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandReload.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandRepair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandRepairCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandSpecial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandSpecialAttackType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandSummonedSwordColor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/ACommandVersion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/admin/AbstractAdminCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/player/AbstractPlayerCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/player/PCommandAppraisal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/player/PCommandHelp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/player/PCommandOpen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/command/player/PCommandSeeBladeMaxRepairCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/AnvilBlockLocation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladeEntityLocation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladePlusAppraisalDisplay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladePlusButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladePlusCraftResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladePlusGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladePlusHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladePlusInventoryAttribute.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladePlusItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladePlusMaterial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/BladeSpeedOfProgressAttribute.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/CalculationResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/ForgingExp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/ForgingModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/appraisal/AppraisalExp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/appraisal/AppraisalFail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/appraisal/AppraisalMaterial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/appraisal/AppraisalProbability.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/appraisal/AppraisalProudSoul.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/appraisal/AppraisalRepairCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/appraisal/AppraisalTime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/gemstone/BetGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/gemstone/Gemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/gemstone/LuckyGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/gemstone/ProtectGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/gemstone/RepairGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/common/gemstone/SpecialGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/file/AbstractBladeFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/file/BladeAppraisalFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/file/BladeGuiSettingFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/file/BladeLanguageFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/file/BladeMaterialFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/file/BladeModelFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/file/BladeSpecialAttackType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/AbstractGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/Bet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/Lucky.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/Protect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/Repair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/Special.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/hanlde/AbstractHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/hanlde/FailHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/hanlde/ResultDistributionHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/hanlde/ResultHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/gemstone/hanlde/SuccessHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/inv/AbstractBladePlusInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/inv/AbstractInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/inv/AppraisalInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/inv/BladePlusInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/inv/TextModelInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/inv/WarningInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/listener/BladePlusListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/listener/BladePlusUseBladeListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/listener/BladePlusUseSAListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/nbt/NBTBladePlusUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/nbt/NBTLookup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/nbt/NBTRead.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/nbt/NBTWrite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/take/BladePlusTake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/CommandExecutorType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/GemstoneTypeEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/ResultTypeEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/SpecialTypeEnum$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/SpecialTypeEnum$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/SpecialTypeEnum$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/SpecialTypeEnum$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/SpecialTypeEnum$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/type/SpecialTypeEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/util/Calculation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/util/ItemUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlAppraisalMaterial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlAppraisalStone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlBanUseWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlInventorySetting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlMaterial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlMessages.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlReset.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlSetting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlSladePlusGemstone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlSlashBlade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pers/tuershen/bladeplus/yaml/YamlSpecialAttackType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/BladePlus-1.0-Release.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/BladePlus-1.0.7-Release.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/BladePlus-1.0.8-Release.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/BladePlus-1.0.9-Release.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/BladePlus-1.1.0-Release.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/guiSetting.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/guiSetting.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/language.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/language.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/specialAttackType.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/specialAttackType.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/BladePlusMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/BladePlusMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/IYamlSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/IYamlSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/appraisal/IYamlAppraisalMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/appraisal/IYamlAppraisalMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/balde/IYamlMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/balde/IYamlMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/balde/IYamlModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/balde/IYamlModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/balde/IYamlSlashBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/balde/IYamlSlashBlade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/balde/IYamlSpecialAttackType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/gui/IYamlGuiSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/gui/IYamlGuiSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/inv/ISladePlusInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/api/inv/ISladePlusInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/check/BlandStandCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/check/BlandStandCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/check/RepairCounterCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/check/RepairCounterCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/AbstractCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/AbstractCommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/AbstractCommandExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/AdminCommandHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/AdminCommandHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/PlayerCommandHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/PlayerCommandHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandAppraisal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandAppraisal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandBanSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandBanSA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandBaseAttackModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandBaseAttackModifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandBet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandBet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandBladeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandBladeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandHelp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandKillCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandKillCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandLucky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandLucky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandMaxRepairCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandMaxRepairCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandProtect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandProtect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandProudSoul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandProudSoul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandReload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandReload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandRepair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandRepair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandRepairCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandRepairCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandSpecial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandSpecial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandSpecialAttackType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandSpecialAttackType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandSummonedSwordColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandSummonedSwordColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/ACommandVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/ACommandVersion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/admin/AbstractAdminCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/admin/AbstractAdminCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/player/AbstractPlayerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/player/AbstractPlayerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/player/PCommandAppraisal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/player/PCommandAppraisal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/player/PCommandHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/player/PCommandHelp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/player/PCommandOpen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/player/PCommandOpen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/command/player/PCommandSeeBladeMaxRepairCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/command/player/PCommandSeeBladeMaxRepairCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/AnvilBlockLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/AnvilBlockLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladeEntityLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladeEntityLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladePlusAppraisalDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladePlusAppraisalDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladePlusButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladePlusButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladePlusCraftResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladePlusCraftResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladePlusGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladePlusGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladePlusHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladePlusHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladePlusInventoryAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladePlusInventoryAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladePlusItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladePlusItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladePlusMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladePlusMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/BladeSpeedOfProgressAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/BladeSpeedOfProgressAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/CalculationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/CalculationResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/ForgingExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/ForgingExp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/ForgingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/ForgingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/appraisal/AppraisalExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/appraisal/AppraisalExp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/appraisal/AppraisalFail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/appraisal/AppraisalFail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/appraisal/AppraisalMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/appraisal/AppraisalMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/appraisal/AppraisalProbability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/appraisal/AppraisalProbability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/appraisal/AppraisalProudSoul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/appraisal/AppraisalProudSoul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/appraisal/AppraisalRepairCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/appraisal/AppraisalRepairCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/appraisal/AppraisalTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/appraisal/AppraisalTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/gemstone/BetGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/gemstone/BetGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/gemstone/Gemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/gemstone/Gemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/gemstone/LuckyGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/gemstone/LuckyGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/gemstone/ProtectGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/gemstone/ProtectGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/gemstone/RepairGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/gemstone/RepairGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/common/gemstone/SpecialGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/common/gemstone/SpecialGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/file/AbstractBladeFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/file/AbstractBladeFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/file/BladeAppraisalFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/file/BladeAppraisalFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/file/BladeGuiSettingFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/file/BladeGuiSettingFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/file/BladeLanguageFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/file/BladeLanguageFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/file/BladeMaterialFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/file/BladeMaterialFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/file/BladeModelFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/file/BladeModelFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/file/BladeSpecialAttackType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/file/BladeSpecialAttackType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/AbstractGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/AbstractGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/Bet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/Bet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/Lucky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/Lucky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/Protect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/Protect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/Repair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/Repair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/Special.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/Special.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/AbstractHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/AbstractHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/FailHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/FailHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/ResultDistributionHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/ResultDistributionHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/ResultHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/ResultHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/gemstone/hanlde/SuccessHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/SuccessHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/inv/AbstractBladePlusInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/AbstractBladePlusInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/inv/AbstractInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/AbstractInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/inv/AppraisalInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/AppraisalInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/inv/BladePlusInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/BladePlusInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/inv/TextModelInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/TextModelInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/inv/WarningInventory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/listener/BladePlusListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/listener/BladePlusListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/listener/BladePlusUseBladeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/listener/BladePlusUseBladeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/listener/BladePlusUseSAListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/nbt/NBTBladePlusUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/nbt/NBTLookup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/nbt/NBTLookup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/nbt/NBTRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/nbt/NBTRead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/nbt/NBTWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/nbt/NBTWrite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/take/BladePlusTake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/take/BladePlusTake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/CommandExecutorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/CommandExecutorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/GemstoneTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/GemstoneTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/ResultTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/ResultTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/type/SpecialTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/SpecialTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/util/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/util/Calculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/util/ItemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/util/ItemUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlAppraisalMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlAppraisalMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlAppraisalStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlAppraisalStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlBanUseWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlBanUseWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlInventorySetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlInventorySetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlReset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlReset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlSladePlusGemstone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlSladePlusGemstone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlSlashBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlSlashBlade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/yaml/YamlSpecialAttackType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/guiSetting.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/guiSetting.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/language.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/language.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/specialAttackType.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/specialAttackType.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/ResultDistributionHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/ResultDistributionHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/SuccessHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/gemstone/hanlde/SuccessHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/TextModelInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/TextModelInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/WarningInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/inv/WarningInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/listener/BladePlusListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/listener/BladePlusListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/listener/BladePlusUseBladeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/listener/BladePlusUseBladeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/take/BladePlusTake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/take/BladePlusTake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/BladeInventoryHandleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/BladeInventoryHandleEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/GemstoneTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/GemstoneTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/SpecialTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/type/SpecialTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlAppraisalStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlAppraisalStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlReset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/tuershen/bladeplus/core/yaml/YamlReset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,13 +42,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
     <projectState path="$PROJECT_DIR$/../BladePlus-1.12.2">
       <ProjectState />
     </projectState>
-    <projectState path="$PROJECT_DIR$/../../github1/BladePlusHide">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$USER_HOME$/github1/BladePlusHide">
       <ProjectState />
     </projectState>
   </component>
@@ -340,7 +61,7 @@
         <task path="$PROJECT_DIR$/../BladePlus-1.12.2">
           <activation />
         </task>
-        <task path="$PROJECT_DIR$/../../github1/BladePlusHide">
+        <task path="$USER_HOME$/github1/BladePlusHide">
           <activation />
         </task>
         <projects_view>
@@ -398,37 +119,37 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../开发/Uranium-1710-dev-5-B287-4e9e823-server.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bukkit" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15625" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Tuershen\Desktop\github1\BladePlusHide\src\main\resources" />
-      <recent name="C:\Users\Tuershen\Desktop\github\BladePlus\src\main\java" />
-      <recent name="C:\Users\Tuershen\Desktop\github\BladePlus\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pers.tuershen.bladeplus.charset" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Desktop\bladePlus\bukkit" />
       <recent name="C:\Users\Tuershen\Desktop\github1\BladePlusHide\src\main\java" />
       <recent name="C:\Users\Tuershen\Desktop\github1\BladePlusHide\bukkit" />
       <recent name="C:\Users\Tuershen\Desktop\github1\BladePlusHide" />
       <recent name="C:\Users\Tuershen\Desktop\github1\BladePlusHide\src\main\resources" />
-      <recent name="C:\Users\Tuershen\Desktop\github\BladePlus\bukkit" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pers.tuershen.bladeplus.charset" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tuershen\Desktop\github1\BladePlusHide\src\main\resources" />
+      <recent name="C:\Users\Tuershen\Desktop\github\BladePlus\src\main\java" />
+      <recent name="C:\Users\Tuershen\Desktop\github\BladePlus\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.BladePlus [build]">
@@ -470,48 +191,10 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BladePlusHide [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../../github1/BladePlusHide" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="BladePlusHide [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../../github1/BladePlusHide" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="BladePlusHide [processResources]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../../github1/BladePlusHide" />
+        <option name="externalProjectPath" value="$USER_HOME$/github1/BladePlusHide" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -527,13 +210,36 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="bladePlus [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="[1.7.10]BladePlus-1.1.5.3-Release-low.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/bukkit/[1.7.10]BladePlus-1.1.5.3-Release-low.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.bladePlus [buildDependents]" />
+        <item itemvalue="JAR Application.[1.7.10]BladePlus-1.1.5.3-Release-low.jar" />
         <item itemvalue="Gradle.BladePlus [build]" />
         <item itemvalue="Gradle.BladePlus [assemble]" />
         <item itemvalue="Gradle.BladePlusHide [processResources]" />
-        <item itemvalue="Gradle.BladePlusHide [dependencies]" />
-        <item itemvalue="Gradle.BladePlusHide [jar]" />
       </list>
     </recent_temporary>
   </component>
@@ -659,6 +365,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="调整强化结果" />
     <MESSAGE value="强化失败处理结果" />
@@ -705,28 +423,28 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="190" y="107" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1613398885247" />
-    <state width="1877" height="271" key="GridCell.Tab.0.bottom" timestamp="1614093117933">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="171" key="GridCell.Tab.0.bottom" timestamp="1617593100761">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="169" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614020159132" />
+    <state width="1323" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1617593100761" />
     <state width="1877" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614093117933" />
     <state width="1323" height="169" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614067437038" />
-    <state width="1877" height="271" key="GridCell.Tab.0.center" timestamp="1614093117933">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="171" key="GridCell.Tab.0.center" timestamp="1617593100761">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="169" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614020159131" />
+    <state width="1323" height="171" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1617593100761" />
     <state width="1877" height="271" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614093117933" />
     <state width="1323" height="169" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614067437037" />
-    <state width="1877" height="271" key="GridCell.Tab.0.left" timestamp="1614093117933">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="171" key="GridCell.Tab.0.left" timestamp="1617593100760">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="169" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614020159131" />
+    <state width="1323" height="171" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1617593100760" />
     <state width="1877" height="271" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614093117933" />
     <state width="1323" height="169" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614067437037" />
-    <state width="1877" height="271" key="GridCell.Tab.0.right" timestamp="1614093117933">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="171" key="GridCell.Tab.0.right" timestamp="1617593100761">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="169" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614020159132" />
+    <state width="1323" height="171" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1617593100761" />
     <state width="1877" height="271" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614093117933" />
     <state width="1323" height="169" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614067437037" />
     <state x="323" y="61" key="NewModule_or_Project.wizard" timestamp="1613397782863">

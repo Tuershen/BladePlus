@@ -1,5 +1,8 @@
 package pers.tuershen.bladeplus.core.type;
 
+import com.tuershen.nbtlibrary.minecraft.nbt.TagBase;
+import com.tuershen.nbtlibrary.minecraft.nbt.TagFloat;
+import com.tuershen.nbtlibrary.minecraft.nbt.TagInt;
 import pers.tuershen.bladeplus.api.gemstone.ISpecialGemstone;
 import pers.tuershen.bladeplus.util.Calculation;
 
@@ -27,6 +30,10 @@ public enum SpecialTypeEnum {
         public String getSpecialDisplay() {
             return this.iSpecialGemstone.getKillCountMsg();
         }
+
+        public <T extends Number> TagBase createTag(T value, int temp) {
+            return new TagInt(value.intValue() + temp);
+        }
     },
     SUMMONED_SWORD_COLOR(2) {
         @Override
@@ -42,6 +49,10 @@ public enum SpecialTypeEnum {
         @Override
         public String getSpecialDisplay() {
             return this.iSpecialGemstone.getSummonedSwordColor();
+        }
+
+        public <T extends Number> TagBase createTag(T value, int temp) {
+            return new TagInt(value.intValue() + temp);
         }
     },
     PROD_SOUL(3) {
@@ -59,6 +70,10 @@ public enum SpecialTypeEnum {
         public String getSpecialDisplay() {
             return this.iSpecialGemstone.getProudSoulMsg();
         }
+
+        public <T extends Number> TagBase createTag(T value, int temp) {
+            return new TagInt(value.intValue() + temp);
+        }
     },
     BASE_ATTACK_MODIFIER(4) {
         @Override
@@ -75,6 +90,11 @@ public enum SpecialTypeEnum {
         public String getSpecialDisplay() {
             return this.iSpecialGemstone.getBaseAttackModifier();
         }
+
+        public <T extends Number> TagBase createTag(T value, int temp) {
+            return new TagFloat(value.floatValue() + temp);
+        }
+
     },
     REPAIR_COUNTER(5) {
         @Override
@@ -91,6 +111,11 @@ public enum SpecialTypeEnum {
         public String getSpecialDisplay() {
             return this.iSpecialGemstone.getRepairCounter();
         }
+
+        public <T extends Number> TagBase createTag(T value, int temp) {
+            return new TagInt(value.intValue() + temp);
+        }
+
     };
 
     int type;
@@ -116,6 +141,8 @@ public enum SpecialTypeEnum {
     public abstract String getAttributeName();
 
     public abstract String getSpecialDisplay();
+
+    public abstract <T extends Number> TagBase createTag(T paramT, int paramInt);
 
     public static SpecialTypeEnum getRandomSpecialAttribute(ISpecialGemstone iSpecialGemstone) {
         int random = Calculation.getRandomNumber(1, 6);

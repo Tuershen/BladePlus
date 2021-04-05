@@ -20,9 +20,8 @@ public class WarningInventory implements InventoryHolder {
         BladePlusItem firstItem = iYamlSetting.getIYamlGuiSetting().getBladePlusInventoryAttribute().getFirstItem();
         ItemStack first = new ItemStack(Material.valueOf(firstItem.getType()), 1, firstItem.getDur());
         this.warning = BladePlusMain.bladePlusMain.getServer().createInventory(this, 9, title);
-        for (int i = 0; i < 9 ; i++) {
+        for (int i = 0; i < 9; i++)
             this.warning.setItem(i, first);
-        }
     }
 
     @Override

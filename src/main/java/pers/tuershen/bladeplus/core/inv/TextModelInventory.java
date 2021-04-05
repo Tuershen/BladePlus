@@ -47,50 +47,47 @@ public class TextModelInventory extends AbstractInventory implements InventoryHo
      * @return 界面
      */
     public Inventory analysis() {
-        List<TagString> data = textModelList.getData();
-        this.page = (data.size() / 45) + 1;
+        List<TagString> data = this.textModelList.getData();
+        this.page = data.size() / 45 + 1;
         int slot = 0;
-        boolean never = NBTLookup.isNever(itemStack);
-        ItemStack copy = new ItemStack(itemStack.getType(), 1 , itemStack.getDurability());
+        boolean never = NBTLookup.isNever(this.itemStack);
+        ItemStack copy = new ItemStack(this.itemStack.getType(), 1, this.itemStack.getDurability());
         for (int j = 0; j < this.page; j++) {
             Inventory inventory = setDefaultInventory(this);
-            for (int i = never ? 1 : 0; i < 45 && slot < data.size(); i++, slot++) {
+            for (int i = never ? 1 : 0; i < 45 && slot < data.size(); i++, slot++)
                 inventory.setItem(i, setTextModel(copy, data.get(slot)));
-            }
             this.inventoryList.add(inventory);
         }
-        this.inventory = this.inventoryList.size() > 0 ? this.inventoryList.get(0) : setDefaultInventory(this);
+        this.inventory = (this.inventoryList.size() > 0) ? this.inventoryList.get(0) : setDefaultInventory(this);
         if (never) {
-            TagCompound neverCompound = NBTWrite.getNever(itemStack);
+            TagCompound neverCompound = NBTWrite.getNever(this.itemStack);
             this.inventory.setItem(0, NBTWrite.setInventoryModel(this.itemStack, neverCompound));
         }
         return this.inventory;
     }
 
     public ItemStack replaceModel(ItemStack replaceItem, ItemStack blade) {
-        if (replaceItem != null) {
-            if (replaceItem.getType() != Material.AIR) {
-                if (NBTLookup.hasTextModel(replaceItem)) {
-                    String text = NBTRead.getMaterialString(replaceItem, "TextureName");
-                    String model = NBTRead.getMaterialString(replaceItem, "ModelName");
-                    return NBTWrite.setModel(blade, new ForgingModel().setModelPath(model).setTextPath(text));
-                }else {
-                    NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(blade);
-                    ItemStack newItem = new ItemStack(replaceItem.getType(), 1, replaceItem.getDurability());
-                    compound.remove("TextureName");
-                    compound.remove("ModelName");
-                    return BladePlusMain.libraryApi.setCompound(newItem, compound);
-                }
+        if (replaceItem != null &&
+                replaceItem.getType() != Material.AIR) {
+            if (NBTLookup.hasTextModel(replaceItem)) {
+                String text = NBTRead.getMaterialString(replaceItem, "TextureName");
+                String model = NBTRead.getMaterialString(replaceItem, "ModelName");
+                return NBTWrite.setModel(blade, (new ForgingModel()).setModelPath(model).setTextPath(text));
             }
+            NBTTagCompoundApi compound = BladePlusMain.libraryApi.getCompound(blade);
+            ItemStack newItem = new ItemStack(replaceItem.getType(), 1, replaceItem.getDurability());
+            compound.remove("TextureName");
+            compound.remove("ModelName");
+            return BladePlusMain.libraryApi.setCompound(newItem, compound);
         }
         return blade;
     }
 
     public ItemStack setTextModel(ItemStack itemStack, TagString tagString) {
-        if (iYamlModel.hasModel(tagString.getData())) {
-            ForgingModel model = iYamlModel.getModel(tagString.getData());
+        if (this.iYamlModel.hasModel(tagString.getData())) {
+            ForgingModel model = this.iYamlModel.getModel(tagString.getData());
             ItemMeta itemMeta = itemStack.getItemMeta();
-            itemMeta.setDisplayName(iYamlModel.getModelKey(tagString.getData()));
+            itemMeta.setDisplayName(this.iYamlModel.getModelKey(tagString.getData()));
             itemStack.setItemMeta(itemMeta);
             return NBTWrite.setBladeModel(itemStack, model);
         }

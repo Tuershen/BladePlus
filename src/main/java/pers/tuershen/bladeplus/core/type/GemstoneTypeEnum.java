@@ -1,5 +1,6 @@
 package pers.tuershen.bladeplus.core.type;
 
+import com.tuershen.nbtlibrary.minecraft.nbt.TagBase;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagCompound;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagInt;
 import org.bukkit.entity.Player;
@@ -13,6 +14,7 @@ import pers.tuershen.bladeplus.core.common.CalculationResult;
 import pers.tuershen.bladeplus.util.Calculation;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @auther Tuershen Create Date on 2021/2/9
@@ -23,7 +25,7 @@ public enum GemstoneTypeEnum {
     //保护石 强化失败不会掉属性
     PROTECT(1) {
         @Override
-        public CalculationResult handleGemstone(TagCompound tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
+        public CalculationResult handleGemstone(TagCompound<TagBase> tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
             if (forgingResultType == ResultTypeEnum.FAIL) {
                 blade.setFail(0);
                 if (this.checkPlayer()) {
@@ -49,7 +51,7 @@ public enum GemstoneTypeEnum {
     //幸运石 增加强化成功的几率
     LUCKY(2) {
         @Override
-        public CalculationResult handleGemstone(TagCompound tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
+        public CalculationResult handleGemstone(TagCompound<TagBase> tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
             return new CalculationResult(tag, blade);
         }
 
@@ -78,31 +80,36 @@ public enum GemstoneTypeEnum {
     //异类石 有几率随机增加拔刀的基础伤害值，杀敌数，以及随机剑气颜色
     SPECIAL(3) {
         @Override
-        public CalculationResult handleGemstone(TagCompound tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
-            double probability = this.checkDouble("probability");
+        public CalculationResult handleGemstone(TagCompound<TagBase> tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
+            double probability = checkDouble("probability");
             ResultTypeEnum resultType = Calculation.getResultType(probability);
-            ISpecialGemstone iSpecialGemstone = setting.getIYamlSladePlusGemstone().getISpecialGemstone();
+            ISpecialGemstone iSpecialGemstone = this.setting.getIYamlSladePlusGemstone().getISpecialGemstone();
             if (resultType == ResultTypeEnum.SUCCESS) {
-                int max = this.checkInt("max");
-                int min = this.checkInt("min");
+                int max = checkInt("max");
+                int min = checkInt("min");
                 SpecialTypeEnum specialTypeEnum = SpecialTypeEnum.getRandomSpecialAttribute(iSpecialGemstone);
                 int specialType = specialTypeEnum.getSpecialType(max, min);
-                tag.set(specialTypeEnum.getAttributeName(), new TagInt(specialType));
-                if (this.checkPlayer()) {
+                String attributeType = specialTypeEnum.getAttributeName();
+                TagBase newBase = null;
+                if (tag.hasKey(attributeType)) {
+                    Map<String, TagBase> map = tag.getMap();
+                    if (map.containsKey(attributeType)) {
+                        Number data = (Number) map.get(attributeType).data();
+                        newBase = specialTypeEnum.createTag(data, specialType);
+                    }
+                } else {
+                    newBase = specialTypeEnum.createTag(0, specialType);
+                }
+                tag.set(attributeType, newBase);
+                if (checkPlayer()) {
                     List<String> successMsg = iSpecialGemstone.getSuccessMsg();
-                    for (String msg : successMsg) {
-                        player.sendMessage(msg
-                                .replace("%specialType%", specialTypeEnum.getSpecialDisplay())
-                                .replace("%value%", String.valueOf(specialType)));
-                    }
+                    for (String msg : successMsg)
+                        this.player.sendMessage(msg.replace("%specialType%", specialTypeEnum.getSpecialDisplay()).replace("%value%", String.valueOf(specialType)));
                 }
-            } else {
-                if (this.checkPlayer()) {
-                    List<String> failMsg = iSpecialGemstone.getFailMsg();
-                    for (String msg : failMsg) {
-                        player.sendMessage(msg);
-                    }
-                }
+            } else if (checkPlayer()) {
+                List<String> failMsg = iSpecialGemstone.getFailMsg();
+                for (String msg : failMsg)
+                    this.player.sendMessage(msg);
             }
             return new CalculationResult(tag, blade);
         }
@@ -120,7 +127,7 @@ public enum GemstoneTypeEnum {
     //赌石 有几率翻倍增加拔刀剑的属性，但也可能翻倍扣除拔刀剑的属性
     BET(4) {
         @Override
-        public CalculationResult handleGemstone(TagCompound tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
+        public CalculationResult handleGemstone(TagCompound<TagBase> tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
             double probability = this.checkDouble("probability");
             ResultTypeEnum resultType = Calculation.getResultType(probability);
             IBetGemstone iBetGemstone = this.setting.getIYamlSladePlusGemstone().getIBetGemstone();
@@ -180,7 +187,7 @@ public enum GemstoneTypeEnum {
     //封印石
     REPAIR(5) {
         @Override
-        public CalculationResult handleGemstone(TagCompound tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
+        public CalculationResult handleGemstone(TagCompound<TagBase> tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType) {
             double probability = this.checkDouble("probability");
             ResultTypeEnum resultType = Calculation.getResultType(probability);
             IRepairGemstone iRepairGemstone = this.setting.getIYamlSladePlusGemstone().getIRepairGemstone();
@@ -217,9 +224,9 @@ public enum GemstoneTypeEnum {
         }
     };
 
-    private int type;
+    private final int type;
 
-    TagCompound gemstoneMate;
+    TagCompound<TagBase> gemstoneMate;
 
     IYamlSetting setting;
 
@@ -229,7 +236,7 @@ public enum GemstoneTypeEnum {
         this.type = type;
     }
 
-    public abstract CalculationResult handleGemstone(TagCompound tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType);
+    public abstract CalculationResult handleGemstone(TagCompound<TagBase> tag, BladePlusMaterial blade, ResultTypeEnum forgingResultType);
 
     public abstract BladePlusGemstone pretreatment(BladePlusMaterial blade);
 
@@ -248,7 +255,7 @@ public enum GemstoneTypeEnum {
     }
 
 
-    protected TagCompound setMaxRepairCounter(TagCompound tag, int repair) {
+    protected TagCompound<TagBase> setMaxRepairCounter(TagCompound<TagBase> tag, int repair) {
         if (tag.hasKey("MaxRepairCounter")) {
             TagInt maxRepairCounter = tag.getInt("MaxRepairCounter");
             maxRepairCounter.setData(maxRepairCounter.getInt() + repair);
@@ -259,7 +266,7 @@ public enum GemstoneTypeEnum {
         return tag;
     }
 
-    public static GemstoneTypeEnum getInstance(int type, TagCompound gemstoneMate, IYamlSetting setting, Player player) {
+    public static GemstoneTypeEnum getInstance(int type, TagCompound<TagBase> gemstoneMate, IYamlSetting setting, Player player) {
         GemstoneTypeEnum[] gemstoneTypeEnums = GemstoneTypeEnum.values();
         for (GemstoneTypeEnum gemstoneTypeEnum : gemstoneTypeEnums) {
             if (gemstoneTypeEnum.type == type) {
@@ -282,7 +289,7 @@ public enum GemstoneTypeEnum {
         this.player = player;
     }
 
-    private void setGemstoneMate(TagCompound gemstoneMate) {
+    private void setGemstoneMate(TagCompound<TagBase> gemstoneMate) {
         this.gemstoneMate = gemstoneMate;
     }
 }
