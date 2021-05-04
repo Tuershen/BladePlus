@@ -1,12 +1,11 @@
 package pers.tuershen.bladeplus.util;
 
-import pers.tuershen.bladeplus.core.common.BladePlusButton;
-import pers.tuershen.bladeplus.core.common.BladeSpeedOfProgressAttribute;
+import pers.tuershen.bladeplus.bukkit.core.common.BladePlusButton;
+import pers.tuershen.bladeplus.bukkit.core.common.BladeSpeedOfProgressAttribute;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.nio.charset.Charset;
 import java.util.List;
 
 /**

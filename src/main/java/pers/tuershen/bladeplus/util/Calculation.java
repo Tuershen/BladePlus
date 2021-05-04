@@ -1,6 +1,6 @@
 package pers.tuershen.bladeplus.util;
 
-import pers.tuershen.bladeplus.core.type.ResultTypeEnum;
+import pers.tuershen.bladeplus.bukkit.core.type.ResultTypeEnum;
 
 import java.util.Random;
 

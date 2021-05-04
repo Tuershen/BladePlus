@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="BladePlus-1.1.1-Release">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../BladePlus-1.12.2/build/libs/BladePlus-1.1.1-Release.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

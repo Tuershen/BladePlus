@@ -1,9 +1,0 @@
-package pers.tuershen.bladeplus.core.type;
-
-/**
- * @auther Tuershen Create Date on 2021/2/10
- */
-public enum ResultTypeEnum {
-    SUCCESS,
-    FAIL
-}

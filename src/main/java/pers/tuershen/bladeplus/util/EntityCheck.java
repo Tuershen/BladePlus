@@ -27,7 +27,6 @@ public class EntityCheck {
     }
 
     public boolean check() {
-
         Entity[] entities = this.block.getChunk().getEntities();
         for (Entity entity : entities) {
             if (entity.getType().name().equalsIgnoreCase(BLADE_STAND)) {
