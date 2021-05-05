@@ -33,8 +33,8 @@ public class YamlAppraisalStone  extends YamlReset implements IYamlAppraisalSton
 
     @Override
     public boolean hasAppraisalStone(String itemType) {
-        for (int i = 0; i < this.modelMap.size(); i++) {
-            if (itemType.contains(modelMap.get(i))) return true;
+        for (String s : this.modelMap) {
+            if (itemType.contains(s)) return true;
         }
         return false;
     }

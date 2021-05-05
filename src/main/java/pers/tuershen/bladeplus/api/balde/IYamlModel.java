@@ -1,7 +1,7 @@
 package pers.tuershen.bladeplus.api.balde;
 
 import pers.tuershen.bladeplus.api.IYamlReset;
-import pers.tuershen.bladeplus.core.common.ForgingModel;
+import pers.tuershen.bladeplus.bukkit.common.ForgingModel;
 
 import java.util.List;
 

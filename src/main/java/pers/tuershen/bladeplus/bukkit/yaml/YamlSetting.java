@@ -4,10 +4,7 @@ import pers.tuershen.bladeplus.BladePlusMain;
 import pers.tuershen.bladeplus.api.*;
 import pers.tuershen.bladeplus.api.appraisal.IYamlAppraisalMaterial;
 import pers.tuershen.bladeplus.api.appraisal.IYamlAppraisalStone;
-import pers.tuershen.bladeplus.api.balde.IYamlBladeSkillType;
-import pers.tuershen.bladeplus.api.balde.IYamlMaterial;
-import pers.tuershen.bladeplus.api.balde.IYamlModel;
-import pers.tuershen.bladeplus.api.balde.IYamlSlashBlade;
+import pers.tuershen.bladeplus.api.balde.*;
 import pers.tuershen.bladeplus.api.check.IYamlBanUseWorld;
 import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
 import pers.tuershen.bladeplus.api.msg.IYamlMsg;
@@ -39,9 +36,11 @@ public class YamlSetting implements IYamlSetting {
 
     private YamlSladePlusGemstone yamlSladePlusGemstone;
 
-    private int maxRepairCounter;
-
     private YamlReset yamlReset;
+
+    private YamlBladeProgramme yamlBladeProgramme;
+
+    private int maxRepairCounter;
 
     public YamlSetting() {
         yamlMaterial = new YamlMaterial();
@@ -55,6 +54,7 @@ public class YamlSetting implements IYamlSetting {
         yamlReset = new YamlReset();
         bladeSkillType = new YamlBladeSkillType();
         yamlSladePlusGemstone = new YamlSladePlusGemstone();
+        yamlBladeProgramme = new YamlBladeProgramme();
     }
 
     @Override
@@ -123,6 +123,11 @@ public class YamlSetting implements IYamlSetting {
     @Override
     public IYamlSladePlusGemstone getIYamlSladePlusGemstone() {
         return this.yamlSladePlusGemstone;
+    }
+
+    @Override
+    public IYamlBladeProgramme getIYamlBladeProgramme() {
+        return this.yamlBladeProgramme;
     }
 
 

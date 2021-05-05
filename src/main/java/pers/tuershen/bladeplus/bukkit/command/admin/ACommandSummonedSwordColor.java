@@ -46,7 +46,6 @@ public class ACommandSummonedSwordColor extends AbstractAdminCommand<Player> {
 
     @Override
     public List<String> getTabExecutorResult() {
-
         return this.tabResultList;
     }
 

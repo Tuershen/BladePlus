@@ -4,17 +4,20 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import pers.tuershen.bladeplus.api.IYamlSetting;
+import pers.tuershen.bladeplus.api.Result;
 import pers.tuershen.bladeplus.api.inv.IAppraisalInventory;
 import pers.tuershen.bladeplus.api.msg.IYamlMsg;
 import pers.tuershen.bladeplus.bukkit.inv.BladePlusInventory;
 import pers.tuershen.bladeplus.bukkit.inv.TextModelInventory;
 import pers.tuershen.bladeplus.bukkit.nbt.NBTLookup;
+import pers.tuershen.bladeplus.bukkit.nbt.NBTRead;
 
 public enum BladeInventoryHandleEnum {
     BLADE_INVENTORY {
-        public <T extends org.bukkit.inventory.InventoryHolder> void eventHandle(T holder, int rawSlot) {
+        public <T extends InventoryHolder> void eventHandle(T holder, int rawSlot) {
             Player player = (Player)this.event.getWhoClicked();
             BladePlusInventory bladePlusInventory = (BladePlusInventory)this.event.getInventory().getHolder();
             if (rawSlot == bladePlusInventory.getButtonSlot()) {
@@ -23,11 +26,21 @@ public enum BladeInventoryHandleEnum {
                     player.sendMessage(iYamlMsg.getMsg("error_1"));
                 } else {
                     if (NBTLookup.hasMaterial(material)) {
-                        bladePlusInventory.runStart(material);
+                        bladePlusInventory.getBladeEntity().getNBTTagCompound().getCompound("Blade").getCompound("tag");
+                        Result result = iYamlSetting.getIYamlBladeProgramme().equalResult(
+                                NBTRead.getBladeEntityInt(bladePlusInventory.getBladeEntity(), "RepairCounter"),
+                                NBTRead.getMaterialInt(material, "repairCounter"));
+                        if (result.resultType() == ResultTypeEnum.SUCCESS) {
+                            bladePlusInventory.runStart(material);
+                            this.event.setCancelled(true);
+                            return;
+                        }
+                        player.sendMessage(iYamlMsg.getMsg("error_18"));
                         this.event.setCancelled(true);
                         return;
                     }
                     player.sendMessage(iYamlMsg.getMsg("error_2"));
+                    this.event.setCancelled(true);
                 }
             }
             if (rawSlot < 18 && rawSlot != bladePlusInventory
@@ -37,7 +50,7 @@ public enum BladeInventoryHandleEnum {
         }
     },
     TEXT_MODEL_INVENTORY {
-        public <T extends org.bukkit.inventory.InventoryHolder> void eventHandle(T holder, int rawSlot) {
+        public <T extends InventoryHolder> void eventHandle(T holder, int rawSlot) {
             if (rawSlot >= 0 && rawSlot < 54) {
                 TextModelInventory textModelInventory = (TextModelInventory)holder;
                 Player player = (Player)this.event.getWhoClicked();
@@ -60,7 +73,7 @@ public enum BladeInventoryHandleEnum {
         }
     },
     APPRAISAL_INVENTORY {
-        public <T extends org.bukkit.inventory.InventoryHolder> void eventHandle(T holder, int rawSlot) {
+        public <T extends InventoryHolder> void eventHandle(T holder, int rawSlot) {
             IAppraisalInventory iAppraisalInventory = (IAppraisalInventory)holder;
             if (rawSlot < 9) {
                 if (iAppraisalInventory.getButtonSlot() == rawSlot) {
@@ -73,7 +86,7 @@ public enum BladeInventoryHandleEnum {
         }
     },
     WARNING_INVENTORY {
-        public <T extends org.bukkit.inventory.InventoryHolder> void eventHandle(T holder, int rawSlot) {
+        public <T extends InventoryHolder> void eventHandle(T holder, int rawSlot) {
             this.event.setCancelled(true);
         }
     };
@@ -103,5 +116,5 @@ public enum BladeInventoryHandleEnum {
         this.event = event;
     }
 
-    public abstract <T extends org.bukkit.inventory.InventoryHolder> void eventHandle(T paramT, int paramInt);
+    public abstract <T extends InventoryHolder> void eventHandle(T paramT, int paramInt);
 }

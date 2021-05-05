@@ -1,4 +1,4 @@
-package pers.tuershen.bladeplus.modular;
+package pers.tuershen.bladeplus.api.modular;
 
 public enum ModularType {
 

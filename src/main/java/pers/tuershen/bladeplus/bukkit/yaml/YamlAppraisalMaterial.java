@@ -5,7 +5,7 @@ import pers.tuershen.bladeplus.BladePlusMain;
 import pers.tuershen.bladeplus.api.appraisal.IYamlAppraisalMaterial;
 import pers.tuershen.bladeplus.bukkit.common.appraisal.*;
 import pers.tuershen.bladeplus.bukkit.common.appraisal.AppraisalMaterial;
-import pers.tuershen.bladeplus.bukkit.core.common.appraisal.*;
+import pers.tuershen.bladeplus.bukkit.common.appraisal.*;
 
 import java.util.*;
 

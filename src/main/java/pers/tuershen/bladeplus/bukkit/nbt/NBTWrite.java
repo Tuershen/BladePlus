@@ -1,12 +1,12 @@
-package pers.tuershen.bladeplus.nbt;
+package pers.tuershen.bladeplus.bukkit.nbt;
 
 import com.tuershen.nbtlibrary.minecraft.nbt.*;
 import org.bukkit.Material;
 import pers.tuershen.bladeplus.BladePlusMain;
-import pers.tuershen.bladeplus.bukkit.core.common.appraisal.AppraisalMaterial;
-import pers.tuershen.bladeplus.bukkit.core.common.BladePlusAppraisalDisplay;
-import pers.tuershen.bladeplus.bukkit.core.common.BladePlusMaterial;
-import pers.tuershen.bladeplus.bukkit.core.common.ForgingModel;
+import pers.tuershen.bladeplus.bukkit.common.appraisal.AppraisalMaterial;
+import pers.tuershen.bladeplus.bukkit.common.BladePlusAppraisalDisplay;
+import pers.tuershen.bladeplus.bukkit.common.BladePlusMaterial;
+import pers.tuershen.bladeplus.bukkit.common.ForgingModel;
 import pers.tuershen.bladeplus.util.Calculation;
 import com.tuershen.nbtlibrary.api.NBTTagCompoundApi;
 import org.bukkit.inventory.ItemStack;

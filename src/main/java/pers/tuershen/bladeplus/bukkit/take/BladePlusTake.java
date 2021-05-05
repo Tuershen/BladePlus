@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import pers.tuershen.bladeplus.BladePlusMain;
+import pers.tuershen.bladeplus.BladePlusVersion;
 import pers.tuershen.bladeplus.api.ISladePlusTask;
 import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
 import pers.tuershen.bladeplus.bukkit.common.AnvilBlockLocation;
@@ -22,6 +23,7 @@ import pers.tuershen.bladeplus.util.Calculation;
 import pers.tuershen.bladeplus.util.ItemUtil;
 
 public class BladePlusTake extends BukkitRunnable {
+
     private BladePlusMaterial bladePlusMaterial;
 
     private Location blockLocation;
@@ -52,7 +54,7 @@ public class BladePlusTake extends BukkitRunnable {
 
     private static final int START_SLOT = 9;
 
-    private boolean enableEff;
+    private final boolean enableEff;
 
     public BladePlusTake(BladePlusMaterial bladePlusMaterial, ISladePlusTask iSladePlusTask) {
         this.enableEff = BladePlusMain.bladePlusMain.getConfig().getBoolean("enableEff", true);
@@ -73,24 +75,26 @@ public class BladePlusTake extends BukkitRunnable {
 
     public void run() {
         if (this.time == this.cumulative) {
-            if (this.enableEff)
+            if (this.enableEff) {
                 this.effLocation.getWorld().strikeLightning(this.effLocation);
+            }
             ResultTypeEnum resultType = Calculation.getResultType(this.bladePlusMaterial.getProbability());
             this.iSladePlusTask.handleDistribution(createForgingHandle(), resultType);
             this.iSladePlusTask.caneWorld(this.name);
             cancel();
-        } else {
-            this.effLocation.getWorld().playEffect(this.effLocation, Effect.MOBSPAWNER_FLAMES, 10);
-            this.effLocation.getWorld().playSound(this.effLocation, Sound.ANVIL_LAND, 1.0F, 1.0F);
-            double speedOfProgress = this.cumulative / this.time * 100.0D;
-            ItemMeta itemMeta = this.speedOfProgressMaterial.getItemMeta();
-            itemMeta.setDisplayName(speedOfProgressDisplay(speedOfProgress, (this.time - this.cumulative)));
-            this.speedOfProgressMaterial.setItemMeta(itemMeta);
-            int i = (int)(this.cumulative / this.factor);
-            for (int slot = 0; slot <= i; slot++)
-                this.iSladePlusTask.getInventory().setItem(slot + 9, this.speedOfProgressMaterial);
-            this.cumulative++;
+            return;
         }
+        this.effLocation.getWorld().playEffect(this.effLocation, Effect.MOBSPAWNER_FLAMES, 10);
+        this.effLocation.getWorld().playSound(this.effLocation, Sound.valueOf(BladePlusVersion.getSoundName()), 1.0F, 1.0F);
+        double speedOfProgress =  ((double) this.cumulative / this.time) * 100.0D;
+        ItemMeta itemMeta = this.speedOfProgressMaterial.getItemMeta();
+        itemMeta.setDisplayName(speedOfProgressDisplay(speedOfProgress, (this.time - this.cumulative)));
+        this.speedOfProgressMaterial.setItemMeta(itemMeta);
+        int i = (int)(this.cumulative / this.factor);
+        for (int slot = 0; slot <= i; slot++) {
+            this.iSladePlusTask.getInventory().setItem(slot + 9, this.speedOfProgressMaterial);
+        }
+        this.cumulative++;
     }
 
     private String speedOfProgressDisplay(double speedOfProgress, double time) {

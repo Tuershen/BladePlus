@@ -3,7 +3,7 @@ package pers.tuershen.bladeplus.api.balde;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagCompound;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagInt;
 import pers.tuershen.bladeplus.api.IYamlReset;
-import pers.tuershen.bladeplus.core.type.SEffectType;
+import pers.tuershen.bladeplus.bukkit.type.SEffectType;
 
 import java.util.List;
 

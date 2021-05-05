@@ -2,10 +2,7 @@ package pers.tuershen.bladeplus.api;
 
 import pers.tuershen.bladeplus.api.appraisal.IYamlAppraisalMaterial;
 import pers.tuershen.bladeplus.api.appraisal.IYamlAppraisalStone;
-import pers.tuershen.bladeplus.api.balde.IYamlBladeSkillType;
-import pers.tuershen.bladeplus.api.balde.IYamlMaterial;
-import pers.tuershen.bladeplus.api.balde.IYamlModel;
-import pers.tuershen.bladeplus.api.balde.IYamlSlashBlade;
+import pers.tuershen.bladeplus.api.balde.*;
 import pers.tuershen.bladeplus.api.check.IYamlBanUseWorld;
 import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
 import pers.tuershen.bladeplus.api.msg.IYamlMsg;
@@ -84,5 +81,11 @@ public interface IYamlSetting extends IYamlReset {
      * @return
      */
     IYamlSladePlusGemstone getIYamlSladePlusGemstone();
+
+    /**
+     * 强化石强化限制
+     * @return
+     */
+    IYamlBladeProgramme getIYamlBladeProgramme();
 
 }

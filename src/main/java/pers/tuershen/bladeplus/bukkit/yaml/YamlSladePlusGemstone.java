@@ -6,7 +6,6 @@ import pers.tuershen.bladeplus.api.IYamlSladePlusGemstone;
 import pers.tuershen.bladeplus.api.gemstone.*;
 import pers.tuershen.bladeplus.bukkit.common.gemstone.*;
 import pers.tuershen.bladeplus.bukkit.common.gemstone.SpecialGemstone;
-import pers.tuershen.bladeplus.bukkit.core.common.gemstone.*;
 
 /**
  * @auther Tuershen Create Date on 2021/2/12

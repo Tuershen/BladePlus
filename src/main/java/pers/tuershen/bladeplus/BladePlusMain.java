@@ -1,24 +1,30 @@
 package pers.tuershen.bladeplus;
 
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.event.HandlerList;
+import org.bukkit.event.Listener;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.api.balde.IYamlSlashBlade;
-import pers.tuershen.bladeplus.core.command.AdminCommandHandle;
-import pers.tuershen.bladeplus.core.command.PlayerCommandHandle;
-import pers.tuershen.bladeplus.core.command.admin.*;
-import pers.tuershen.bladeplus.core.command.player.*;
-import pers.tuershen.bladeplus.core.file.*;
-import pers.tuershen.bladeplus.core.listener.BladePlusListener;
-import pers.tuershen.bladeplus.core.listener.BladePlusUseBladeListener;
-import pers.tuershen.bladeplus.core.listener.BladePlusUseSASEListener;
-import pers.tuershen.bladeplus.core.yaml.YamlSetting;
+import pers.tuershen.bladeplus.bukkit.command.AdminCommandHandle;
+import pers.tuershen.bladeplus.bukkit.command.PlayerCommandHandle;
+import pers.tuershen.bladeplus.bukkit.command.admin.*;
+import pers.tuershen.bladeplus.bukkit.command.player.*;
+import pers.tuershen.bladeplus.bukkit.file.*;
+import pers.tuershen.bladeplus.bukkit.listener.BladePlusListener;
+import pers.tuershen.bladeplus.bukkit.listener.BladePlusUseBladeListener;
+import pers.tuershen.bladeplus.bukkit.listener.BladePlusUseSASEListener;
+import pers.tuershen.bladeplus.bukkit.yaml.YamlSetting;
 import com.tuershen.nbtlibrary.CompoundLibraryManager;
 import com.tuershen.nbtlibrary.api.CompoundLibraryApi;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import pers.tuershen.bladeplus.modular.ModularManage;
+import pers.tuershen.bladeplus.modular.io.ReadConfiguration;
 
+import java.io.File;
 
 
 public class BladePlusMain extends JavaPlugin {
@@ -41,6 +47,15 @@ public class BladePlusMain extends JavaPlugin {
 
     public static BladeSpecialAttackType attackType;
 
+    private static final ModularManage<? extends pers.tuershen.bladeplus.modular.ModularCore> modularManage = new ModularManage<>();
+
+    public static int getModularSize(){
+        return modularManage.modularMap.size();
+    }
+
+    private AdminCommandHandle<? extends CommandSender> adminCommandHandle;
+
+    private PlayerCommandHandle<? extends CommandSender> playerCommandHandle;
 
     @Override
     public void onEnable() {
@@ -51,17 +66,19 @@ public class BladePlusMain extends JavaPlugin {
         YamlSetting yamlSetting = new YamlSetting();
         yamlSetting.init();
         yamlSlashBlade = yamlSetting.getIYamlSlashBlade();
-        AdminCommandHandle<?> adminCommandHandle = new AdminCommandHandle<>(yamlSetting);
-        PlayerCommandHandle<?> playerCommandHandle = new PlayerCommandHandle<>(yamlSetting);
+        adminCommandHandle = new AdminCommandHandle<>(yamlSetting);
+        playerCommandHandle = new PlayerCommandHandle<>(yamlSetting);
         this.registerCommandExecutor("bladePlus", adminCommandHandle);
         this.registerCommandExecutor("bd", playerCommandHandle);
         this.registerTagExecutor("bladePlus", adminCommandHandle);
         this.registerTagExecutor("bd", playerCommandHandle);
-        BladePlusRegister.initAdminCommands(adminCommandHandle, yamlSetting);
-        BladePlusRegister.initPlayerCommands(playerCommandHandle, yamlSetting);
+        initAdminCommands(adminCommandHandle, yamlSetting);
+        initPlayerCommands(playerCommandHandle, yamlSetting);
         registerEvents(yamlSetting);
         Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §a拔刀剑剑锻造系统加载成功!");
         printlnBladePlusLogInfo();
+        modularManage.loadModular(new ReadConfiguration(new File(bladePlusMain.getDataFolder(), "modular")));
+        BladePlusVersion.init(this.getServer());
     }
 
 
@@ -95,6 +112,45 @@ public class BladePlusMain extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new BladePlusUseSASEListener(yamlSetting), this);
     }
 
+    public void initAdminCommands(AdminCommandHandle adminCommandHandle, IYamlSetting iYamlSetting) {
+        adminCommandHandle.registerAdminCommandHandle(new ACommandAppraisal(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandMaterial(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandMaxRepairCounter(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandModel(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandProtect(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandHelp(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandReload(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandVersion(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandLucky(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandBet(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandSpecial(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandBladeModel(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandKillCount(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandProudSoul(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandRepairCounter(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandSpecialAttackType(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandSummonedSwordColor(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandBaseAttackModifier(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandBanSA(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandRepair(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandBanSE(iYamlSetting));
+        adminCommandHandle.registerAdminCommandHandle(new ACommandModular(iYamlSetting));
+    }
+
+    public void initPlayerCommands(PlayerCommandHandle playerCommandHandle, IYamlSetting iYamlSetting) {
+        playerCommandHandle.registerCommandHandle(new PCommandAppraisal(iYamlSetting));
+        playerCommandHandle.registerCommandHandle(new PCommandOpen(iYamlSetting));
+        playerCommandHandle.registerCommandHandle(new PCommandHelp(iYamlSetting));
+        playerCommandHandle.registerCommandHandle(new PCommandSeeBladeMaxRepairCounter(iYamlSetting));
+        playerCommandHandle.registerCommandHandle(new PCommandVersion(iYamlSetting));
+    }
+
+    public <T extends AbstractPlayerCommand> void registerPlayerCommand(T t){
+        this.playerCommandHandle.registerCommandHandle(t);
+    }
+
+
+
     public void bladeSaveDefaultFile(){
         languageFile.saveDefaultFile();
         guiSettingFile.saveDefaultFile();
@@ -113,10 +169,21 @@ public class BladePlusMain extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6作者：§d兔儿神");
         Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6插件反馈群：§b978420514");
         Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6如果你有好的意见请务必反馈给我！");
-        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6此版本建议运行在1.7.10版本服务器上");
+        Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §6此版本建议运行在1.7.10-1.12.2版本服务器上");
     }
 
 
+    public <T extends Listener> void  registerModularListener(T listener){
+        this.getServer().getPluginManager().registerEvents(listener, this);
+    }
+
+    public <T extends Listener> void unregisterModularListener(T listener){
+        HandlerList.unregisterAll(listener);
+    }
+
+    public void logger(String msg){
+        this.getServer().getLogger().info(msg);
+    }
 
 
 }

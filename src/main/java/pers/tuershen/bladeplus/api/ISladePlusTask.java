@@ -3,8 +3,8 @@ package pers.tuershen.bladeplus.api;
 import com.tuershen.nbtlibrary.api.EntityNBTTagCompoundApi;
 import org.bukkit.Location;
 import pers.tuershen.bladeplus.api.gui.IYamlGuiSetting;
-import pers.tuershen.bladeplus.core.common.BladePlusHandle;
-import pers.tuershen.bladeplus.core.type.ResultTypeEnum;
+import pers.tuershen.bladeplus.bukkit.common.BladePlusHandle;
+import pers.tuershen.bladeplus.bukkit.type.ResultTypeEnum;
 
 /**
  * @auther Tuershen Create Date on 2021/2/23

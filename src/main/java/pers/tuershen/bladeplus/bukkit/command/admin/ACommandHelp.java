@@ -4,6 +4,7 @@ import org.bukkit.command.CommandSender;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.bukkit.type.CommandExecutorType;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +14,9 @@ import java.util.Map;
  */
 public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
 
-    private static Map<String, List<String>> modularMap = new HashMap<>();
+    private static final Map<String, List<String>> modularMap = new HashMap<>();
+
+    private static final int HELP_COUNT = 4;
 
     public ACommandHelp(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
@@ -37,9 +40,12 @@ public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
             case 3:
                 this.page3(sender);
                 return true;
+            case 4:
+                this.page4(sender);
+                return true;
             default:
-                if (page > 3) {
-                    if (page <= modularMap.size() + 3) {
+                if (page > HELP_COUNT) {
+                    if (page <= modularMap.size() + HELP_COUNT) {
                         Object hasKey = modularMap.keySet().toArray()[page];
                         List<String> helpInfo = modularMap.get(hasKey.toString());
                         this.pageModular(sender, helpInfo);
@@ -66,6 +72,7 @@ public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
         this.tabResultList.add("1");
         this.tabResultList.add("2");
         this.tabResultList.add("3");
+        this.tabResultList.add("4");
         return this.tabResultList;
     }
 
@@ -92,7 +99,7 @@ public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
         sender.sendMessage("§7[§3Console§7]   §a▪ §7重新插件");
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus help");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7插件指令帮助");
-        sender.sendMessage("§8§m--一一一一一一一一§7[§b1 §a/ §c"+3 + modularMap.size()+"§7]§8§m一一一一一一一一--");
+        sender.sendMessage("§8§m--一一一一一一一一§7[§b1 §a/ §c"+ (HELP_COUNT + modularMap.size()) +"§7]§8§m一一一一一一一一--");
     }
 
     public void page2(CommandSender sender) {
@@ -110,7 +117,7 @@ public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
         sender.sendMessage("§7[§3Console§7]   §a▪ §7有几率增加拔刀的最大锻造数限制");
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus protect");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7设置手中物品为保护石，可以免除一次锻造失败惩罚");
-        sender.sendMessage("§8§m--一一一一一一一一§7[§b2 §a/ §c"+3 + modularMap.size()+"§7]§8§m一一一一一一一一--");
+        sender.sendMessage("§8§m--一一一一一一一一§7[§b2 §a/ §c"+ (HELP_COUNT + modularMap.size())+"§7]§8§m一一一一一一一一--");
     }
 
     public void page3(CommandSender sender) {
@@ -120,7 +127,7 @@ public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus proudSoul <荣耀值>");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7设置手中拔刀的荣耀值");
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus killCount <杀敌数>");
-        sender.sendMessage("§7[§3Console§7]   §a▪ §7设置手中物品为鉴定石");
+        sender.sendMessage("§7[§3Console§7]   §a▪ §7设置手中拔刀的杀敌数");
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus specialAttackType <技能id>");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7设置手中拔刀剑的技能");
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus baseAttackModifier <基础伤害值>");
@@ -129,8 +136,16 @@ public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
         sender.sendMessage("§7[§3Console§7]   §a▪ §7随机生成拔刀剑的剑气颜色");
         sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus model <模型路径> <材质路径>");
         sender.sendMessage("§7[§3Console§7]   §a▪ §7设置手中拔刀剑的皮肤与模型");
-        sender.sendMessage("§8§m--一一一一一一一一§7[§b3 §a/ §c"+3 + modularMap.size()+"§7]§8§m一一一一一一一一--");
+        sender.sendMessage("§8§m--一一一一一一一一§7[§b3 §a/ §c"+ (HELP_COUNT + modularMap.size())+"§7]§8§m一一一一一一一一--");
     }
+
+    public void page4(CommandSender sender) {
+        sender.sendMessage("§8§m--一一一一一一一一一一一一一一一一一一一--");
+        sender.sendMessage("§7[§3Console§7] §b▶ /bladePlus modular info");
+        sender.sendMessage("§7[§3Console§7]   §a▪ §7查看已安装的模块与信息");
+        sender.sendMessage("§8§m--一一一一一一一一§7[§b4 §a/ §c"+ (HELP_COUNT + modularMap.size()) +"§7]§8§m一一一一一一一一--");
+    }
+
 
     public void pageModular(CommandSender sender, List<String> helpInfo){
         helpInfo.forEach(sender::sendMessage);

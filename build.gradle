@@ -18,13 +18,12 @@ processResources {
 }
 
 
-
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
 
 group 'org.example'
-version '1.1.8-Release'
+version '1.2.0-Release'
 
 
 sourceCompatibility = 1.8
@@ -35,7 +34,5 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation files('bukkit/NBTLibrary.jar')
-    implementation files('bukkit/Uranium-1710-dev-5-B287-4e9e823-server.jar')
-
+    compile fileTree(dir: 'bukkit', includes: ['*.jar'])
 }

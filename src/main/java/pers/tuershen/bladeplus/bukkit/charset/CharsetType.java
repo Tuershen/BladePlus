@@ -1,4 +1,4 @@
-package pers.tuershen.bladeplus.charset;
+package pers.tuershen.bladeplus.bukkit.charset;
 
 import java.nio.charset.Charset;
 

@@ -29,9 +29,9 @@ public class YamlSlashBlade extends YamlReset implements IYamlSlashBlade  {
     }
 
     public boolean isSlashBlade(String slashBlade){
-        for (int i = 0; i < slashBladeList.size(); i++) {
-            if (slashBlade.contains(slashBladeList.get(i))) return true;
-         }
+        for (String s : slashBladeList) {
+            if (slashBlade.contains(s)) return true;
+        }
         return false;
     }
 

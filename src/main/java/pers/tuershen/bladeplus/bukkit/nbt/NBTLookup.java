@@ -1,4 +1,4 @@
-package pers.tuershen.bladeplus.nbt;
+package pers.tuershen.bladeplus.bukkit.nbt;
 
 import pers.tuershen.bladeplus.BladePlusMain;
 import com.tuershen.nbtlibrary.api.NBTTagCompoundApi;

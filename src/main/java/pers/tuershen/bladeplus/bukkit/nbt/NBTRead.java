@@ -1,9 +1,11 @@
-package pers.tuershen.bladeplus.nbt;
+package pers.tuershen.bladeplus.bukkit.nbt;
 
+import com.tuershen.nbtlibrary.api.EntityNBTTagCompoundApi;
+import com.tuershen.nbtlibrary.api.NBTTagCompoundApi;
 import com.tuershen.nbtlibrary.minecraft.nbt.*;
 import org.bukkit.inventory.ItemStack;
 import pers.tuershen.bladeplus.BladePlusMain;
-import pers.tuershen.bladeplus.bukkit.core.common.BladePlusMaterial;
+import pers.tuershen.bladeplus.bukkit.common.BladePlusMaterial;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +67,7 @@ public class NBTRead {
         double time = NBTRead.getMaterialDouble(material, "time");
         double probability = NBTRead.getMaterialDouble(material, "probability");
         int fail = NBTRead.getMaterialInt(material, "fail");
-        BladePlusMaterial bladePlusMaterial = new BladePlusMaterial()
+        return new BladePlusMaterial()
                 .setExp(exp)
                 .setRepairCounter(repairCounter)
                 .setProudSoul(proudSoul)
@@ -73,8 +75,6 @@ public class NBTRead {
                 .setTime(time)
                 .setProbability(probability)
                 .setFail(fail);
-
-        return bladePlusMaterial;
     }
 
     /**
@@ -106,9 +106,7 @@ public class NBTRead {
     public static List<String> getSEffectList(ItemStack blade) {
         TagCompound<TagInt> effectMap = BladePlusMain.libraryApi.getCompound(blade).get("SB.SEffect");
         Map<String, TagInt> map = effectMap.getMap();
-        List<String> effectList = new ArrayList<>();
-        map.keySet().forEach((k) -> effectList.add(k));
-        return effectList;
+        return new ArrayList<>(map.keySet());
     }
 
     public static TagCompound<TagInt> getSEffect(ItemStack blade) {
@@ -123,6 +121,21 @@ public class NBTRead {
      */
     public static int getMaxRepairCounter(ItemStack blade) {
         return BladePlusMain.libraryApi.getCompound(blade).getInt("MaxRepairCounter");
+    }
+
+    public static int getBladeEntityInt(EntityNBTTagCompoundApi api, String key) {
+        NBTTagCompoundApi nbtTagCompound = api.getNBTTagCompound();
+        if (nbtTagCompound.hasKey("Blade")) {
+            NBTTagCompoundApi blade = nbtTagCompound.getCompound("Blade");
+            if (blade.hasKey("tag")) {
+                NBTTagCompoundApi tag = blade.getCompound("tag");
+                if (tag.hasKey(key)){
+                    return tag.getInt(key);
+                }
+            }
+        }
+        //RepairCounter
+        return 0;
     }
 
 

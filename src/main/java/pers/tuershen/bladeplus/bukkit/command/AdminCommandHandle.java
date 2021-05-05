@@ -2,8 +2,10 @@ package pers.tuershen.bladeplus.bukkit.command;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import pers.tuershen.bladeplus.BladePlusMain;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.bukkit.command.admin.AbstractAdminCommand;
+import pers.tuershen.bladeplus.bukkit.command.player.AbstractPlayerCommand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +68,11 @@ public class AdminCommandHandle<C extends CommandSender> extends AbstractCommand
 
     protected List<String> tabResult() {
         return this.tabResultList;
+    }
+
+    public <T extends AbstractAdminCommand<C>> void unregisterCommandHandle(T playerCommand){
+        this.adminCommands.remove(playerCommand);
+        BladePlusMain.bladePlusMain.logger("Success unregister AdminCommand of " + playerCommand.getClass().getSimpleName());
     }
 
 

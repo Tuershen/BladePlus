@@ -17,7 +17,7 @@ public class ACommandVersion extends AbstractAdminCommand<CommandSender> {
 
     @Override
     public boolean onCommandHandle(CommandSender sender, String... args) {
-        sender.sendMessage("§7[§3Console§7] §aThe plugin version is 1.1.5");
+        sender.sendMessage("§7[§3Console§7] §aThe plugin version is 1.2.0");
         sender.sendMessage("§7[§3Console§7] §aThe author of this plugin is Tuershen(兔儿神) ");
         return true;
     }

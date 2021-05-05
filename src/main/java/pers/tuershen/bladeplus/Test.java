@@ -1,9 +1,10 @@
 package pers.tuershen.bladeplus;
 
 
-import pers.tuershen.bladeplus.core.type.ResultTypeEnum;
+import pers.tuershen.bladeplus.bukkit.type.ResultTypeEnum;
 import pers.tuershen.bladeplus.util.Calculation;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
