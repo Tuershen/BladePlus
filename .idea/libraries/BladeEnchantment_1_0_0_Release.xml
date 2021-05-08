@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="BladeEnchantment-1.0.0-Release">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../BladeEnchantment-1.0.0-Release.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

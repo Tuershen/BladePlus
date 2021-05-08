@@ -21,10 +21,12 @@ import com.tuershen.nbtlibrary.CompoundLibraryManager;
 import com.tuershen.nbtlibrary.api.CompoundLibraryApi;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import pers.tuershen.bladeplus.modular.ModularCore;
 import pers.tuershen.bladeplus.modular.ModularManage;
 import pers.tuershen.bladeplus.modular.io.ReadConfiguration;
 
 import java.io.File;
+import java.util.List;
 
 
 public class BladePlusMain extends JavaPlugin {
@@ -53,9 +55,11 @@ public class BladePlusMain extends JavaPlugin {
         return modularManage.modularMap.size();
     }
 
-    private AdminCommandHandle<? extends CommandSender> adminCommandHandle;
+    private AdminCommandHandle adminCommandHandle;
 
-    private PlayerCommandHandle<? extends CommandSender> playerCommandHandle;
+    private PlayerCommandHandle playerCommandHandle;
+
+    private IYamlSetting yamlSetting;
 
     @Override
     public void onEnable() {
@@ -66,14 +70,14 @@ public class BladePlusMain extends JavaPlugin {
         YamlSetting yamlSetting = new YamlSetting();
         yamlSetting.init();
         yamlSlashBlade = yamlSetting.getIYamlSlashBlade();
-        adminCommandHandle = new AdminCommandHandle<>(yamlSetting);
-        playerCommandHandle = new PlayerCommandHandle<>(yamlSetting);
+        adminCommandHandle = new AdminCommandHandle(yamlSetting);
+        playerCommandHandle = new PlayerCommandHandle(yamlSetting);
         this.registerCommandExecutor("bladePlus", adminCommandHandle);
         this.registerCommandExecutor("bd", playerCommandHandle);
         this.registerTagExecutor("bladePlus", adminCommandHandle);
         this.registerTagExecutor("bd", playerCommandHandle);
-        initAdminCommands(adminCommandHandle, yamlSetting);
-        initPlayerCommands(playerCommandHandle, yamlSetting);
+        initAdminCommands(yamlSetting);
+        initPlayerCommands(yamlSetting);
         registerEvents(yamlSetting);
         Bukkit.getConsoleSender().sendMessage("§7[§3BladePlus§7] §a拔刀剑剑锻造系统加载成功!");
         printlnBladePlusLogInfo();
@@ -112,7 +116,7 @@ public class BladePlusMain extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new BladePlusUseSASEListener(yamlSetting), this);
     }
 
-    public void initAdminCommands(AdminCommandHandle adminCommandHandle, IYamlSetting iYamlSetting) {
+    public void initAdminCommands(IYamlSetting iYamlSetting) {
         adminCommandHandle.registerAdminCommandHandle(new ACommandAppraisal(iYamlSetting));
         adminCommandHandle.registerAdminCommandHandle(new ACommandMaterial(iYamlSetting));
         adminCommandHandle.registerAdminCommandHandle(new ACommandMaxRepairCounter(iYamlSetting));
@@ -137,7 +141,7 @@ public class BladePlusMain extends JavaPlugin {
         adminCommandHandle.registerAdminCommandHandle(new ACommandModular(iYamlSetting));
     }
 
-    public void initPlayerCommands(PlayerCommandHandle playerCommandHandle, IYamlSetting iYamlSetting) {
+    public void initPlayerCommands(IYamlSetting iYamlSetting) {
         playerCommandHandle.registerCommandHandle(new PCommandAppraisal(iYamlSetting));
         playerCommandHandle.registerCommandHandle(new PCommandOpen(iYamlSetting));
         playerCommandHandle.registerCommandHandle(new PCommandHelp(iYamlSetting));
@@ -145,10 +149,41 @@ public class BladePlusMain extends JavaPlugin {
         playerCommandHandle.registerCommandHandle(new PCommandVersion(iYamlSetting));
     }
 
-    public <T extends AbstractPlayerCommand> void registerPlayerCommand(T t){
-        this.playerCommandHandle.registerCommandHandle(t);
+    public <T extends AbstractPlayerCommand<? extends CommandSender>> void registerPlayerCommandHandle(T playerCommand) {
+        if (playerCommand != null) {
+            playerCommandHandle.registerCommandHandle(playerCommand);
+        }
     }
 
+    public <T extends AbstractAdminCommand<? extends CommandSender>> void registerAdminCommandHandle(T adminCommand) {
+        if (adminCommand != null) {
+            adminCommandHandle.registerAdminCommandHandle(adminCommand);
+        }
+    }
+
+    public <T extends ModularCore> void registerPlayerCommandHelp(T modular, List<String> help) {
+        if (help != null) {
+            if (help.size() > 0) {
+                PCommandHelp.registerHelp(modular.getCode(), help);
+            }
+        }
+    }
+
+    public <T extends ModularCore> void registerAdminCommandHelp(T modular, List<String> help) {
+        if (help != null) {
+            if (help.size() > 0) {
+                ACommandHelp.registerHelp(modular.getCode(), help);
+            }
+        }
+    }
+
+    public void addPlayerCommandResult(String result) {
+        this.playerCommandHandle.addResult(result);
+    }
+
+    public void addAdminCommandResult(String result) {
+        this.adminCommandHandle.addResult(result);
+    }
 
 
     public void bladeSaveDefaultFile(){
@@ -185,5 +220,8 @@ public class BladePlusMain extends JavaPlugin {
         this.getServer().getLogger().info(msg);
     }
 
+    public IYamlSetting getYamlSetting() {
+        return this.yamlSetting;
+    }
 
 }

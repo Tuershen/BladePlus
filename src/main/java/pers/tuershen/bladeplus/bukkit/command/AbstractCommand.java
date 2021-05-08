@@ -20,7 +20,7 @@ public abstract class AbstractCommand<T extends CommandSender> {
         this.iYamlSetting = iYamlSetting;
     }
 
-    public abstract boolean onCommandHandle(T sender, String... args);
+    public abstract boolean onCommandHandle(T send, String... args);
 
     public abstract String[] getArgs();
 
@@ -31,9 +31,4 @@ public abstract class AbstractCommand<T extends CommandSender> {
     public abstract List<String> getTabExecutorResult();
 
     public abstract CommandExecutorType getCommandExecutorType();
-
-
-
-
-
 }

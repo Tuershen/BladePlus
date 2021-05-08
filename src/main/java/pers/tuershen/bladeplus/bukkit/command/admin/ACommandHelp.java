@@ -46,7 +46,7 @@ public class ACommandHelp extends AbstractAdminCommand<CommandSender> {
             default:
                 if (page > HELP_COUNT) {
                     if (page <= modularMap.size() + HELP_COUNT) {
-                        Object hasKey = modularMap.keySet().toArray()[page];
+                        Object hasKey = modularMap.keySet().toArray()[page - (HELP_COUNT + 1)];
                         List<String> helpInfo = modularMap.get(hasKey.toString());
                         this.pageModular(sender, helpInfo);
                         return true;

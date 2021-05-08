@@ -5,7 +5,6 @@ import org.bukkit.command.CommandSender;
 import pers.tuershen.bladeplus.BladePlusMain;
 import pers.tuershen.bladeplus.api.IYamlSetting;
 import pers.tuershen.bladeplus.bukkit.command.admin.AbstractAdminCommand;
-import pers.tuershen.bladeplus.bukkit.command.player.AbstractPlayerCommand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +12,9 @@ import java.util.List;
 /**
  * @auther Tuershen Create Date on 2021/2/10
  */
-public class AdminCommandHandle<C extends CommandSender> extends AbstractCommandExecutor<C> {
+public class AdminCommandHandle extends AbstractCommandExecutor<CommandSender> {
 
-    private List<AbstractAdminCommand<C>> adminCommands = new ArrayList<>();
+    private final List<AbstractAdminCommand<? extends CommandSender>> adminCommands = new ArrayList<>();
 
     public AdminCommandHandle(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
@@ -45,9 +44,17 @@ public class AdminCommandHandle<C extends CommandSender> extends AbstractCommand
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         if (args.length > 0) {
-            this.callExecutor((C)sender, adminCommands, args);
+            this.callExecutor(sender, adminCommands, args);
+            return true;
         }
+        help(sender);
         return false;
+    }
+
+    public void help(CommandSender sender) {
+        sender.sendMessage("§8§m--一一一一一一一一一一一一一一一一一一一--");
+        sender.sendMessage("§7[§3BladePlus§7] §c▶ §b输入的指令不正确！");
+        sender.sendMessage("§7[§3BladePlus§7] §c▶ §7请使用/bp help 或者 /bladePlus help查看指令帮助");
     }
 
 
@@ -56,11 +63,11 @@ public class AdminCommandHandle<C extends CommandSender> extends AbstractCommand
         if (args.length >= 1) {
             if (args[0].equalsIgnoreCase("")) return this.tabResult();
         }
-        return this.callTabExecutor((C)sender, adminCommands, args);
+        return this.callTabExecutor(sender, adminCommands, args);
     }
 
 
-    public <T extends AbstractAdminCommand<C>> void registerAdminCommandHandle(T adminCommand) {
+    public <T extends AbstractAdminCommand<? extends CommandSender>> void registerAdminCommandHandle(T adminCommand) {
         if (adminCommand != null) {
             adminCommands.add(adminCommand);
         }
@@ -70,10 +77,11 @@ public class AdminCommandHandle<C extends CommandSender> extends AbstractCommand
         return this.tabResultList;
     }
 
-    public <T extends AbstractAdminCommand<C>> void unregisterCommandHandle(T playerCommand){
+    public <T extends AbstractAdminCommand<CommandSender>> void unregisterCommandHandle(T playerCommand){
         this.adminCommands.remove(playerCommand);
         BladePlusMain.bladePlusMain.logger("Success unregister AdminCommand of " + playerCommand.getClass().getSimpleName());
     }
+
 
 
 }

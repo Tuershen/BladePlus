@@ -3,6 +3,7 @@ package pers.tuershen.bladeplus.bukkit.command.player;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagList;
 import com.tuershen.nbtlibrary.minecraft.nbt.TagString;
 import org.bukkit.Material;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import pers.tuershen.bladeplus.api.IYamlSetting;
@@ -21,6 +22,7 @@ public class PCommandOpen extends AbstractPlayerCommand<Player> {
     public PCommandOpen(IYamlSetting iYamlSetting) {
         super(iYamlSetting);
     }
+
 
     @Override
     public boolean onCommandHandle(Player player, String... args) {

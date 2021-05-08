@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class ACommandAppraisal extends AbstractAdminCommand<Player> {
 
-    private IYamlAppraisalMaterial iAppraisal;
+    private final IYamlAppraisalMaterial iAppraisal;
 
     public ACommandAppraisal(IYamlSetting iYamlSetting) {
         super(iYamlSetting);

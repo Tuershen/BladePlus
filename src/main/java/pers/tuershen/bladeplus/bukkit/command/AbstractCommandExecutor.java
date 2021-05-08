@@ -43,8 +43,11 @@ public abstract class AbstractCommandExecutor<C extends CommandSender> implement
     }
 
 
-    public <T extends AbstractCommand<C>> void callExecutor(C sender, List<T> executors, String... args) {
-        for (T executor : executors) {
+    public <T extends AbstractCommand<? extends CommandSender>> void callExecutor(
+            C sender,
+            List<T> executors,
+            String... args) {
+        for (AbstractCommand<?> executor : executors) {
             if (screenExecutorType(sender, executor.getCommandExecutorType())) {
                 if (sender.hasPermission(executor.getPermission())) {
                     String[] cmdArgs = executor.getArgs();
@@ -57,7 +60,7 @@ public abstract class AbstractCommandExecutor<C extends CommandSender> implement
                             for (int i = 0; i < al - cl && i != bl; i++) {
                                 buildArgs[i] = args[i + cl];
                             }
-                            executor.onCommandHandle(sender, buildArgs);
+                            ((AbstractCommand<C>) executor).onCommandHandle(sender, buildArgs);
                         }
                     }
                 }
@@ -66,9 +69,12 @@ public abstract class AbstractCommandExecutor<C extends CommandSender> implement
     }
 
 
-    public <T extends AbstractCommand<C>> List<String> callTabExecutor(C sender, List<T> executors, String... args) {
+    public <T extends AbstractCommand<? extends CommandSender>> List<String> callTabExecutor(
+            CommandSender sender,
+            List<T> executors,
+            String... args) {
         List<String> tabList = new ArrayList<>();
-        for (T base : executors) {
+        for (AbstractCommand<?> base : executors) {
             if (screenExecutorType(sender, base.getCommandExecutorType())
                     && sender.hasPermission(base.getPermission())) {
                 int index = args.length - 1;
@@ -80,8 +86,9 @@ public abstract class AbstractCommandExecutor<C extends CommandSender> implement
                         return base.getTabExecutorResult();
                     continue;
                 }
-                if ((base.getArgs()).length >= args.length && base.getArgs()[index].contains(param))
+                if ((base.getArgs()).length >= args.length && base.getArgs()[index].contains(param)) {
                     tabList.add(base.getArgs()[index]);
+                }
             }
         }
         return tabList;
